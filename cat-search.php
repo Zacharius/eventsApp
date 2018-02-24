@@ -16,7 +16,7 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
-<form action="/get-events-by-category.php" method="POST" onsubmit="myFunction(this)">
+<form action="./get-events-by-category.php" method="POST" onsubmit="myFunction(this)">
     Enter name: <input type="text" name="category">
     <input type="submit" value="Submit">
 </form>
