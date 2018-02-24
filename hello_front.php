@@ -8,7 +8,7 @@
         });
 
         request.done(function(response) {
-            alert ( "Response: " + response );
+            alert ( "Response: " + response[0]['ename'] );
             var results = JSON.parse(response);
             for (var i = 0; i < results.length; i++) {
                 var ename = results[i]['ename'];
