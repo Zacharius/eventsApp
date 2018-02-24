@@ -2,31 +2,33 @@
 <html>
 
 <script>
-    function mySearch() {
-        //event.preventDefault();
-        //$catForm = this;
-        alert('hi');
-        /*$.ajax({ // create an AJAX call...
-            data: $('#cat_form').serialize(), // get the form data
-            type: 'POST', // GET or POST
-            url: './get-events-by-category.php', // the file to call
-            .done(function(data) {
-                var temp = JSON.parse(response);
-                if (temp[0] === 'success') {
-                    var results = JSON.parse(temp[1]);
-                    for (var i = 0; i < results.length; i++) {
-                        var ename = results[i]['ename'];
-                        var desc = results[i]['description'];
-                        $('#event_results').append("<li>"+ename+": " +desc+"</li>"); // update the DIV
+    $(document).ready(function() {
+        function mySearch() {
+            //event.preventDefault();
+            //$catForm = this;
+            alert('hi');
+            $.ajax({ // create an AJAX call...
+                data: $('#cat_form').serialize(), // get the form data
+                type: 'POST', // GET or POST
+                url: './get-events-by-category.php', // the file to call
+                .done(function(data) {
+                    var temp = JSON.parse(response);
+                    if (temp[0] === 'success') {
+                        var results = JSON.parse(temp[1]);
+                        for (var i = 0; i < results.length; i++) {
+                            var ename = results[i]['ename'];
+                            var desc = results[i]['description'];
+                            $('#event_results').append("<li>"+ename+": " +desc+"</li>"); // update the DIV
+                        }
+                        alert('success');
+                    } else {
+                        alert("failure");
                     }
-                    alert('success');
-                } else {
-                    alert("failure");
-                }
+                });
             });
-        });
-        return false; // cancel original event to prevent form submitting*/
-    }
+            return false; // cancel original event to prevent form submitting
+        }
+    });
 </script>
 
 
