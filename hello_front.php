@@ -8,6 +8,7 @@
         });
 
         request.done(function(response) {
+            $("#content").append('<li>qwerty</li>');
             var results = JSON.parse(response);
             alert ( results.length);
             for (var i = 0; i < results.length; i++) {
