@@ -29,6 +29,7 @@ echo "</ul>";
     $('#cat-form').submit(function(event) {
         event.preventDefault();
         $catForm = this;
+        alert('hi');
         $.ajax({ // create an AJAX call...
             data: $catForm.serialize(), // get the form data
             type: $catForm.attr('method'), // GET or POST
