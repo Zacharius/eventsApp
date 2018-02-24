@@ -1,2 +1,3 @@
 <?php
-echo "bar";
+
+echo $_POST['foo'] . $_POST['bar'];

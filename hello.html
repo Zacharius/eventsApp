@@ -11,16 +11,33 @@
             }
         );
     });*/
-    function myFunc() {
+    /*function myFunc() {
+        var data = $('#myForm').serialize();
         $.post("./hello.php",
             {
-                foo: "foo"
+                data: data
             },
             function(data) {
                 alert(data);
             }
         );
-    }
+    }*/
+    $(function(){
+        var request = $.ajax({
+            type: "POST",
+            url: "./hello.php",
+            data: {foo: "foo1", bar: "bar1"},
+            dataType: "json"
+        });
+
+        request.done(function(msg) {
+            alert ( "Response: " + msg );
+        });
+
+        request.fail(function(jqXHR, textStatus) {
+            alert( "Request failed: " + textStatus );
+        });
+    });
 </script>
 
 <form id="myForm" method="POST">
