@@ -4,11 +4,11 @@ include('database.php');
 $conn = connect_db();
 
 $results = array();
-$category = json_decode($_POST['category'], true);
+$category = $_POST['category'];
 
 // data validation
 if(empty($category)){
-    die(json_encode(array('status' => 'failure')));
+    die(json_encode(array('failed')));
 }
 
 // fetch names of events with the specified category

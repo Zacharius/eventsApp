@@ -4,8 +4,8 @@
 <script src="js/jquery.js"></script>
 
 <script>
-    $('#cat-form').submit(function() {
-        //event.preventDefault();
+    $('#cat_form').submit(function(event) {
+        event.preventDefault();
         $catForm = this;
         alert('hi');
         $.ajax({ // create an AJAX call...
@@ -28,7 +28,7 @@
             }
         });
         return false; // cancel original event to prevent form submitting
-    }
+    )};
 </script>
 
 
@@ -48,7 +48,7 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
-<form id="cat-form" method="POST">
+<form id="cat_form" method="POST" action="./get-events-by-category.php">
     Enter name: <input type="text" name="category">
     <input type="submit" value="Submit">
 </form>
