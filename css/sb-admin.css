@@ -19,6 +19,9 @@ body.fixed-nav {
   padding-top: 56px;
 }
 
+body.calendar{
+  @include 'calendar.css'
+}
 .content-wrapper {
   min-height: calc(100vh - 56px);
   padding-top: 1rem;
