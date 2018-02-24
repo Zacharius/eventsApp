@@ -22,7 +22,7 @@
             }
         );
     }*/
-    $(function(){
+    function myFunc() {
         var request = $.ajax({
             type: "POST",
             url: "./hello.php",
@@ -36,7 +36,7 @@
         request.fail(function(jqXHR, textStatus) {
             alert( "Request failed: " + textStatus );
         });
-    });
+    }
 </script>
 
 <form id="myForm" method="POST">
