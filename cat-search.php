@@ -42,6 +42,7 @@ echo "</ul>";
                         var desc = results[i]['description'];
                         $('#event_results').append("<li>"+ename+": " +desc+"</li>"); // update the DIV
                     }
+                    alert('success');
                 } else {
                     alert("failure");
                 }
