@@ -43,20 +43,20 @@
 					</div>
 				</div>
 				<div class="dropdown col-lg-3" style="margin-bottom: 5px;">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Price
 					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 						<a class="dropdown-item" href="#">Action</a>
 						<a class="dropdown-item" href="#">Another action</a>
 						<a class="dropdown-item" href="#">Something else here</a>
 					</div>
 				</div>
 				<div class="dropdown col-lg-3" style="margin-bottom: 5px;">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Age
 					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 						<a class="dropdown-item" href="#">Action</a>
 						<a class="dropdown-item" href="#">Another action</a>
 						<a class="dropdown-item" href="#">Something else here</a>
@@ -347,6 +347,37 @@
 	</div>
 	<!-- /. wrap -->
 
+<!-- overlay stuff -->
+<div id="overlay" >
+  <div id="text">Overlay Text</div>
+</div>
+
+<div id="overlay1" >
+</div>
+
+
+
+<!-- javascript stuff -->
+<script>
+
+$( ".event " ).click(function() {
+  	// alert($(this).children(".event-desc").text());
+	$("#overlay").css("display","block");
+	$("#overlay1").css("display","block");
+
+});
+
+$("#overlay1").click(function(){
+	if($("#overlay").css("display") == "block")
+	{
+		$("#overlay").css("display","none");
+		$("#overlay1").css("display","none");
+
+	}
+});
+
+
+</script>
 	<script>
 	$( ".event " ).click(function() {
 		alert($(this).children(".event-host").text());
