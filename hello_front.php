@@ -9,7 +9,7 @@
 
         request.done(function(response) {
             var results = JSON.parse(response);
-            alert ( "Response: " + results[0] );
+            alert ( "Response: " + results );
             for (var i = 0; i < results.length; i++) {
                 var ename = results[i]['ename'];
                 var desc = results[i]['description'];
