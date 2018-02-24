@@ -7,11 +7,11 @@
     $(document).ready(function(){
         $('#cat_form').submit(function(event) {
             event.preventDefault();
-            $catForm = this;
+            //$catForm = this;
             alert('hi');
             $.ajax({ // create an AJAX call...
-                data: $catForm.serialize(), // get the form data
-                type: $catForm.attr('method'), // GET or POST
+                data: $('#cat_form').serialize(), // get the form data
+                type: 'POST', // GET or POST
                 url: './get-events-by-category.php', // the file to call
                 success: function(response) { // on success..
                     var temp = JSON.parse(response);
