@@ -12,7 +12,7 @@
             data: $('#cat_form').serialize(), // get the form data
             type: 'POST', // GET or POST
             url: './get-events-by-category.php', // the file to call
-            success: function(response) { // on success..
+            .done(function(data) {
                 var temp = JSON.parse(response);
                 if (temp[0] === 'success') {
                     var results = JSON.parse(temp[1]);
@@ -25,8 +25,7 @@
                 } else {
                     alert("failure");
                 }
-            },
-            error:
+            });
         });
         return false; // cancel original event to prevent form submitting
     }
@@ -49,7 +48,7 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
-<form id="cat_form" method="POST" action="./get-events-by-category.php" onsubmit="doSearch()">
+<form id="cat_form" method="POST" onsubmit="doSearch()">
     Enter name: <input type="text" name="category">
     <input type="submit" value="Submit" onclick="doSearch()">
 </form>
