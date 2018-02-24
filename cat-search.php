@@ -49,7 +49,7 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
-<form id="cat_form" method="POST" action="./get-events-by-category.php">
+<form id="cat_form" method="POST" action="./get-events-by-category.php" onsubmit="doSearch()">
     Enter name: <input type="text" name="category">
     <input type="submit" value="Submit" onclick="doSearch()">
 </form>
