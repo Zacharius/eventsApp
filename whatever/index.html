@@ -22,7 +22,7 @@
             var month = $('.month ul li:nth-child(3)').text();
             var reg = /([a-zA-Z]+)(\d+)/;
             var items = month.split(reg);
-            alert(items);
+            alert(items[1]+"   "+items[2]);
 
             /*var request = $.ajax({
                 type: "POST",
