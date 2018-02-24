@@ -1,2 +1,2 @@
 <?php
-echo $_POST["foo"] . "bar";
+echo "bar";
