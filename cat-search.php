@@ -9,7 +9,16 @@
     $('#cat_form').submit(function(event) {
         event.preventDefault();
         alert('hi');
-        $.ajax({ // create an AJAX call...
+        var foo = document.getElementById('pass');
+        $.post("./get-events-by-category.php",
+            {
+                category: foo
+            },
+            function(data, status) {
+                //alert("Data: " + data + "\nStatus: " + status);
+                alert(data);
+        });
+        /*$.ajax({ // create an AJAX call...
             data: $('#cat_form').serialize(), // get the form data
             type: 'POST', // GET or POST
             url: './get-events-by-category.php', // the file to call
@@ -27,7 +36,7 @@
                     alert("failure");
                 }
             });
-        });
+        });*/
         return false; // cancel original event to prevent form submitting
     });
 </script>
