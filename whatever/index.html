@@ -22,7 +22,11 @@
             var month = $('.month ul li:nth-child(3)').text();
             var reg = /([a-zA-Z]+)(\d+)/;
             var items = month.split(reg);
-            alert(items[1]+"   "+items[2]);
+            //alert(items[1]+"   "+items[2]);
+
+			var day = 30;
+			var fday = $(".day .date:contains("+day+")").text();
+			alert(fday);
 
             /*var request = $.ajax({
                 type: "POST",
@@ -31,7 +35,7 @@
 
             request.done(function(response) {
                 var results = JSON.parse(response);
-                //alert ( results.length);
+                //alert(response);
                 $('#event_results').empty();
                 for (var i = 0; i < results.length; i++) {
                     var ename = results[i]['ename'];
