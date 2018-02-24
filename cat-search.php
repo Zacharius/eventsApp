@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+
+<script src="js/jquery.js"></script>
+
 <body>
 
 <p>Search for events tagged with the specified category</p>
