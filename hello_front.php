@@ -14,6 +14,7 @@
         request.done(function(response) {
             var results = JSON.parse(response);
             //alert ( results.length);
+            $('#event_results').empty();
             for (var i = 0; i < results.length; i++) {
                 var ename = results[i]['ename'];
                 var desc = results[i]['description'];
