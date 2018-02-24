@@ -47,8 +47,8 @@ echo "</ul>";
 ?>
 
 <form id="cat_form" method="POST">
-    Enter name: <input type="text" name="category">
-    <a href="javascript:mySearch()">Search</a>
+    Enter name: <input type="text" name="category" id="category">
+    <a href="javascript:alert('hi')">Search</a>
 </form>
 
 <p>Results:</p>
