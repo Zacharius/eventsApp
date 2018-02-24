@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<script src="js/jquery.js"></script>
-
 <script>
-    function doSearch() {
+    function mySearch() {
         //event.preventDefault();
         //$catForm = this;
         alert('hi');
@@ -48,9 +46,9 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
-<form id="cat_form" method="POST" onsubmit="doSearch()">
+<form id="cat_form" method="POST">
     Enter name: <input type="text" name="category">
-    <input type="submit" value="Submit" onclick="doSearch()">
+    <a href="javascript:mySearch()">Search</a>
 </form>
 
 <p>Results:</p>
