@@ -25,7 +25,13 @@
             //alert(items[1]+"   "+items[2]);
 
 			var day = 30;
-			$(".day:not('.other-month') .date:contains("+day+")").after("hello");
+			var temp = "<div class=\"event\">" +
+                "<div class=\"event-desc\">" +
+                "HTML 5 lecture with Brad Traversy from Eduonix" +
+                "</div><div class=\"event-time\">" +
+                "1:00pm to 3:00pm" +
+                "</div></div>";
+			$(".day:not('.other-month') .date:contains("+day+")").after(temp);
 			//alert(fday);
 
             /*var request = $.ajax({
