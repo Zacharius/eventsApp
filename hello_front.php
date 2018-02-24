@@ -41,6 +41,7 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
+<input type="button" value="Submit" onclick="myFunc()">
 
 <form id="myForm" method="POST">
     Enter category: <input type="text" name="category">
