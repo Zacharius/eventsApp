@@ -13,7 +13,8 @@
             for (var i = 0; i < results.length; i++) {
                 var ename = results[i]['ename'];
                 var desc = results[i]['description'];
-                $('#event_results').append("<li>"+ename+": " +desc+"</li>"); // update the DIV
+                //$('#event_results').append("<li>"+ename+": " +desc+"</li>");
+                $('#event_results').append('<li>hello</li>');
             }
         });
 
