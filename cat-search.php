@@ -6,7 +6,7 @@
 </head>
 
 <script>
-    $('#cat_form').submit(function(event) {
+    /*$('#cat_form').submit(function(event) {
         event.preventDefault();
         alert('hi');
         var foo = document.getElementById('pass');
@@ -18,7 +18,7 @@
                 //alert("Data: " + data + "\nStatus: " + status);
                 alert(data);
         });
-        /*$.ajax({ // create an AJAX call...
+        /!*$.ajax({ // create an AJAX call...
             data: $('#cat_form').serialize(), // get the form data
             type: 'POST', // GET or POST
             url: './get-events-by-category.php', // the file to call
@@ -36,9 +36,36 @@
                     alert("failure");
                 }
             });
-        });*/
+        });*!/
         return false; // cancel original event to prevent form submitting
-    });
+    });*/
+    function myFunc() {
+        var request = $.ajax({
+            type: "POST",
+            url: "./get-events-by-category.php",
+            data: $('#myForm').serialize()
+        });
+
+        request.done(function(response) {
+            alert ( "Response: " + response );
+            var temp = JSON.parse(response);
+            if (temp[0] === 'success') {
+                var results = JSON.parse(temp[1]);
+                for (var i = 0; i < results.length; i++) {
+                    var ename = results[i]['ename'];
+                    var desc = results[i]['description'];
+                    $('#event_results').append("<li>"+ename+": " +desc+"</li>"); // update the DIV
+                }
+                alert('success');
+            } else {
+                alert("failure");
+            }
+        });
+
+        request.fail(function(jqXHR, textStatus) {
+            alert( "Request failed: " + textStatus );
+        });
+    }
 </script>
 
 
@@ -59,8 +86,8 @@ echo "</ul>";
 ?>
 
 <form id="cat_form" method="POST">
-    Enter name: <input type="text" name="category" id="category">
-    <input type="submit" value="Submit">
+    Enter category: <input type="text" name="category" id="category">
+    <input type="submit" value="Submit" onclick="myFunc()">
 </form>
 
 <p>Results:</p>
