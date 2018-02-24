@@ -1,5 +1,5 @@
 <?php
 $ret = array();
-$ret[] = $_POST['foo'];
-$ret[] = $_POST['bar'];
+$ret['foo'] = $_POST['foo'] . '2';
+$ret['bar'] = $_POST['bar'] . '2';
 echo json_encode($ret);
