@@ -2,7 +2,7 @@
 
 function connect_db(){
 	$_SESSION["foo"] = "success";
-	$dbhost = "aa1mmfnt965pffo.ccuxndnykfbl.us-east-2.rds.amazonaws.com";
+	$dbhost = "aa1mmfnt965pffo.ccuxndnykfbl.us-east-2.rds.amazonaws.com:3306";
 	$dbuser = "zacharius";
 	$dbpass = "CompSci2.0";
 	$dbname = "viaSocial";
