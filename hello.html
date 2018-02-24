@@ -26,8 +26,7 @@
         var request = $.ajax({
             type: "POST",
             url: "./hello.php",
-            data: {foo: "foo1", bar: "bar1"},
-            dataType: "json"
+            data: {foo: "foo1", bar: "bar1"}
         });
 
         request.done(function(msg) {
