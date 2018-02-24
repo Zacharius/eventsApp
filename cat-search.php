@@ -6,7 +6,7 @@
         //event.preventDefault();
         //$catForm = this;
         alert('hi');
-        $.ajax({ // create an AJAX call...
+        /*$.ajax({ // create an AJAX call...
             data: $('#cat_form').serialize(), // get the form data
             type: 'POST', // GET or POST
             url: './get-events-by-category.php', // the file to call
@@ -25,7 +25,7 @@
                 }
             });
         });
-        return false; // cancel original event to prevent form submitting
+        return false; // cancel original event to prevent form submitting*/
     }
 </script>
 
