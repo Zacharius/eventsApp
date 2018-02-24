@@ -15,6 +15,36 @@
 	src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var month = $('.month ul li:nth-child(2)').text();
+            alert(month);
+
+            /*var request = $.ajax({
+                type: "POST",
+                url: "./get_events.php"
+            });
+
+            request.done(function(response) {
+                var results = JSON.parse(response);
+                //alert ( results.length);
+                $('#event_results').empty();
+                for (var i = 0; i < results.length; i++) {
+                    var ename = results[i]['ename'];
+                    var desc = results[i]['description'];
+                    $('#event_results').append("<li>"+ename+": " +desc+"</li>");
+                    //$('#event_results').append('<li>hello</li>');
+                    //$("#content").append('<li>qwerty</li>');
+                }
+            });
+
+            request.fail(function(jqXHR, textStatus) {
+                alert( "Request failed: " + textStatus );
+            });*/
+        });
+    </script>
 </head>
 <body>
 
