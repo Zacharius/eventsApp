@@ -364,6 +364,8 @@ $( ".event " ).click(function() {
   	// alert($(this).children(".event-desc").text());
 	$("#overlay").css("display","block");
 	$("#overlay1").css("display","block");
+	$("body").css("overflow-y", "hidden");
+	$("body").css("overflow-x", "hidden");
 
 });
 
@@ -378,11 +380,11 @@ $("#overlay1").click(function(){
 
 
 </script>
-	<script>
+	<!-- <script>
 	$( ".event " ).click(function() {
 		alert($(this).children(".event-host").text());
 	});
-	</script>
+	</script> -->
 
 </body>
 </html>
