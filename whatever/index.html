@@ -196,8 +196,8 @@
 				<li class="day">
 					<div class="date">14</div>
 					<div class="event">
-						<div class="event-start" id="shortEvent">	1:00pm</div>
-						<div class="event-title" id="shortEvent">Power up baby</div>
+						<div class="event-start" id="divInline">	1:00pm</div>
+						<div class="event-title" id="divInline">Power up baby</div>
 						<div	class="event-price">$3.50</div>
 						<div class="event-location">My place</div>
 						<div class="event-desc">
@@ -218,22 +218,22 @@
 					</div>
 
 					<div class="event">
-						<div class="event-start" id="shortEvent">	3:00pm</div>
-						<div class="event-title" id="shortEvent">Power down baby</div>
+						<div class="event-start" id="divInline">	3:00pm</div>
+						<div class="event-title" id="divInline">Power down baby</div>
 						<div class="event-host">
 							papa bless
 						</div>
 					</div>
 					<div class="event">
-						<div class="event-start" id="shortEvent">	3:00pm</div>
-						<div class="event-title" id="shortEvent">Power down baby</div>
+						<div class="event-start" id="divInline">	3:00pm</div>
+						<div class="event-title" id="divInline">Power down baby</div>
 						<div class="event-host">
 							papa bless
 						</div>
 					</div>
 					<div class="event">
-						<div class="event-start" id="shortEvent">	3:00pm</div>
-						<div class="event-title" id="shortEvent">Power down baby</div>
+						<div class="event-start" id="divInline">	3:00pm</div>
+						<div class="event-title" id="divInline">Power down baby</div>
 						<div class="event-host">
 							papa bless
 						</div>
@@ -349,7 +349,9 @@
 
 <!-- overlay stuff -->
 <div id="overlay" >
-  <div id="text">Overlay Text</div>
+	<button type="button" name="ovClose" id="x">X</button>
+<div id="ovDate">Feb 24</div>
+
 </div>
 
 <div id="overlay1" >
@@ -374,9 +376,19 @@ $("#overlay1").click(function(){
 	{
 		$("#overlay").css("display","none");
 		$("#overlay1").css("display","none");
-
+		$("body").css("overflow-y", "scroll");
 	}
 });
+
+$("#x").click(function(){
+	if($("#overlay").css("display") == "block")
+	{
+		$("#overlay").css("display","none");
+		$("#overlay1").css("display","none");
+		$("body").css("overflow-y", "scroll");
+	}
+});
+
 
 
 </script>
