@@ -1,5 +1,4 @@
 <?php
 $ret = array();
-$ret['foo'] = $_POST['foo'] . '2';
-$ret['bar'] = $_POST['bar'] . '2';
+$ret['cat'] = $_POST['category'] . '1';
 echo json_encode($ret);

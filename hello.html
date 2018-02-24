@@ -26,7 +26,7 @@
         var request = $.ajax({
             type: "POST",
             url: "./hello.php",
-            data: {foo: "foo1", bar: "bar1"}
+            data: $('#myForm').serialize()
         });
 
         request.done(function(msg) {
