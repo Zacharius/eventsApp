@@ -4,11 +4,14 @@ VIA Social Calender
 
 * webserver
     http://viasocialcalender-env.gcf3z4pmga.us-east-2.elasticbeanstalk.com/
+
+** access
+   *ssh -i /path/zach.pem e2c-user@viasocialcalender-env.gcf3z4pmga.us-east-2.elasticbeanstalk.com*
 * database
 ** access
-   First ssh into the sebserver. From the webserver use the following command:
+   First ssh into the webserver. From the webserver use the following command:
     
-   *$mysql  -h $RDS_HOSTNAME -u $RDS_USERNAME  -p  -D $RDS_DB_NAME*
+   *mysql  -h $RDS_HOSTNAME -u $RDS_USERNAME  -p  -D $RDS_DB_NAME*
 ** Schema
     
    - ename :: varchar(100)
