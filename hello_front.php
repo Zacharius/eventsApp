@@ -17,9 +17,9 @@
             for (var i = 0; i < results.length; i++) {
                 var ename = results[i]['ename'];
                 var desc = results[i]['description'];
-                //$('#event_results').append("<li>"+ename+": " +desc+"</li>");
+                $('#event_results').append("<li>"+ename+": " +desc+"</li>");
                 //$('#event_results').append('<li>hello</li>');
-                $("#content").append('<li>qwerty</li>');
+                //$("#content").append('<li>qwerty</li>');
             }
         });
 
@@ -51,4 +51,4 @@ echo "</ul>";
 </form>
 
 <p>Results:</p>
-<ul id="content"></ul>
+<ul id="event_results"></ul>
