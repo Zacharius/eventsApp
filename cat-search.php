@@ -3,34 +3,9 @@
 
 <script src="js/jquery.js"></script>
 
-<body>
-
-<p>Search for events tagged with the specified category</p>
-
-These are all the categories currently in the database:
-<?php
-include('database.php');
-$conn = connect_db();
-$result = mysqli_query($conn, "SELECT DISTINCT tags FROM Events ORDER BY tags DESC");
-echo "<ul id='current_cats'>";
-while($row = mysqli_fetch_assoc($result)) {
-    echo "<li>{$row['tags']}</li>";
-}
-echo "</ul>";
-?>
-
-<form id="cat-form" method="POST">
-    Enter name: <input type="text" name="category">
-    <input type="submit" value="Submit">
-</form>
-
-<p>Results:</p>
-<ul id="event_results">
-</ul>
-
 <script>
-    $('#cat-form').submit(function(event) {
-        event.preventDefault();
+    $('#cat-form').submit(function() {
+        //event.preventDefault();
         $catForm = this;
         alert('hi');
         $.ajax({ // create an AJAX call...
@@ -55,6 +30,32 @@ echo "</ul>";
         return false; // cancel original event to prevent form submitting
     }
 </script>
+
+
+<body>
+
+<p>Search for events tagged with the specified category</p>
+
+These are all the categories currently in the database:
+<?php
+include('database.php');
+$conn = connect_db();
+$result = mysqli_query($conn, "SELECT DISTINCT tags FROM Events ORDER BY tags DESC");
+echo "<ul id='current_cats'>";
+while($row = mysqli_fetch_assoc($result)) {
+    echo "<li>{$row['tags']}</li>";
+}
+echo "</ul>";
+?>
+
+<form id="cat-form" method="POST">
+    Enter name: <input type="text" name="category">
+    <input type="submit" value="Submit">
+</form>
+
+<p>Results:</p>
+<ul id="event_results">
+</ul>
 
 </body>
 </html>
