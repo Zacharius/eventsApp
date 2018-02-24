@@ -17,8 +17,7 @@ if($result = mysqli_query($conn, $sql)){
     while($row = mysqli_fetch_assoc($result)){
         $results[] = $row;
     }
-    //echo(json_encode($results));
-    echo $results;
+    echo(json_encode($results));
 }
 /*else {
     die(json_encode(array('failed')));
