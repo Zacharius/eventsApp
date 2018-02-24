@@ -25,7 +25,8 @@
                 } else {
                     alert("failure");
                 }
-            }
+            },
+            error:
         });
         return false; // cancel original event to prevent form submitting
     }
@@ -48,7 +49,7 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
-<form id="cat_form" method="POST">
+<form id="cat_form" method="POST" action="./get-events-by-category.php">
     Enter name: <input type="text" name="category">
     <input type="submit" value="Submit" onclick="doSearch()">
 </form>
