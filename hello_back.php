@@ -7,9 +7,9 @@ $results = array();
 $category = $_POST['category'];
 
 // data validation
-/*if(empty($category)){
-    die(json_encode(array('failed')));
-}*/
+if(empty($category)){
+    die();
+}
 
 // fetch names of events with the specified category
 $sql = "SELECT ename, description from Events WHERE tags LIKE '%$category%'";
