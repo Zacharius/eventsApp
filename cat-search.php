@@ -4,30 +4,32 @@
 <script src="js/jquery.js"></script>
 
 <script>
-    $('#cat_form').submit(function(event) {
-        event.preventDefault();
-        $catForm = this;
-        alert('hi');
-        $.ajax({ // create an AJAX call...
-            data: $catForm.serialize(), // get the form data
-            type: $catForm.attr('method'), // GET or POST
-            url: './get-events-by-category.php', // the file to call
-            success: function(response) { // on success..
-                var temp = JSON.parse(response);
-                if (temp[0] === 'success') {
-                    var results = JSON.parse(temp[1]);
-                    for (var i = 0; i < results.length; i++) {
-                        var ename = results[i]['ename'];
-                        var desc = results[i]['description'];
-                        $('#event_results').append("<li>"+ename+": " +desc+"</li>"); // update the DIV
+    $(document).ready(function(){
+        $('#cat_form').submit(function(event) {
+            event.preventDefault();
+            $catForm = this;
+            alert('hi');
+            $.ajax({ // create an AJAX call...
+                data: $catForm.serialize(), // get the form data
+                type: $catForm.attr('method'), // GET or POST
+                url: './get-events-by-category.php', // the file to call
+                success: function(response) { // on success..
+                    var temp = JSON.parse(response);
+                    if (temp[0] === 'success') {
+                        var results = JSON.parse(temp[1]);
+                        for (var i = 0; i < results.length; i++) {
+                            var ename = results[i]['ename'];
+                            var desc = results[i]['description'];
+                            $('#event_results').append("<li>"+ename+": " +desc+"</li>"); // update the DIV
+                        }
+                        alert('success');
+                    } else {
+                        alert("failure");
                     }
-                    alert('success');
-                } else {
-                    alert("failure");
                 }
-            }
-        });
-        return false; // cancel original event to prevent form submitting
+            });
+            return false; // cancel original event to prevent form submitting
+        )};
     )};
 </script>
 
@@ -48,7 +50,7 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
-<form id="cat_form" method="POST" action="./get-events-by-category.php">
+<form id="cat_form" method="POST">
     Enter name: <input type="text" name="category">
     <input type="submit" value="Submit">
 </form>
