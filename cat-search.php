@@ -16,7 +16,7 @@ while($row = mysqli_fetch_assoc($result)) {
 echo "</ul>";
 ?>
 
-<form id="cat-form" action="./get-events-by-category.php" method="POST" onsubmit="myFunction(this)">
+<form id="cat-form" method="POST">
     Enter name: <input type="text" name="category">
     <input type="submit" value="Submit">
 </form>
@@ -32,7 +32,7 @@ echo "</ul>";
         $.ajax({ // create an AJAX call...
             data: $catForm.serialize(), // get the form data
             type: $catForm.attr('method'), // GET or POST
-            url: $catForm.attr('action'), // the file to call
+            url: './get-events-by-category.php', // the file to call
             success: function(response) { // on success..
                 var temp = JSON.parse(response);
                 if (temp[0] === 'success') {
