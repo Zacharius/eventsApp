@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-<script src="js/jquery-2.1.0.min.js"></script>
-<script src="js/app.js"></script>
+<head>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
 
 <script>
-    function mySearch() {
-        //event.preventDefault();
-        //$catForm = this;
+    $('#cat_form').submit(function(event) {
+        event.preventDefault();
         alert('hi');
         $.ajax({ // create an AJAX call...
             data: $('#cat_form').serialize(), // get the form data
@@ -29,7 +29,7 @@
             });
         });
         return false; // cancel original event to prevent form submitting
-    }
+    });
 </script>
 
 
@@ -51,7 +51,7 @@ echo "</ul>";
 
 <form id="cat_form" method="POST">
     Enter name: <input type="text" name="category" id="category">
-    <button onclick="mySearch()">Search</button>
+    <input type="submit" value="Submit">
 </form>
 
 <p>Results:</p>
