@@ -1,6 +1,6 @@
 <?php
 
-include('../database.php');
+include('database.php');
 $conn = connect_db();
 
 $results = array();
