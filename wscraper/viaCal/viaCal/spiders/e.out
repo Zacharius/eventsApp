@@ -1,0 +1,135 @@
+:0: UserWarning: You do not have a working installation of the service_identity module: 'cannot import name opentype'.  Please install it from <https://pypi.python.org/pypi/service_identity> and make sure all of its dependencies are satisfied.  Without the service_identity module, Twisted can perform only rudimentary TLS client hostname verification.  Many valid certificate/hostname mappings may be rejected.
+2018-02-25 03:56:16 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: viaCal)
+2018-02-25 03:56:16 [scrapy.utils.log] INFO: Versions: lxml 4.1.1.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 2.7.13 (default, Jan 31 2018, 00:17:36) - [GCC 4.8.5 20150623 (Red Hat 4.8.5-11)], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 2017), cryptography 2.1.4, Platform Linux-4.9.77-31.58.amzn1.x86_64-x86_64-with-glibc2.2.5
+2018-02-25 03:56:16 [scrapy.crawler] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'viaCal.spiders', 'FEED_URI': 'new.json', 'SPIDER_MODULES': ['viaCal.spiders'], 'BOT_NAME': 'viaCal', 'ROBOTSTXT_OBEY': True, 'FEED_FORMAT': 'json'}
+2018-02-25 03:56:16 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2018-02-25 03:56:16 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-02-25 03:56:16 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-02-25 03:56:16 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2018-02-25 03:56:16 [scrapy.core.engine] INFO: Spider opened
+2018-02-25 03:56:16 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-02-25 03:56:16 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-02-25 03:56:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/robots.txt> (referer: None)
+2018-02-25 03:56:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar> (referer: None)
+2018-02-25 03:56:16 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET http://tpr.org/community-calendar/event/247365> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2018-02-25 03:56:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/247365> (referer: http://tpr.org/community-calendar)
+2018-02-25 03:56:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=1> (referer: http://tpr.org/community-calendar)
+2018-02-25 03:56:16 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/247365>
+{'title': (u'34th Annual UTSA Diploma Dash 5K',), 'des': [u'Come race around the UTSA Main campus at the 34th Annual UTSA Diploma Dash 5K City Championship.  Compete for a medal in your age category or just come out for a stroll while you enjoy food, beverages and a great time after this chip timed certified course race.  $15 to $35'], 'venue': (u'Convocation Center, UTSA Main Campus, San Antonio        ',), 'cost': [u'$15 to $35'], 'address': [u'Convocation Center, UTSA Main Campus', u'1 UTSA Circle, San Antonio, Texas 78249', u'San Antonio, TX 78249', u'(210) 458-4133', u'alumni@utsa.edu'], 'date': (u'\n        Feb 24      ',)}
+2018-02-25 03:56:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/263024> (referer: http://tpr.org/community-calendar?page=1)
+2018-02-25 03:56:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=2> (referer: http://tpr.org/community-calendar?page=1)
+2018-02-25 03:56:16 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/263024>
+{'title': (u'Food Drive',), 'des': [u'True Force Tae Kwon Do Martial Arts school is having food drive to San Antonio Food Bank to give back to community, teach serving, and giving to others in need. Our goal is 200bls of non perishable food. '], 'venue': (u'True Force Tae Kwon Do , San Antonio        ',), 'cost': [u'Free'], 'address': [u'True Force Tae Kwon Do ', u'2201 Vance Jackson Suite B', u'San Antonio, TX 78213', u'(210) 782-4198', u'Trueforce2000@yahoo.com'], 'date': (u'\n        Feb 24      ',)}
+2018-02-25 03:56:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/264646> (referer: http://tpr.org/community-calendar?page=2)
+2018-02-25 03:56:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=3> (referer: http://tpr.org/community-calendar?page=2)
+2018-02-25 03:56:17 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/264646>
+{'title': (u'Exact Change',), 'des': [u'Exact Change, curated by Norbert C. Martinez\r\nartists: Daniela Cavazos Madrigal, & Norbert Clyde Martinez, Jr\r\nexhibit dates: Feb.1.2018 through Mar.22.2018\r\nContemporary Art Month Opening Reception: Thu, Mar.1.2018 @ 5 p/7p'], 'venue': (u"The Main Gallery @ S.A.College's Visual Arts Center, San Antonio        ",), 'cost': [u'Free'], 'address': [u"The Main Gallery @ S.A.College's Visual Arts Center", u'950 Lewis St (@ W Dewey Pl) on the S.A.College campus', u'San Antonio, TX 78212', u'(210) 486-0255', u'sac-visualarts@alamo.edu'], 'date': (u'\n        Feb 24      ',)}
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/270958> (referer: http://tpr.org/community-calendar?page=3)
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=4> (referer: http://tpr.org/community-calendar?page=3)
+2018-02-25 03:56:17 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/270958>
+{'title': (u'2018 Spring Symposium',), 'des': [u'Registration is open for our spring symposium at the Lady Bird Johnson Wildflower Center on Saturday, February 24.\r\n\r\nPresenters at the event this year will be Matt Buckingham of TXDoT discussing nature photography; Tania Homayoun of Texas Parks and Wildlife on Texas Nature Trackers; David Lewis of the Gulf States Mycological Society on mushrooms; Cynthia Rodriguez of the Austin Parks Foundation on Getting Involved; and Bill Lindemann speaking about the Fredericksburg Nature Center. Andrea DeLong-Amaya, Director of Horticulture at the Wildflower Center will lead a tour following the presentations.\r\n\r\nA light breakfast, box lunch and full access to the Wildflower Center gardens is included. Doors open at 8 am.  Please register online. Pre-registration is required. Cost is $60 person ($50 for members).\r\n\r\nNearby accommodations for those staying overnight include Holiday Inn Express and LaQuinta Inn.\r\n\r\nPlease download the agenda and registration form for full details. Contact our State Office for more information.\r\n\r\nThe spring symposium is a joint production of the Native Plant Society of Texas and the Lady Bird Johnson Wildflower Center.'], 'venue': (u'Lady Bird Johnson Wildflower Center, Austin        ',), 'cost': [u'$50 - $75'], 'address': [u'Lady Bird Johnson Wildflower Center', u'4801 La Crosse Avenue', u'Austin, TX 78739', u'(830) 997-9272', u'state@npsot.org'], 'date': (u'\n        Feb 24      ',)}
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/283438> (referer: http://tpr.org/community-calendar?page=4)
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=5> (referer: http://tpr.org/community-calendar?page=4)
+2018-02-25 03:56:17 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/283438>
+{'title': (u'The American Heart Association\u2019s Red Sofa Tour Heads to the 12th Annual Vestido Rojo Conference',), 'des': [u"To encourage Hispanic women and their families to take action and live a healthier life, The PM Group and American Heart Association's Go Red For Women movement will bring the Red Sofa Tour to the 2018 Vestido Rojo conference. \r\n\r\nHeart disease and stroke cause 1 in 3 deaths among women - more than all cancers combined. In an effort to change this statistic, The PM Group and American Heart Association encourage women in San Antonio to unite and share how they live a life with heart by: \r\n- Taking a photo on the red sofa\r\n- Uploading a photo with #RedSofaTourSA\r\n- Pledge to spread the word "], 'venue': (u'San Antonio Events Center , San Antonio         ',), 'cost': [u'Free'], 'address': [u'San Antonio Events Center ', u'8111 Meadow Leaf Dr. ', u'San Antonio , TX 78227'], 'date': (u'\n        Feb 24      ',)}
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/263799> (referer: http://tpr.org/community-calendar?page=5)
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=6> (referer: http://tpr.org/community-calendar?page=5)
+2018-02-25 03:56:17 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/263799>
+{'title': (u'Tricentennial Resources and Service Opportunities',), 'des': [u'Celebrating the Big 300th Birthday! \r\nIncarnate Word ministries have been part of almost half of San Antonio\u2019s history. For education and enjoyment during this Tricentennial year, please consider these resources and service opportunities http://www.uiw.edu/eccl/Faculty-Resources/uiw_tricentennial_invitation.html and http://www.uiw.edu/eccl/sustainabilityservice300.html\r\n"The University of the Incarnate Word provides reasonable accommodation with adequate notice. To request disability accommodation for this event, visit www.uiw.edu/ada."'], 'venue': (u'San Antonio, Texas, San Antonio        ',), 'cost': [u'Free'], 'address': [u'San Antonio, Texas', u'San Antonio, TX '], 'date': (u'\n        Feb 25      ',)}
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/275758> (referer: http://tpr.org/community-calendar?page=6)
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=7> (referer: http://tpr.org/community-calendar?page=6)
+2018-02-25 03:56:17 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/275758>
+{'title': (u'Blood Drive',), 'des': [u'STBTC'], 'venue': (u'St. Mark Catholic Church, San Antonio        ',), 'cost': [], 'address': [u'St. Mark Catholic Church', u'1602 Thousand Oaks', u'San Antonio, TX '], 'date': (u'\n        Feb 25      ',)}
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=8> (referer: http://tpr.org/community-calendar?page=7)
+2018-02-25 03:56:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=9> (referer: http://tpr.org/community-calendar?page=8)
+2018-02-25 03:56:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/272031> (referer: http://tpr.org/community-calendar?page=9)
+2018-02-25 03:56:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=10> (referer: http://tpr.org/community-calendar?page=9)
+2018-02-25 03:56:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/272031>
+{'title': (u'San Antonio Fandango: Art by Momo & Pompa  -Engaging Exhibition Highlighting 300+ Years of Heritage',), 'des': [u'Come interact with the new traveling exhibition by local artist couple, Maureen (aka Momo) Brown and Charles Harrison (aka Pompa), titled, \u201cSan Antonio Fandango: Art by Momo & Pompa\u201d in the San Antonio Central Public Library Gallery from February 6 \u2013 March 31, 2018. This engaging exhibition will pay tribute to 300+ years of San Antonio\u2019s rich heritage with an interactive art experience designed for \u201cChildren of ALL ages\u201d! The artists\u2019 mission is to inspire and promote our heritage through their whimsical inquisitive colorful mixed media contemporary art with paintings, photography, sculptures, coloring books and games (including an exhibit scavenger hunt). Momo\u2019s style is free flowing interwoven \u201cpuzzle-like\u201d animals created in the moment and Pompa\u2019s style includes massive mixed media colorful light sculptures and paintings. Their collaboration is full of surprises. The exhibit includes a free-standing 15 foot double-sided mural \u201cFrom Dawn to Dusk: South Texas Habitat and Mexican Free-Tailed Bats\u201d now owned and part of the education program of Bat Conservation International and Bracken Cave and on display on the 6th floor of the Central Library in the Texana and Genealogy Department. The main gallery exhibits highlight the heritage of our beautiful city from flora and fauna, south Texas rock art, the San Antonio mission trail, to landmarks and urban San Antonio. In addition the artists are launching a new coloring book highlighting San Antonio\u2019s downtown attractions with animals and our local legend characters. \r\n\r\nEveryone is invited to chat with the artists and for \u201chands on art games and coloring\u201d at the free public exhibit Opening Reception in the San Antonio Public Library Gallery on Tuesday, February 6, 5 \u2013 7pm and a Family Opening on Saturday, February 10, 2018, from 12 \u2013 3pm.\r\nIf you would like more information about this topic, please contact Maureen (Momo) Brown at (512) 638-3483 or email at momo4design@yahoo.com.\r\n'], 'venue': (u'San Antonio Public Library-Central Library (downtown), San Antonio        ',), 'cost': [u'Free'], 'address': [u'San Antonio Public Library-Central Library (downtown)', u'600 Soledad', u'San Antonio, TX 78205', u'210 207-2500', u'rdavila@sanantonio.gov'], 'date': (u'\n        Feb 26      ',)}
+2018-02-25 03:56:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=11> (referer: http://tpr.org/community-calendar?page=10)
+2018-02-25 03:56:18 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://tpr.org/community-calendar/event/275777> (failed 1 times): 502 Bad Gateway
+2018-02-25 03:56:18 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://tpr.org/community-calendar/event/275777> (failed 2 times): 502 Bad Gateway
+2018-02-25 03:56:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar?page=12> (referer: http://tpr.org/community-calendar?page=11)
+2018-02-25 03:56:18 [scrapy.downloadermiddlewares.retry] DEBUG: Gave up retrying <GET http://tpr.org/community-calendar/event/275777> (failed 3 times): 502 Bad Gateway
+2018-02-25 03:56:18 [scrapy.core.engine] DEBUG: Crawled (502) <GET http://tpr.org/community-calendar/event/275777> (referer: http://tpr.org/community-calendar?page=11)
+2018-02-25 03:56:18 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <502 http://tpr.org/community-calendar/event/275777>: HTTP status code is not handled or not allowed
+2018-02-25 03:56:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://tpr.org/community-calendar/event/281235> (referer: http://tpr.org/community-calendar?page=12)
+2018-02-25 03:56:18 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://tpr.org/community-calendar?page=13> (failed 1 times): 502 Bad Gateway
+2018-02-25 03:56:18 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://tpr.org/community-calendar?page=13> (failed 2 times): 502 Bad Gateway
+2018-02-25 03:56:18 [scrapy.downloadermiddlewares.retry] DEBUG: Gave up retrying <GET http://tpr.org/community-calendar?page=13> (failed 3 times): 502 Bad Gateway
+2018-02-25 03:56:18 [scrapy.core.engine] DEBUG: Crawled (502) <GET http://tpr.org/community-calendar?page=13> (referer: http://tpr.org/community-calendar?page=12)
+2018-02-25 03:56:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://tpr.org/community-calendar/event/281235>
+{'title': (u'Friends of Kingsland Library',), 'des': [u'Popular local journalist John Hallowell will share stories on the history of Kingsland, TX and Lake LBJ.   Refreshments will be served.'], 'venue': (u'Kingsland Library, Kingsland         ',), 'cost': [u'Free'], 'address': [u'Kingsland Library', u'124 W. Polk Street', u'Kingsland , TX 78639', u'(325) 399-3170', u'gaybaskin@yahoo.com'], 'date': (u'\n        Feb 27      ',)}
+2018-02-25 03:56:18 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <502 http://tpr.org/community-calendar?page=13>: HTTP status code is not handled or not allowed
+2018-02-25 03:56:18 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-02-25 03:56:18 [scrapy.extensions.feedexport] INFO: Stored json feed (9 items) in: new.json
+2018-02-25 03:56:18 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 8127,
+ 'downloader/request_count': 29,
+ 'downloader/request_method_count/GET': 29,
+ 'downloader/response_bytes': 432201,
+ 'downloader/response_count': 29,
+ 'downloader/response_status_count/200': 23,
+ 'downloader/response_status_count/502': 6,
+ 'dupefilter/filtered': 167,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 2, 25, 3, 56, 18, 758194),
+ 'httperror/response_ignored_count': 2,
+ 'httperror/response_ignored_status_count/502': 2,
+ 'item_scraped_count': 9,
+ 'log_count/DEBUG': 42,
+ 'log_count/INFO': 10,
+ 'memusage/max': 55062528,
+ 'memusage/startup': 55062528,
+ 'request_depth_max': 13,
+ 'response_received_count': 25,
+ 'retry/count': 4,
+ 'retry/max_reached': 2,
+ 'retry/reason_count/502 Bad Gateway': 4,
+ 'scheduler/dequeued': 28,
+ 'scheduler/dequeued/memory': 28,
+ 'scheduler/enqueued': 28,
+ 'scheduler/enqueued/memory': 28,
+ 'start_time': datetime.datetime(2018, 2, 25, 3, 56, 16, 364107)}
+2018-02-25 03:56:18 [scrapy.core.engine] INFO: Spider closed (finished)
+hello world
+I am here
+hello world
+I am here
+hello world
+I am here
+hello world
+I am here
+hello world
+I am here
+hello world
+I am here
+hello world
+I am here
+hello world
+I am here
+hello world
+I am here
