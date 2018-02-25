@@ -267,7 +267,11 @@ alert(lastDayindex);
         rowcnt++;
         $('#calendar').append("<tr class=\"days\" id=\"row" + rowcnt + "\"></tr>");
       }
-      $('#row' + rowcnt).append("<td class=\"day\"><div class=\"date\">" + i + "</div></td>");
+      if (i < 10) {
+          $('#row' + rowcnt).append("<td class=\"day\"><div class=\"date\">0" + i + "</div></td>");
+      } else {
+          $('#row' + rowcnt).append("<td class=\"day\"><div class=\"date\">" + i + "</div></td>");
+	  }
       rowrem--;
     }
 
