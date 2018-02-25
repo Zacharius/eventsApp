@@ -11,7 +11,7 @@ import mysql.connector
 from mysql.connector import errorcode 
 #from scrapy.extensions import DropItem
 from scrapy.http import Request
-
+from datetime import datetime
 
 
 
@@ -34,29 +34,33 @@ class ViacalPipeline(object):
             
             preDate = item['date'][0]
             preDate = preDate.strip('\n')
+            preDate = preDate.strip()
             dateR = preDate + ", 2018"
-            dateI = datetime.strptime(dateR, '%b, %d, %Y')
-            print(item['date'][0] = dateI.strftime('%Y-%m-%d'))
+            dateU = dateR.encode("utf-8")
+            dt_obj = datetime.strptime(dateU,'%b %d, %Y')
+            #dateI = dt_obj.strftime('%b %d, %Y')
+            dateF = dt_obj.strftime('%Y-%m-%d')
+            print(dateF)
+            print('*******************************************************')
 
 
+            cursor = conn.cursor()
+            insertEvent = ("INSERT IGNORE INTO Events (date, ename, hname, description, address, cost, " 
+                            "startTime) "
+                            "VALUES (%s, %s, %s, %s, %s, %s, %s)" )
 
-            #cursor = conn.cursor()
-            #insertEvent = ("INSERT IGNORE INTO Events (date, ename, hname, description, address, cost, " 
-            #                "startTime) "
-            #                "VALUES (%s, %s, %s, %s, %s, %s, %s)" )
+            data = ((dateF.encode('utf-8')), 
+                    (item['title'][0].encode('utf-8')),
+                    (item['venue'][0].encode('utf-8')),
+                    (item['des'][0].encode('utf-8')),
+                    (item['address'][0].encode('utf-8')), 
+                    (item['cost'][0].encode('utf-8')),
+                    (item['time'][0].encode('utf-8')))
 
-           # data = ((item['date'][0].encode('utf-8')), 
-           #         (item['title'][0].encode('utf-8')),
-           #         (item['venue'][0].encode('utf-8')),
-           #         (item['des'][0].encode('utf-8')),
-           #         (item['address'][0].encode('utf-8')), 
-           #         (item['cost'][0].encode('utf-8')),
-           #         (item['time'][0].encode('utf-8')))
-
-           # cursor.execute(insertEvent, data)
-           # conn.commit()
-           # cursor.close()
-           # conn.close()
+            cursor.execute(insertEvent, data)
+            conn.commit()
+            cursor.close()
+            conn.close()
 
         except mysql.connector.Error as  e:
             print "MYSQL Error %s", e
