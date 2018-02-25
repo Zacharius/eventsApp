@@ -107,7 +107,7 @@
 <div id="overlay" class="grid-event-overlay" >
 	<button type="button" name="ovClose" id="x">X</button>
 	<div id="ovDate"><i class="fas fa-angle-left"></i>February 24, 2018<i class="fas fa-angle-right"></i></div>
-	<div style="padding: 18px"></div>
+	<!-- <div style="padding: 18px"></div> -->
 	<hr class="style14">
 
 	<div class="container">
@@ -230,57 +230,102 @@ alert(lastDayindex);
 	populateCalendar(firstdayindex,lastDayindex);
 
 }
-function populateCalendar(index,lastDay){
-	var rowrem = 7;
-	var rowcnt = 1;
-	var foo = "<div id=\"calendar\">" +
-	"<ul class=\"weekdays\">" +
-	"<li>Sunday</li>" +
-	"<li>Monday</li>" +
-	"<li>Tuesday</li>" +
-	"<li>Wednesday</li>" +
-	"<li>Thursday</li>" +
-	"<li>Friday</li>" +
-	"<li>Saturday</li>" +
-	"</ul></div>";
+  function populateCalendar(index, lastDay) {
+    var rowrem = 7;
+    var rowcnt = 1;
+    var foo = "<table id=\"calendar\">" +
+    "<tr class=\"weekdays\">" +
+    "<th scope=\"col\">Sunday</th>" +
+    "<th scope=\"col\">Monday</th>" +
+    "<th scope=\"col\">Tuesday</th>" +
+    "<th scope=\"col\">Wednesday</th>" +
+    "<th scope=\"col\">Thursday</th>" +
+    "<th scope=\"col\">Friday</th>" +
+    "<th scope=\"col\">Saturday</th>" +
+    " </tr></table>";
 
-	alert("break1");
-	var row1= "<ul class=\"days\" id=\"row1\"></ul>";
-	var row2= "<ul class=\"days\" id=\"row2\">";
-	var row3= "<ul class=\"days\" id=\"row3\">";
-	var row4= "<ul class=\"days\" id=\"row4\">";
-	var row5= "<ul class=\"days\" id=\"row5\">";
+    var row1 = "<tr class=\"days\" id=\"row1\"></tr>";
+  
+    var otherday = "<td class=\"day other-month\"></td>";
 
-	var bar = "<li class=\"day\"><div class=\"date\">5</div></li>";
+    $("#content-wrapper").append(foo);
 
-	var otherday = "<li class=\"day other-month\"></li>";
-
-	$( "#content-wrapper" ).append(foo);
-
-	$("#calendar").append(row1);
+    $("#calendar").append(row1);
 
 
-	for(var i=0;i<index;i++){
-		$('#row'+rowcnt).append(otherday);
-		rowrem--;
-	}
+    for (var i = 0; i < index; i++) {
+      $('#row' + rowcnt).append(otherday);
+      rowrem--;
+    }
+
+    //rowcnt++;
+    for (i = 1; i <= lastDay; i++) {
+      if (rowrem == 0) {
+        rowrem = 7;
+        rowcnt++;
+        $('#calendar').append("<tr class=\"days\" id=\"row" + rowcnt + "\"></tr>");
+      }
+      $('#row' + rowcnt).append("<td class=\"day\"><div class=\"date\">" + i + "</div></td>");
+      rowrem--;
+    }
+
+    for (i = 0; i < rowrem; i++) {
+      $('#row' + rowcnt).append(otherday);
+    }
+    populateInitial();
+
+  }
+// function populateCalendar(index,lastDay){
+// 	var rowrem = 7;
+// 	var rowcnt = 1;
+// 	var foo = "<div id=\"calendar\">" +
+// 	"<ul class=\"weekdays\">" +
+// 	"<li>Sunday</li>" +
+// 	"<li>Monday</li>" +
+// 	"<li>Tuesday</li>" +
+// 	"<li>Wednesday</li>" +
+// 	"<li>Thursday</li>" +
+// 	"<li>Friday</li>" +
+// 	"<li>Saturday</li>" +
+// 	"</ul></div>";
+
+// 	alert("break1");
+// 	var row1= "<ul class=\"days\" id=\"row1\"></ul>";
+// 	var row2= "<ul class=\"days\" id=\"row2\">";
+// 	var row3= "<ul class=\"days\" id=\"row3\">";
+// 	var row4= "<ul class=\"days\" id=\"row4\">";
+// 	var row5= "<ul class=\"days\" id=\"row5\">";
+
+// 	var bar = "<li class=\"day\"><div class=\"date\">5</div></li>";
+
+// 	var otherday = "<li class=\"day other-month\"></li>";
+
+// 	$( "#content-wrapper" ).append(foo);
+
+// 	$("#calendar").append(row1);
+
+
+// 	for(var i=0;i<index;i++){
+// 		$('#row'+rowcnt).append(otherday);
+// 		rowrem--;
+// 	}
 
 //rowcnt++;
-	 for (i = 1; i <= lastDay; i++) {
-	 	if (rowrem == 0) {
-	 		rowrem = 7;
-			rowcnt++;
-	 		$('#calendar').append("<ul class=\"days\" id=\"row"+rowcnt+"\"></ul>");
-	 	}
-	 	$('#row'+rowcnt).append("<li class=\"day\"><div class=\"date\">"+i+"</div></li>");
-	 	rowrem--;
-	 }
+// 	 for (i = 1; i <= lastDay; i++) {
+// 	 	if (rowrem == 0) {
+// 	 		rowrem = 7;
+// 			rowcnt++;
+// 	 		$('#calendar').append("<ul class=\"days\" id=\"row"+rowcnt+"\"></ul>");
+// 	 	}
+// 	 	$('#row'+rowcnt).append("<li class=\"day\"><div class=\"date\">"+i+"</div></li>");
+// 	 	rowrem--;
+// 	 }
 
-	 for (i = 0; i < rowrem; i++) {
-		 $('#row'+rowcnt).append(otherday);
-	 }
+// 	 for (i = 0; i < rowrem; i++) {
+// 		 $('#row'+rowcnt).append(otherday);
+// 	 }
 
-}
+// }
 // function findDay(d){
 // 	// alert(d);
 // 	var weekday = ["Sunday", "Monday"	,"Tuesday", "Wednesday", "Thursday", "Friday"	, "Saturday"];

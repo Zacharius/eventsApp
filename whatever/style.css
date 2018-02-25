@@ -11,9 +11,8 @@ body {
 .month {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 80%;
-  margin-left: 10%;
-  background: #1abc9c;
+  width: 100%;
+    background: #1abc9c;
   text-align: center;
 }
 
@@ -65,8 +64,128 @@ body {
 header {
   text-align: center;
 }
-
+/****************************************************************************/
+/* COPY THIS!!!! declare a 7 column grid on the table */
 #calendar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#calendar tr, #calendar tbody {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+ width: 100%;
+}
+
+
+#calendar a {
+  color: #8e352e;
+  text-decoration: none;
+}
+
+#calendar td, #calendar th {
+  padding: 5px;
+  box-sizing:border-box;
+  border: 1px solid #ccc;
+}
+
+#calendar .weekdays {
+  background: #9b42f4;
+}
+
+
+#calendar .weekdays th {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20px;
+  border: none !important;
+  padding: 10px 6px;
+  color: #fff;
+  font-size: 13px;
+}
+
+#calendar td {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+#calendar td.day:hover {
+  background: #8ee8b3;
+}
+
+#calendar .date {
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 4px;
+  width: 20px;
+  flex: 0 0 auto;
+  align-self: flex-end;
+}
+
+#calendar .event {
+  flex: 0 0 auto;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+  line-height: 14px;
+  background: #e4f2f2;
+  border: 1px solid #b5dbdc;
+  color: #009aaf;
+  text-decoration: none;
+}
+
+#calendar .event-desc {
+  color: #666;
+  margin: 3px 0 7px 0;
+  text-decoration: none;
+}
+
+#calendar .other-month {
+  background: #f5f5f5;
+  color: #666;
+}
+#calendar .event-start {
+  color: #666;
+  margin: 3px 0 7px 0;
+  text-decoration: none;
+}
+#calendar .event-title {
+  margin: 3px 0 7px 0;
+  text-decoration: none;
+}
+#calendar .event-price{
+display: none;
+}
+#calendar .event-location {
+display: none;
+}
+#calendar .event-url {
+display: none;
+}
+#calendar .event-tag {
+display: none;
+}
+#calendar .event-host {
+display: none;
+}
+#calendar .event-desc {
+display: none;
+}
+#calendar .event-end {
+display: none;
+}
+#calendar .other-month {
+  background: #f5f5f5;
+  color: #666;
+}
+/*TILL HERE*/
+/****************************************************************************/
+
+/*#calendar {
   width: 90%;
   padding-left: 10%;
 }
@@ -174,7 +293,7 @@ display: none;
 #calendar .other-month {
   background: #f5f5f5;
   color: #666;
-}
+}*/
 
 #ov-ev-title{
   font-family: 'Libre Baskerville', serif;
@@ -205,6 +324,7 @@ display: none;
   color: black;
   margin-top: 10px;
   font-family: 'Libre Baskerville', serif;
+  padding:18px;
 
 }
 hr.style14 { 
@@ -271,10 +391,26 @@ hr.style14 {
    ============================*/
 
 @media(max-width: 768px) {
-  #calendar .weekdays,
-  #calendar .other-month {
+  #ovDate{
+    font-size: 80%;
+  }
+  #ov-ev-title h1{
+    text-align: center;
+    font-size: 20px;
+  }
+  #ov-ev-start{
+    text-align: center;
+  }
+  #ov-ev-tags{
+    text-align: center;
+  }
+  #ov-ev-desc{
+    text-align: center;
+  }
+  #calendar .weekdays, #calendar .other-month {
     display: none;
   }
+
   #calendar li {
     height: auto !important;
     border: 1px solid #ededed;
@@ -282,9 +418,18 @@ hr.style14 {
     padding: 10px;
     margin-bottom: -1px;
   }
-  #calendar .date {
-    float: none;
+
+  #calendar, #calendar tr, #calendar tbody {
+    grid-template-columns: 1fr;
   }
+
+  #calendar  tr {
+    grid-column: 1 / 2;
+  }
+
+  #calendar .date {
+    align-self: flex-start;
+}
   #overlay{
     overflow-y: scroll;
     width: auto;
@@ -294,13 +439,5 @@ hr.style14 {
     right: 3%;
     bottom: 0%;
     border-radius: 5px;
-  }
-  #calendar{
-    width: 100%;
-    padding-left: 0;
-  }
-  .month{
-    width: 100%;
-    margin-left: 0%;
   }
 }
