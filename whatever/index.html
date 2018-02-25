@@ -44,7 +44,7 @@
 
     request.done(function(response) {
       var results = JSON.parse(response);
-      alert(results[0]['ename']);
+      //alert(results[0]['ename']);
 
       //$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
 
@@ -110,7 +110,7 @@
 
       request.done(function(response) {
           var results = JSON.parse(response);
-          alert(response);
+          //alert(response);
           $('#ov-ev-title h1').text(results[0]['ename']);
           $('#ov-ev-start h3').text(results[0]['startTime'] + " - " + results[0]['endTime']);
           $('#ov-ev-tags p').text(results[0]['tags']);
