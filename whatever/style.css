@@ -11,8 +11,8 @@ body {
 .month {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 100%;
-  margin: 0;
+  width: 80%;
+  margin-left: 10%;
   background: #1abc9c;
   text-align: center;
 }
@@ -58,12 +58,17 @@ body {
   padding-top: 1rem;
 }
 
+#divInline{
+  display: inline;
+
+}
 header {
   text-align: center;
 }
 
 #calendar {
-  width: 100%;
+  width: 90%;
+  padding-left: 10%;
 }
 
 #calendar a {
@@ -116,11 +121,10 @@ header {
 #calendar .date {
   text-align: center;
   margin-bottom: 5px;
-  padding: 4px;
-  background: #333;
-  color: #fff;
+  color: black;
+  margin-bottom: 10px;
+  color: black;
   width: 20px;
-  border-radius: 50%;
   float: right;
 }
 
@@ -130,7 +134,6 @@ header {
   font-size: 13px;
   border-radius: 4px;
   padding: 5px;
-  margin-top: 40px;
   margin-bottom: 5px;
   line-height: 14px;
   background: #e4f2f2;
@@ -138,17 +141,107 @@ header {
   color: #009aaf;
   text-decoration: none;
 }
-
-#calendar .event-desc {
+#calendar .event-start {
   color: #666;
   margin: 3px 0 7px 0;
   text-decoration: none;
 }
-
+#calendar .event-title {
+  margin: 3px 0 7px 0;
+  text-decoration: none;
+}
+#calendar .event-price{
+display: none;
+}
+#calendar .event-location {
+display: none;
+}
+#calendar .event-url {
+display: none;
+}
+#calendar .event-tag {
+display: none;
+}
+#calendar .event-host {
+display: none;
+}
+#calendar .event-desc {
+display: none;
+}
+#calendar .event-end {
+display: none;
+}
 #calendar .other-month {
   background: #f5f5f5;
   color: #666;
 }
+
+
+/*this is for the overlay*/
+#overlay {
+    position: fixed;
+    display: none;
+    width: 75%;
+    height: 75%;
+    top: 12.5%;
+    left: 12.5%;
+    right: 12.5%;
+    bottom: 12.5%;
+    background-color: rgba(119,119,119,0.9);
+    border-radius: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+#ovDate{
+
+  text-align: left;
+  margin-left: 10px;
+  font-size: 25px;
+  color: white;
+  margin-top: 10px;
+
+}
+#ovTitle{
+
+}
+#x {
+    position: absolute;
+    background: rgba(150,0,0,0.3);;
+    color: white;
+    top: -10;
+    right: 0;
+    margin-top:2px;
+    margin-right:2px;
+}
+#overlay1 {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 1;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.pink{
+  background: pink;
+  border: 1px solid black;
+}
+
 
 /* ============================
         Mobile Responsiveness
@@ -168,5 +261,23 @@ header {
   }
   #calendar .date {
     float: none;
+  }
+  #overlay{
+    overflow-y: scroll;
+    width: auto;
+    height: 75%;
+    top: 15%;
+    left: 3%;
+    right: 3%;
+    bottom: 0%;
+    border-radius: 5px;
+  }
+  #calendar{
+    width: 100%;
+    padding-left: 0;
+  }
+  .month{
+    width: 100%;
+    margin-left: 0%;
   }
 }
