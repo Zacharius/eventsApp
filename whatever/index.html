@@ -59,7 +59,7 @@
 
                     //$(".day:not('.other-month') .date:contains("+day+")").last().after(newEvent);
 					var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains("+day+")").last());
-					/*newElement.on("click", function() {
+					newElement.on("click", function() {
                         $("#overlay").css("display","block");
                         $("#overlay1").css("display","block");
                         $("body").css("overflow-y", "hidden");
@@ -82,7 +82,7 @@
                                 $("body").css("overflow-y", "scroll");
                             }
                         });
-					});*/
+					});
                     //$('#event_results').append("<li>"+ename+": " +desc+"</li>");
                     //$('#event_results').append('<li>hello</li>');
                     //$("#content").append('<li>qwerty</li>');
