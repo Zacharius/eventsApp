@@ -1,5 +1,8 @@
+import os
 import scrapy
 from scrapy import Request
+import mysql.connector
+from mysql.connector import Error
 
 class QuotesSpider(scrapy.Spider):
     name = "events"
@@ -29,11 +32,50 @@ class QuotesSpider(scrapy.Spider):
         title = response.meta.get('title')
         venue = response.meta.get('venue')
         des = response.css('div.content div.row.collapse.description p::text').extract()
+        address = response.css('ul.event-venue li::text').extract()
+        cost = response.css('li.icon.price::text').extract()
+        if cost is none:
+            cost = response.css('li.free.icon.price::text').extract()
+        if cost is none:
+            cost = 'unknown'
+        time = response.css('li.icon.time::text').extract()
+        cats = response.css('li.categories a::text').extract()
+        dow = response.css('div.dayofweek::text').extract()
+        print('hello world')
+        mysql_connect()
+        print('I am here')
+        
 
         yield {
                'date': date,
                'title': title,
                'venue': venue,
-               'des': des
+               'des': des,
+               'address' : address,
+                'cost' : cost
+
                }
 
+    def mysql_connect():
+
+        try:
+            conn = mysql.connector.connect(host=os.environ['RDS_HOSTNAME'],
+                                           database=os.environ['RDS_DB_NAME'],
+                                           user=os.environ['RDS_USERNAME'],
+                                           password=os.environ['RDS_PASSWORD'])
+
+            if conn.is_connected():
+                print("Suceess!!!")
+
+        except Error as e:
+            print(e)
+            print('Failure')
+
+
+        finally:
+            print('lets get rolling')
+
+
+
+
+        
