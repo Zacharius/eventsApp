@@ -45,13 +45,12 @@
 
     request.done(function(response) {
       var results = JSON.parse(response);
-      alert(results.length);
+      alert(results[0]['id']);
 
       //$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
 
       //$('#event_results').empty();
       for (var i = 0; i < results.length; i++) {
-          alert(results[i]['ename']);
         var title = results[i]['ename'];
         var start = results[i]['startTime'];
         var eid = results[i]['id'];
