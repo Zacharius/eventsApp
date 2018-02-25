@@ -63,6 +63,9 @@
         //$(".day:not('.other-month') .date:contains("+day+")").last().after(newEvent);
         var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
         newElement.on("click", function() {
+
+          populateOverlay(eid);
+
           $("#overlay").css("display", "block");
           $("#overlay1").css("display", "block");
           $("body").css("overflow-y", "hidden");
@@ -93,6 +96,24 @@
     request.fail(function(jqXHR, textStatus) {
       alert("Request failed: " + textStatus);
     });
+  }
+
+  function populateOverlay(eid) {
+      var request = $.ajax({
+          type: "POST",
+          url: "./get_event_by_id",
+          data: {id: eid}
+      });
+
+      request.done(function(response) {
+          var results = JSON.parse(response);
+          alert (response);
+          $('#ov-ev-title h1').text(results['ename']);
+      });
+
+      request.fail(function(jqXHR, textStatus) {
+          alert( "Request failed: " + textStatus );
+      });
   }
 
   </script>
