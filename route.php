@@ -8,6 +8,7 @@
 
 <?php
 
+$return = array();
 $origin = '8801 Cinnamon Creek dr, San Antonio, TX, 78240';
 $destination = '8233 Potranco Road, San Antonio, Tx, 78252';
 $apiKey='AIzaSyAHkOp4TdEBDVIV6H9192SghZ-h4idguAU';
@@ -24,7 +25,7 @@ function urlBuilder($origin, $destination, $apiKey)
 
     return $final;
 
-        }
+}
 
 $request = urlBuilder($origin,$destination,$apiKey);
 
@@ -37,35 +38,38 @@ $numHops=0;
 $json = json_decode($jsontmp, TRUE);
 foreach($json['routes'][0] as $key=>$val)//first route associative array
 {
-  if($key == 'legs')
-  {
-    foreach($val as $val2)//iterate through leg array
+    if($key == 'legs')
     {
-      $numHops++;
-      foreach($val2 as $key3=>$val3)//associative array in each leg array member
-      {
-        if($key3 == 'duration')
+        foreach($val as $val2)//iterate through leg array
         {
-          $length += $val3['value'];
-          echo $length;
-          echo "<br>";
-        }
+            $numHops++;
+            foreach($val2 as $key3=>$val3)//associative array in each leg array member
+            {
+                if($key3 == 'duration')
+                {
+                    $length += $val3['value'];
+                    /*echo $length;
+                    echo "<br>";*/
+                    $return['length'] = $length;
+                }
 
-        if($key3 == 'distance')
-        {
-          $distance += $val3['value'];
-          echo $distance;
-          echo "<br>";
+                if($key3 == 'distance')
+                {
+                    $distance += $val3['value'];
+                    /*echo $distance;
+                    echo "<br>";*/
+                    $return['distance'] = $distance;
+                }
+            }
         }
-      }
     }
-  }
-  if($key == 'fare')
-  {
-    $fare = $val['text'];
-    echo $fare;
-    echo "<br>";
-  }
+    if($key == 'fare')
+    {
+        $fare = $val['text'];
+        /*echo $fare;
+        echo "<br>";*/
+        $return['fare'] = $fare;
+    }
 }
 
 
@@ -74,9 +78,10 @@ $origin = str_replace(' ','+', $origin);
 $destination = str_replace(' ','+', $destination);
 
 
-echo "$mapURLBase&orgin=$origin&destination=$destination";
+//echo "$mapURLBase&orgin=$origin&destination=$destination";
+$return['mapURLparams'] = "$mapURLBase&orgin=$origin&destination=$destination";
 
-
+echo json_encode($return);
 
 ?>
 </body>
