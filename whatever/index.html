@@ -48,7 +48,7 @@
                 for (var i = 0; i < results.length; i++) {
                     var title = results[i]['ename'];
                     var start = results[i]['startTime'];
-                    var day = results[i]['date'];
+                    var day = results[i]['date'].split("/")[2];
                     alert(day);
                     var newEvent = "<div class=\"event\">" +
                         "<div class=\"event-start\" id=\"divInline\">"+start+"</div>" +
