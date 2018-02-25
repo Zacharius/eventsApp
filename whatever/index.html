@@ -54,7 +54,7 @@
         var start = results[i]['startTime'];
         var eid = results[i]['id'];
         var day = results[i]['date'].split("-")[2];
-        alert(day);
+        //alert(day);
         var newEvent = "<div class=\"event\">" +
         "<div class=\"event-start\" id=\"divInline\">" + start + " </div>" +
         "<div class=\"event-title\" id=\"divInline\">" + title + "</div>" +
@@ -64,7 +64,7 @@
         var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
         newElement.on("click", function() {
 
-          populateOverlay();
+          populateOverlay(eid);
 
           $("#overlay").css("display", "block");
           $("#overlay1").css("display", "block");
@@ -98,10 +98,8 @@
     });
   }
 
-  function populateOverlay() {
-      //var eid = event.target.find(".event-id").text();
-      var eid = 5;
-      alert(eid);
+  function populateOverlay(eid) {
+      //var eid = $(this).find("#event-id").text();
       var request = $.ajax({
           type: "POST",
           url: "./get_event_by_id.php",
