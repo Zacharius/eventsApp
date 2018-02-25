@@ -5,7 +5,7 @@ $conn = connect_db();
 
 $results = array();
 $month = date("n",strtotime($_POST['month']));
-$year = $_POST['year'];
+$year = str_replace('\"', '', $_POST['year']);
 
 
 // data validation
