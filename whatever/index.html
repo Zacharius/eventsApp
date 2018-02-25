@@ -62,9 +62,9 @@
 
         //$(".day:not('.other-month') .date:contains("+day+")").last().after(newEvent);
         var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
-        newElement.on("click", function(event) {
+        newElement.on("click", function() {
 
-          populateOverlay(event);
+          populateOverlay();
 
           $("#overlay").css("display", "block");
           $("#overlay1").css("display", "block");
@@ -98,7 +98,7 @@
     });
   }
 
-  function populateOverlay(event) {
+  function populateOverlay() {
       //var eid = event.target.find(".event-id").text();
       var eid = 5;
       alert(eid);
