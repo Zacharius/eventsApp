@@ -4,8 +4,8 @@ include('../database.php');
 $conn = connect_db();
 
 $results = array();
-$month = "02";//date("n",strtotime($_POST['month']));
-$year = "2018";//$_POST['year'];
+$month = date("n",strtotime($_POST['month']));
+$year = $_POST['year'];
 
 
 // data validation
@@ -13,8 +13,8 @@ if (empty($month)) { die("Month is blank."); }
 if (empty($year)) { die("Year is blank."); }
 
 // fetch names of events with the specified category
-//$sql = "SELECT * from Events WHERE YEAR(date) = $year AND MONTH(date) = $month";
-$sql = "select * from Events";
+$sql = "SELECT * from Events WHERE YEAR(date) = $year AND MONTH(date) = $month";
+//$sql = "select * from Events";
 if($result = mysqli_query($conn, $sql)){
     while($row = mysqli_fetch_assoc($result)){
         $results[] = $row;

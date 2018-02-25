@@ -35,7 +35,7 @@
 
     var request = $.ajax({
       type: "POST",
-      url: "../hello_back.php",
+      url: "./get_events.php",
         async: false,
       data: {
         month: items[1],
@@ -65,7 +65,7 @@
         var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
         newElement.on("click", function() {
 
-          //populateOverlay(event);
+          populateOverlay(event);
 
           $("#overlay").css("display", "block");
           $("#overlay1").css("display", "block");
