@@ -16,9 +16,10 @@ if($result = mysqli_query($conn, $sql)){
     //echo(json_encode($row));
 }
 
-/*//$file = file_get_contents('../route.php');
-$content = eval("?>$file");*/
+//$file = file_get_contents('../route.php');
+$file = include "../route.php";
+/*$content = eval("?>$file");*/
 
 $ret[] = $row;
-//$ret[] = $content;
+$ret[] = $file;
 echo json_encode($ret);
