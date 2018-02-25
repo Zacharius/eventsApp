@@ -406,14 +406,18 @@
 	      		<div class="row">
 		        	<div class="col-md-12 pink"> 
 		        		<div id="ov-ev-start-pos">
-		        			starting
+		        			<form>
+		        				<input type="text" name="start-position" placeholder="starting">
+		        			</form>
 		        		</div>		
 		        	</div>
 	     		</div>
 	      		<div class="row">
 	        		<div class="col-md-12 pink">
 	        			<div id="ov-ev-end-pos">
-	        				ending
+	        				<form>
+		        				<input type="text" name="end-position" placeholder="ending">
+		        			</form>
 	        			</div>
 	        		</div>
 	      		</div>
@@ -427,8 +431,12 @@
 	    	</div>
 
 	    	<div class="col-md-1 pink">location</div>
-	    	
-	    	<div class="col-md-6 pink">itinerary</div>
+
+	    	<div class="col-md-6 pink">
+	    		itinerary
+	    		<div id="googleMap" style="width:100px;height:100px;"></div>
+	    	</div>
+
 	  	</div>
 
 	</div>
@@ -475,6 +483,16 @@ $("#x").click(function(){
 
 
 </script>
+<script>
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(51.508742,-0.120850),
+    zoom:5,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNRskTYG0q51UVMriEpYFZ1NubWEFblWI=myMap"></script>
 	<!-- <script>
 	$( ".event " ).click(function() {
 		alert($(this).children(".event-host").text());
