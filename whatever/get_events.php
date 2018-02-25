@@ -4,8 +4,10 @@ include('../database.php');
 $conn = connect_db();
 
 $results = array();
-$category = $_POST['category'];
+$items = $_POST['items'];
 
+echo json_encode($items);
+/*
 // data validation
 if(empty($category)){
     die();
@@ -18,4 +20,4 @@ if($result = mysqli_query($conn, $sql)){
         $results[] = $row;
     }
     echo(json_encode($results));
-}
+}*/

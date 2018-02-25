@@ -25,36 +25,38 @@
             //alert(items[1]+"   "+items[2]);
 
 			var day = 30;
-			var temp = "<div class=\"event\">" +
+			/*var temp = "<div class=\"event\">" +
                 "<div class=\"event-title\">" +
                 "HTML 5 lecture with Brad Traversy from Eduonix" +
                 "</div><div class=\"event-time\">" +
                 "1:00pm to 3:00pm" +
-                "</div></div>";
-			$(".day:not('.other-month') .date:contains("+day+")").after(temp);
+                "</div></div>";*/
+			//$(".day:not('.other-month') .date:contains("+day+")").after(temp);
+
 			//alert(fday);
 
-            /*var request = $.ajax({
+            var request = $.ajax({
                 type: "POST",
-                url: "./get_events.php"
+                url: "./get_events.php",
+				data: items
             });
 
             request.done(function(response) {
                 var results = JSON.parse(response);
-                //alert(response);
-                $('#event_results').empty();
+                alert(response);
+                /*$('#event_results').empty();
                 for (var i = 0; i < results.length; i++) {
                     var ename = results[i]['ename'];
                     var desc = results[i]['description'];
                     $('#event_results').append("<li>"+ename+": " +desc+"</li>");
                     //$('#event_results').append('<li>hello</li>');
                     //$("#content").append('<li>qwerty</li>');
-                }
+                }*/
             });
 
             request.fail(function(jqXHR, textStatus) {
                 alert( "Request failed: " + textStatus );
-            });*/
+            });
         });
     </script>
 </head>
