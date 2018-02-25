@@ -62,9 +62,9 @@
 
         //$(".day:not('.other-month') .date:contains("+day+")").last().after(newEvent);
         var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
-        newElement.on("click", function() {
+        newElement.on("click", function(event) {
 
-          populateOverlay();
+          populateOverlay(event);
 
           $("#overlay").css("display", "block");
           $("#overlay1").css("display", "block");
@@ -98,8 +98,8 @@
     });
   }
 
-  function populateOverlay() {
-      var eid = $(".event-id", this).text();
+  function populateOverlay(event) {
+      var eid = event.currentTarget.find(".event-id").text();
       alert(eid);
       var request = $.ajax({
           type: "POST",
