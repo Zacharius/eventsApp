@@ -99,7 +99,7 @@
   }
 
   function populateOverlay() {
-      var eid = $(this).find('#event-id');
+      var eid = $(this).find("#event-id").text();
       var request = $.ajax({
           type: "POST",
           url: "./get_event_by_id.php",
