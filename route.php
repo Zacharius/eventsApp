@@ -97,8 +97,8 @@ $destination = str_replace(' ','+', $destination);
 $mapParams = "$mapURLBase&orgin=$origin&destination=$destination";
 $ret['mapParams'] = $mapParams;
 
-$ret['fare'] = 2.00;
-echo $ret;
+$ret['fare'] = "2";
+echo json_encode($ret);
 
 ?>
 </body>
