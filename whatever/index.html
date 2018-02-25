@@ -1,350 +1,372 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-	<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
-	<script
-	src="https://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous">
-	</script>
-</head>
-<body onload="fetchDate()">
 
-	<!-- Image and text -->
-	<nav class="navbar navbar-light" style="background-color: rgb(39, 72, 124)">
-		<a class="navbar-brand" href="#">
-			<img src="Main-Logo.png" width="50" height="35" class="d-inline-block align-top" alt="">
-		</a>
-	</nav>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-	<div style="margin-bottom: 25px"></div>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        populateInitial();
+      });
 
-	<!-- Filters  -->
-	<div class="container">
-		<form >
-			<div class="row">
+      function populateInitial() {
+        var month = $('.month ul li:nth-child(3)').text();
+        var reg = /([a-zA-Z]+)(\d+)/;
+        var items = month.split(reg);
+        //alert(items[1]+"   "+items[2]);
 
-				<div class="dropdown col-lg-3"  style="margin-bottom: 5px;" >
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Category
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
-				</div>
-				<div class="dropdown col-lg-3" style="margin-bottom: 5px;">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Price
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
-				</div>
-				<div class="dropdown col-lg-3" style="margin-bottom: 5px;">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Age
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
-				</div>
+        /*var temp = "<div class=\"event\">" +
+        "<div class=\"event-title\">" +
+        "HTML 5 lecture with Brad Traversy from Eduonix" +
+        "</div><div class=\"event-time\">" +
+        "1:00pm to 3:00pm" +
+        "</div></div>";*/
+        //$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
 
-				<div class="col-lg-1 col-xs-0"></div>
+        var request = $.ajax({
+          type: "POST",
+          url: "./get_events.php",
+          data: {
+            month: items[1],
+            year: items[2]
+          }
+        });
 
-				<div class="col-lg-1" style="margin-bottom: 5px">
-					<button type="submit" class="btn btn-primary">Apply</button>
-				</div>
+        request.done(function(response) {
+          var results = JSON.parse(response);
+          //alert(results.length);
 
-				<div class="col-lg-1 small">
-					<button type="submit" class="btn btn-primary">Clear</button>
-				</div>
+          //$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
 
-			</div>
+          //$('#event_results').empty();
+          for (var i = 0; i < results.length; i++) {
+            var title = results[i]['ename'];
+            var start = results[i]['startTime'];
+            var day = results[i]['date'].split("-")[2];
+            //alert(day);
+            var newEvent = "<div class=\"event\">" +
+              "<div class=\"event-start\" id=\"divInline\">" + start + " </div>" +
+              "<div class=\"event-title\" id=\"divInline\">" + title + "</div></div>";
 
-		</form>
+            //$(".day:not('.other-month') .date:contains("+day+")").last().after(newEvent);
+            var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
+            newElement.on("click", function() {
+              $("#overlay").css("display", "block");
+              $("#overlay1").css("display", "block");
+              $("body").css("overflow-y", "hidden");
+              $("body").css("overflow-x", "hidden");
 
-	</div>
+              $("#overlay1").click(function() {
+                if ($("#overlay").css("display") == "block") {
+                  $("#overlay").css("display", "none");
+                  $("#overlay1").css("display", "none");
+                  $("body").css("overflow-y", "scroll");
+                }
+              });
 
-	<div id="content-wrapper">
-		<div class="month">
-			<ul>
-				<li class="prev">&#10094;</li>
-				<li class="next">&#10095;</li>
-				<li>August<br><span style="font-size:18px">2017</span></li>
-			</ul>
-		</div>
+              $("#x").click(function() {
+                if ($("#overlay").css("display") == "block") {
+                  $("#overlay").css("display", "none");
+                  $("#overlay1").css("display", "none");
+                  $("body").css("overflow-y", "scroll");
+                }
+              });
+            });
+            //$('#event_results').append("<li>"+ename+": " +desc+"</li>");
+            //$('#event_results').append('<li>hello</li>');
+            //$("#content").append('<li>qwerty</li>');
+          }
+        });
+
+        request.fail(function(jqXHR, textStatus) {
+          alert("Request failed: " + textStatus);
+        });
+      }
+
+    </script>
+
+  </head>
+
+  <body onload="fetchDate()">
+
+    <!-- Image and text  -->
+    <nav class="navbar navbar-light" style="background-color: rgb(39, 72, 124)">
+      <a class="navbar-brand" href="#">
+<img src="Main-Logo.png" width="50" height="35" class="d-inline-block align-top" alt="">
+</a>
+    </nav>
+
+    <div style="margin-bottom: 25px"></div>
+
+    <!-- Filters  -->
+    <div class="container">
+      <form>
+        <div class="row">
+
+          <div class="dropdown col-lg-3" style="margin-bottom: 5px;">
+            <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Category
+</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+          <div class="dropdown col-lg-3" style="margin-bottom: 5px;">
+            <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Price
+</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+          <div class="dropdown col-lg-3" style="margin-bottom: 5px;">
+            <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Age
+</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+
+          <div class="col-lg-1 col-xs-0"></div>
+
+          <div class="col-lg-1" style="margin-bottom: 5px">
+            <button type="submit" class="btn btn-primary">Apply</button>
+          </div>
+
+          <div class="col-lg-1 small">
+            <button type="submit" class="btn btn-primary">Clear</button>
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <div id="content-wrapper">
+      <div class="month">
+        <ul>
+          <li class="prev">&#10094;</li>
+          <li class="next">&#10095;</li>
+          <li>August<br><span style="font-size:18px">2017</span></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12 pink">
+        <h1 style="text-align: center;">Bus Info</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-12 pink">
+            <div id="ov-ev-start-pos">
+              <form>
+                <input type="text" name="start-position" placeholder="starting">
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 pink">
+            <div id="ov-ev-end-pos">
+              <form>
+                <input type="text" name="end-position" placeholder="ending">
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 pink">
+            <div id="ov-ev-busfare">
+              bus fare
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1 pink">location</div>
+
+      <div class="col-md-6 pink">
+        itinerary
+        <div id="googleMap" style="width:100px;height:100px;"></div>
+      </div>
+
+    </div>
 
 
-</div>
-<!-- /. calendar -->
-</div>
-<!-- /. wrap -->
-
-<!-- overlay stuff -->
-<div id="overlay" class="grid-event-overlay" >
-	<button type="button" name="ovClose" id="x">X</button>
-	<div id="ovDate">February 24, 2018</div>
-	<div style="padding: 20px"></div>
-
-	<div class="container">
-		
-		<div class="row">
-			<div class="col-md-2 pink">
-				
-			</div>
-			<div class="col-md-7 col-sm-7 col-xs-12 pink">
-				<div id="ov-ev-title">
-					<h1>VIA Codeathon</h1>
-				</div>		
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-12 pink">
-				<div id="ov-ev-start">
-					<h3> start - end</h3>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-2 pink">
-				
-			</div>
-			<div class="col-md-10 pink">
-				<div id="ov-ev-tags">
-					<p>tags comedy kids free music plays theatre pubs beer</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-2 pink">
-				
-			</div>
-			<div class="col-md-10 pink">
-				<div id="ov-ev-desc">
-					<p>description of the event</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row" style="padding: 20px"></div>
-
-		<div class="row">
-			<div class="col-md-12 pink">
-				<h1 style="text-align: center;">Bus Info</h1>
-			</div>
-		</div>
-
-		<div class= "row">
-	    	<div class= "col-md-5">
-	      		<div class="row">
-		        	<div class="col-md-12 pink"> 
-		        		<div id="ov-ev-start-pos">
-		        			<form>
-		        				<input type="text" name="start-position" placeholder="starting">
-		        			</form>
-		        		</div>		
-		        	</div>
-	     		</div>
-	      		<div class="row">
-	        		<div class="col-md-12 pink">
-	        			<div id="ov-ev-end-pos">
-	        				<form>
-		        				<input type="text" name="end-position" placeholder="ending">
-		        			</form>
-	        			</div>
-	        		</div>
-	      		</div>
-	      		<div class="row">
-	        		<div class="col-md-12 pink"> 
-	        			<div id="ov-ev-busfare">
-	        				bus fare
-	        			</div>
-	        		</div>
-	      		</div>
-	    	</div>
-
-	    	<div class="col-md-1 pink">location</div>
-
-	    	<div class="col-md-6 pink">
-	    		itinerary
-	    		<div id="googleMap" style="width:100px;height:100px;"></div>
-	    	</div>
-
-	  	</div>
-
-	</div>
-			
-	
-	
-</div>
-
-<div id="overlay1" >
-</div>
+    <div id="overlay1">
+    </div>
 
 
 
-<!-- javascript stuff -->
-<script>
+    <!-- javascript stuff -->
+    <script>
+      $(".event ").click(function() {
+        // alert($(this).children(".event-desc").text());
+        $("#overlay").css("display", "block");
+        $("#overlay1").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+        $("body").css("overflow-x", "hidden");
 
+      });
+
+      $("#overlay1").click(function() {
+        if ($("#overlay").css("display") == "block") {
+          $("#overlay").css("display", "none");
+          $("#overlay1").css("display", "none");
+          $("body").css("overflow-y", "scroll");
+        }
+      });
+
+      $("#x").click(function() {
+        if ($("#overlay").css("display") == "block") {
+          $("#overlay").css("display", "none");
+          $("#overlay1").css("display", "none");
+          $("body").css("overflow-y", "scroll");
+        }
+      });
+
+      function fetchDate() {
+        var today = new Date();
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
+        var dd = today.getDate();
+        var mm = today.getMonth(); //January is 0!
+        var currentMonth = months[mm];
+
+        var yyyy = today.getFullYear();
+        // if(dd<10){
+        // 	dd='0'+dd;
+        // }
+        // if(mm<10){
+        // 	mm='0'+mm;
+        // }
+        // var today = dd+'/'+mm+'/'+yyyy;
+        /*Populate month on the header bar*/
+        $('.month ul li:nth-child(3)').html(currentMonth + "<br><span style=\"font-size:18px\">" + yyyy + "</span>");
+
+        /*Find the first day of the month, then find the day of the week for that*/
+        var first = new Date(yyyy, mm, 1);
+        var firstdayindex = first.getDay();
+
+        var date = new Date();
+        var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+        // var firstday = findDay(first);
+        alert(firstdayindex);
+
+        var lastDayindex = lastDay.getDate();
+        alert(lastDayindex);
+        populateCalendar(firstdayindex, lastDayindex);
+
+      }
+
+      function populateCalendar(index, lastDay) {
+        var rowrem = 7;
+        var rowcnt = 1;
+        var foo = "<div id=\"calendar\">" +
+          "<ul class=\"weekdays\">" +
+          "<li>Sunday</li>" +
+          "<li>Monday</li>" +
+          "<li>Tuesday</li>" +
+          "<li>Wednesday</li>" +
+          "<li>Thursday</li>" +
+          "<li>Friday</li>" +
+          "<li>Saturday</li>" +
+          "</ul></div>";
+
+        alert("break1");
+        var row1 = "<ul class=\"days\" id=\"row1\"></ul>";
+        var row2 = "<ul class=\"days\" id=\"row2\">";
+        var row3 = "<ul class=\"days\" id=\"row3\">";
+        var row4 = "<ul class=\"days\" id=\"row4\">";
+        var row5 = "<ul class=\"days\" id=\"row5\">";
+
+        var bar = "<li class=\"day\"><div class=\"date\">5</div></li>";
+
+        var otherday = "<li class=\"day other-month\"></li>";
+
+        $("#content-wrapper").append(foo);
+
+        $("#calendar").append(row1);
+
+
+        for (var i = 0; i < index; i++) {
+          $('#row' + rowcnt).append(otherday);
+          rowrem--;
+        }
+
+        //rowcnt++;
+        for (i = 1; i <= lastDay; i++) {
+          if (rowrem == 0) {
+            rowrem = 7;
+            rowcnt++;
+            $('#calendar').append("<ul class=\"days\" id=\"row" + rowcnt + "\"></ul>");
+          }
+          $('#row' + rowcnt).append("<li class=\"day\"><div class=\"date\">" + i + "</div></li>");
+          rowrem--;
+        }
+
+        for (i = 0; i < rowrem; i++) {
+          $('#row' + rowcnt).append(otherday);
+        }
+
+      }
+      // function findDay(d){
+      // 	// alert(d);
+      // 	var weekday = ["Sunday", "Monday"	,"Tuesday", "Wednesday", "Thursday", "Friday"	, "Saturday"];
+      // 			var n = weekday[d.getDay()];
+      // 			return n;
+      //
+      //
+      // }
+
+    </script>
+
+    <script>
+      function myMap() {
+        var mapProp = {
+          center: new google.maps.LatLng(51.508742, -0.120850),
+          zoom: 5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNRskTYG0q51UVMriEpYFZ1NubWEFblWI=myMap"></script>
+    <!-- <script>
 $( ".event " ).click(function() {
-	// alert($(this).children(".event-desc").text());
-	$("#overlay").css("display","block");
-	$("#overlay1").css("display","block");
-	$("body").css("overflow-y", "hidden");
-	$("body").css("overflow-x", "hidden");
-
+alert($(this).children(".event-host").text());
 });
+</script> -->
 
-$("#overlay1").click(function(){
-	if($("#overlay").css("display") == "block")
-	{
-		$("#overlay").css("display","none");
-		$("#overlay1").css("display","none");
-		$("body").css("overflow-y", "scroll");
-	}
-});
-
-$("#x").click(function(){
-	if($("#overlay").css("display") == "block")
-	{
-		$("#overlay").css("display","none");
-		$("#overlay1").css("display","none");
-		$("body").css("overflow-y", "scroll");
-	}
-});
-
-function fetchDate(){
-	var today = new Date();
-	var months = ["January","February","March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
-	var dd = today.getDate();
-	var mm = today.getMonth(); //January is 0!
-	var currentMonth= months[mm];
-
-	var yyyy = today.getFullYear();
-	// if(dd<10){
-	// 	dd='0'+dd;
-	// }
-	// if(mm<10){
-	// 	mm='0'+mm;
-	// }
-	// var today = dd+'/'+mm+'/'+yyyy;
-	/*Populate month on the header bar*/
-	$('.month ul li:nth-child(3)').html(currentMonth+"<br><span style=\"font-size:18px\">"+yyyy+"</span>");
-
-	/*Find the first day of the month, then find the day of the week for that*/
-	var first = new Date(yyyy, mm, 1);
-	var firstdayindex = first.getDay();
-
-	var date = new Date();
-	var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-
-	// var firstday = findDay(first);
-	alert(firstdayindex);
-
-	var lastDayindex= lastDay.getDate();
-alert(lastDayindex);
-	populateCalendar(firstdayindex,lastDayindex);
-
-}
-function populateCalendar(index,lastDay){
-	var rowrem = 7;
-	var rowcnt = 1;
-	var foo = "<div id=\"calendar\">" +
-	"<ul class=\"weekdays\">" +
-	"<li>Sunday</li>" +
-	"<li>Monday</li>" +
-	"<li>Tuesday</li>" +
-	"<li>Wednesday</li>" +
-	"<li>Thursday</li>" +
-	"<li>Friday</li>" +
-	"<li>Saturday</li>" +
-	"</ul></div>";
-
-	alert("break1");
-	var row1= "<ul class=\"days\" id=\"row1\"></ul>";
-	var row2= "<ul class=\"days\" id=\"row2\">";
-	var row3= "<ul class=\"days\" id=\"row3\">";
-	var row4= "<ul class=\"days\" id=\"row4\">";
-	var row5= "<ul class=\"days\" id=\"row5\">";
-
-	var bar = "<li class=\"day\"><div class=\"date\">5</div></li>";
-
-	var otherday = "<li class=\"day other-month\"></li>";
-
-	$( "#content-wrapper" ).append(foo);
-
-	$("#calendar").append(row1);
-
-
-	for(var i=0;i<index;i++){
-		$('#row'+rowcnt).append(otherday);
-		rowrem--;
-	}
-
-//rowcnt++;
-	 for (i = 1; i <= lastDay; i++) {
-	 	if (rowrem == 0) {
-	 		rowrem = 7;
-			rowcnt++;
-	 		$('#calendar').append("<ul class=\"days\" id=\"row"+rowcnt+"\"></ul>");
-	 	}
-	 	$('#row'+rowcnt).append("<li class=\"day\"><div class=\"date\">"+i+"</div></li>");
-	 	rowrem--;
-	 }
-
-	 for (i = 0; i < rowrem; i++) {
-		 $('#row'+rowcnt).append(otherday);
-	 }
-
-}
-// function findDay(d){
-// 	// alert(d);
-// 	var weekday = ["Sunday", "Monday"	,"Tuesday", "Wednesday", "Thursday", "Friday"	, "Saturday"];
-// 			var n = weekday[d.getDay()];
-// 			return n;
-//
-//
-// }
-
-</script>
-
-<script>
-function myMap() {
-var mapProp= {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-};
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNRskTYG0q51UVMriEpYFZ1NubWEFblWI=myMap"></script>
-	<!-- <script>
-	$( ".event " ).click(function() {
-		alert($(this).children(".event-host").text());
-	});
-	</script> -->
-
-<!-- <script>
+    <!-- <script>
 $( ".event " ).click(function() {
 alert($(this).children(".event-host").text());
 });
 </script> -->
 
 
-</body>
+  </body>
+
 </html>
