@@ -7,7 +7,8 @@ $results = array();
 $month = date_parse($_POST['month']);
 $year = $_POST['year'];
 
-die($month);
+$results[] = $month;
+echo json_encode($results);
 // data validation
 if (empty($month)) { die("Month is blank."); }
 if (empty($year)) { die("Year is blank."); }
