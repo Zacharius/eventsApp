@@ -176,34 +176,57 @@ display: none;
   color: #666;
 }
 
+#ov-ev-title{
+  font-family: 'Libre Baskerville', serif;
+}
+
 
 /*this is for the overlay*/
 #overlay {
     position: fixed;
-    display: none;
+    display: block;
     width: 75%;
     height: 75%;
     top: 12.5%;
     left: 12.5%;
     right: 12.5%;
     bottom: 12.5%;
-    background-color: rgba(119,119,119,0.9);
+    background-color: rgb(225, 230, 239,0.98);
     border-radius: 5px;
     z-index: 2;
     cursor: pointer;
+    border: 2px solid green;
 }
 #ovDate{
 
-  text-align: left;
+  text-align: center;
   margin-left: 10px;
-  font-size: 25px;
-  color: white;
+  font-size: 20px;
+  color: black;
   margin-top: 10px;
+  font-family: 'Libre Baskerville', serif;
 
 }
-#ovTitle{
-
+hr.style14 { 
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
+
+#ov-ev-tags{
+  font-family: 'Rubik', sans-serif;
+}
+
+#ov-ev-desc{
+  font-family: 'Rubik', sans-serif;
+}
+#ov-ev-start{
+  font-family: 'Rubik', sans-serif;
+}
+
 #x {
     position: absolute;
     background: rgba(150,0,0,0.3);;
