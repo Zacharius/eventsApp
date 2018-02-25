@@ -379,7 +379,11 @@
         rowcnt++;
         $('#calendar').append("<ul class=\"days\" id=\"row" + rowcnt + "\"></ul>");
       }
-      $('#row' + rowcnt).append("<li class=\"day\"><div class=\"date\">" + i + "</div></li>");
+      if (i < 10) {
+          $('#row' + rowcnt).append("<li class=\"day\"><div class=\"date\">0" + i + "</div></li>");
+      } else {
+          $('#row' + rowcnt).append("<li class=\"day\"><div class=\"date\">" + i + "</div></li>");
+      }
       rowrem--;
     }
 
