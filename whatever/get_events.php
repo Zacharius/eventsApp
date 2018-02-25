@@ -4,7 +4,7 @@ include('../database.php');
 $conn = connect_db();
 
 $results = array();
-$month = $_POST['month'];
+$month = date_parse($_POST['month']);
 $year = $_POST['year'];
 
 
