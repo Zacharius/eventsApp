@@ -17,6 +17,7 @@
 	crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+
         $(document).ready(function() {
 			populateInitial();
         });
@@ -51,7 +52,7 @@
                 for (var i = 0; i < results.length; i++) {
                     var title = results[i]['ename'];
                     var start = results[i]['startTime'];
-                    var day = results[i]['date'].split("-")[2];
+                    var day = results[i]['date'].split("-")[2]replace(/^0/, '');
                     //alert(day);
                     var newEvent = "<div class=\"event\">" +
                         "<div class=\"event-start\" id=\"divInline\">"+start+" </div>" +
@@ -92,38 +93,8 @@
             request.fail(function(jqXHR, textStatus) {
                 alert( "Request failed: " + textStatus );
             });
-
-            //updateListeners();
 		}
 
-		function updateListeners() {
-            $( ".event " ).click(function() {
-                // alert($(this).children(".event-desc").text());
-                $("#overlay").css("display","block");
-                $("#overlay1").css("display","block");
-                $("body").css("overflow-y", "hidden");
-                $("body").css("overflow-x", "hidden");
-
-            });
-
-            $("#overlay1").click(function(){
-                if($("#overlay").css("display") == "block")
-                {
-                    $("#overlay").css("display","none");
-                    $("#overlay1").css("display","none");
-                    $("body").css("overflow-y", "scroll");
-                }
-            });
-
-            $("#x").click(function(){
-                if($("#overlay").css("display") == "block")
-                {
-                    $("#overlay").css("display","none");
-                    $("#overlay1").css("display","none");
-                    $("body").css("overflow-y", "scroll");
-                }
-            });
-        }
     </script>
 </head>
 <body>
