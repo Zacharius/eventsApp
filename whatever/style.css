@@ -11,8 +11,8 @@ body {
 .month {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 100%;
-  margin: 0;
+  width: 80%;
+  margin-left: 10%;
   background: #1abc9c;
   text-align: center;
 }
@@ -67,7 +67,8 @@ header {
 }
 
 #calendar {
-  width: 100%;
+  width: 90%;
+  padding-left: 10%;
 }
 
 #calendar a {
@@ -186,14 +187,16 @@ display: none;
     left: 12.5%;
     right: 12.5%;
     bottom: 12.5%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(119,119,119,0.9);
     border-radius: 5px;
     z-index: 2;
     cursor: pointer;
 }
 #ovDate{
-  text-align: center;
-  font-size: 30px;
+
+  text-align: left;
+  margin-left: 10px;
+  font-size: 25px;
   color: white;
   margin-top: 10px;
 
@@ -234,6 +237,12 @@ display: none;
     -ms-transform: translate(-50%,-50%);
 }
 
+.pink{
+  background: pink;
+  border: 1px solid black;
+}
+
+
 /* ============================
         Mobile Responsiveness
    ============================*/
@@ -254,6 +263,7 @@ display: none;
     float: none;
   }
   #overlay{
+    overflow-y: scroll;
     width: auto;
     height: 75%;
     top: 15%;
@@ -261,5 +271,13 @@ display: none;
     right: 3%;
     bottom: 0%;
     border-radius: 5px;
+  }
+  #calendar{
+    width: 100%;
+    padding-left: 0;
+  }
+  .month{
+    width: 100%;
+    margin-left: 0%;
   }
 }
