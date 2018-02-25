@@ -15,6 +15,6 @@ for ($i = 0; $i < 30; $i++) {
     $end2 = $min2+1;
     $end = '' . $hrEnd . ':' . $end1 . $end2;
 
-    $sql = "insert into Events (ename, hname, dow, tags, address, cost, description, url, date, startTime, endTime) values ('ename$i', 'host$i', 'M', 'kids', 'location$i', 10.00, 'desc$i', 'www.website$i.com', '2017-08-$i', $start, $end)";
+    $sql = "insert into Events (ename, hname, dow, tags, address, cost, description, url, date, startTime, endTime) values ('ename$i', 'host$i', 'M', 'kids', 'location$i', 10.00, 'desc$i', 'www.website$i.com', '2017-08-$i', '$start', '$end')";
     mysqli_query($conn, $sql);
 }
