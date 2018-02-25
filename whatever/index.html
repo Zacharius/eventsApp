@@ -99,6 +99,9 @@
   }
 
   function populateOverlay(event) {
+      var destin = '';
+
+      // event details
       var eid = $(event.currentTarget).find(".event-id").text();
       var request = $.ajax({
           type: "POST",
@@ -108,14 +111,38 @@
 
       request.done(function(response) {
           var results = JSON.parse(response);
-          alert (response);
+          //alert(response);
           $('#ov-ev-title h1').text(results['ename']);
           $('#ov-ev-start h3').text(results['startTime'] + " - " + results['endTime']);
           $('#ov-ev-tags p').text(results['tags']);
           $('#ov-ev-desc p').text(results['description']);
+
+          // TODO get current location instead
+          $('#ov-ev-start-pos form input').val("8801 Cinnamon Creek dr, San Antonio, TX, 78240");
+          $('#ov-ev-end-pos form input').val(results['address']);
+
+          destin = results['address'];
       });
 
       request.fail(function(jqXHR, textStatus) {
+          alert( "Request failed: " + textStatus );
+      });
+
+
+      // map info stuff
+      var request2 = $.ajax({
+          type: "POST",
+          url: "./route.php",
+          data: {dest: destin}
+      });
+
+      request2.done(function(response) {
+          var results = JSON.parse(response);
+          alert(response);
+          $('#ov-ev-busfare').text(results['fare']);
+      });
+
+      request2.fail(function(jqXHR, textStatus) {
           alert( "Request failed: " + textStatus );
       });
   }

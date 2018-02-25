@@ -13,7 +13,7 @@ if (empty($month)) { die("Month is blank."); }
 if (empty($year)) { die("Year is blank."); }
 
 // fetch names of events with the specified category
-$sql = "SELECT * from Events WHERE YEAR(date) = $year AND MONTH(date) = $month AND ename like 'AAA%'";
+$sql = "SELECT * from Events WHERE YEAR(date) = $year AND MONTH(date) = $month";
 if($result = mysqli_query($conn, $sql)){
     while($row = mysqli_fetch_assoc($result)){
         $results[] = $row;

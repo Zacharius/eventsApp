@@ -8,8 +8,11 @@
 
 <?php
 
+$ret = array();
+
 $origin = '8801 Cinnamon Creek dr, San Antonio, TX, 78240';
-$destination = '8233 Potranco Road';
+//$destination = '8233 Potranco Road';
+$destination = $_POST['dest'];
 $apiKey='AIzaSyAHkOp4TdEBDVIV6H9192SghZ-h4idguAU';
 
 function urlBuilder($origin, $destination, $apiKey)
@@ -24,7 +27,7 @@ function urlBuilder($origin, $destination, $apiKey)
 
     return $final;
 
-        }
+}
 
 $request = urlBuilder($origin,$destination,$apiKey);
 
@@ -47,15 +50,17 @@ foreach($json['routes'][0] as $key=>$val)//first route associative array
         if($key3 == 'duration')
         {
           $length += $val3['value'];
-          echo $length;
-          echo "<br>";
+          /*echo $length;
+          echo "<br>";*/
+          $ret['length'] = $length;
         }
 
         if($key3 == 'distance')
         {
           $distance += $val3['value'];
-          echo $distance;
-          echo "<br>";
+          /*echo $distance;
+          echo "<br>";*/
+          $ret['distance'] = $distance;
         }
       }
     }
@@ -63,32 +68,36 @@ foreach($json['routes'][0] as $key=>$val)//first route associative array
   if($key == 'fare')
   {
     $fare = $val['text'];
-    echo $fare;
-    echo "<br>";
+    /*echo $fare;
+    echo "<br>";*/
+    $ret['fare'] = $fare;
   }
 }
 
-echo "echo $numHops";
-echo "<br>";
+/*echo $numHops;
+echo "<br>";*/
 
 $mile = $distance/1609.34;
 $hours = floor($length / 3600);
 $minutes =  ($length / 60) - ($hours * 60); 
 
-printf("Final time : %d:%d\n", $hours, $minutes); 
-echo "<br>";
+$fintime = sprintf("Final time : %d:%d\n", $hours, $minutes);
+//echo "<br>";
+$ret['fintime'] = $fintime;
 
-printf("Final Length : %.2f miles", $mile);
-echo "<br>";
+$finlen = sprintf("Final Length : %.2f miles", $mile);
+//echo "<br>";
+$ret['finlen'] = $finlen;
 
 $mapURLBase="https://www.google.com/maps/dir/?api=1&travelmode=transit&";
 $origin = str_replace(' ','+', $origin);
 $destination = str_replace(' ','+', $destination);
 
 
-echo "$mapURLBase&orgin=$origin&destination=$destination";
+$mapParams = "$mapURLBase&orgin=$origin&destination=$destination";
+$ret['mapParams'] = $mapParams;
 
-
+echo json_encode($ret);
 
 ?>
 </body>
