@@ -1,0 +1,642 @@
+[33mcommit 421410b2915f7590fb1edbbfb85c84d1bacf6069[m
+Merge: 35958c0 81b0f28
+Author: nishantg95 <nishant.groveris@gmail.com>
+Date:   Sun Feb 25 01:11:44 2018 -0600
+
+    Merge pull request #7 from oserna1/dynamic2
+    
+    Dynamic2
+
+[33mcommit 81b0f28d239083ee6c5716a1da69e3c3ab62bbd2[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sun Feb 25 01:03:54 2018 -0600
+
+    added 0s
+
+[33mcommit 72661d7d3c7eafa66020b8eab7de54cef9dd8f88[m
+Author: Zach Faddis <zach.faddis@gmail.com>
+Date:   Sun Feb 25 01:00:36 2018 -0600
+
+    Better route.php
+
+[33mcommit e143b82bd1f51022b33dd9ba5011d9be072fa595[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:40:20 2018 -0600
+
+    added 0s
+
+[33mcommit 18c8abb47d5370275420046dba6431cdb984d359[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:39:15 2018 -0600
+
+    09
+
+[33mcommit a8fc52d05d9c1c6ff89a92d18a79d5c83b2b1b46[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:37:58 2018 -0600
+
+    normal
+
+[33mcommit 90b2ea4fa2d4ea0e6598a5ac6bad43b581f8c02d[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:35:25 2018 -0600
+
+    9
+
+[33mcommit 480525f79617890d15cc0ae30f71fff4d50dc9b3[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:33:02 2018 -0600
+
+    alert day
+
+[33mcommit e4bd257289f9cfc3a7aaccab5e779791b717e734[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:32:20 2018 -0600
+
+    parseint
+
+[33mcommit 01d66c3c28a693c54adc3ab3e6806184367a4a73[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:30:46 2018 -0600
+
+    .replace
+
+[33mcommit 7a24fba0f81a5274f0a17aa89b4ab2d81e4101d7[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:30:12 2018 -0600
+
+    new zero
+
+[33mcommit 603945bf2621afd885aea8c12a5ecec234e7cc5c[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:24:31 2018 -0600
+
+    junk data
+
+[33mcommit 029fdbed8d2c96f538f290d988d6754bc82fcefe[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:22:01 2018 -0600
+
+    junk data
+
+[33mcommit d1fddeaa8bcfe8b31070b6da6a9c4a8cb9cdccf6[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:09:41 2018 -0600
+
+    no upd
+
+[33mcommit 7ee323ec44f09db2c7d2f413067b16c9b7675a26[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:09:07 2018 -0600
+
+    event handler?
+
+[33mcommit ded07238c1704da08ce0c9246f4eede81788a125[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:08:40 2018 -0600
+
+    dollar
+
+[33mcommit 4deaa8954abc7728805726475df8e35ccc3aea81[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 22:07:32 2018 -0600
+
+    insertafter
+
+[33mcommit a722e107cb169a164dbb3176f2c3f602cf0810c2[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:42:13 2018 -0600
+
+    update listeners
+
+[33mcommit 422f383a3297b01874de15dd90c4960565286acc[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:38:26 2018 -0600
+
+    function
+
+[33mcommit 4bab5a91530defdc217063336bcc638fcfa99de7[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:22:32 2018 -0600
+
+    add last
+
+[33mcommit a4c7d82ba6c32f835242c64672c66d01433742da[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:20:20 2018 -0600
+
+    space
+
+[33mcommit 0239f8fec47a5b7b1346e3ca7742c5ad1f51b087[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:15:54 2018 -0600
+
+    add event try
+
+[33mcommit 330209f0c4e5ce7dee8b777eed1a842140f7a4bf[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:15:09 2018 -0600
+
+    alert day
+
+[33mcommit 88f12699d8dd8a1200dfa3eb980e88bd7c88c5f5[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:14:45 2018 -0600
+
+    hyphen instead
+
+[33mcommit 44d0d9ea9637280e81c2dd696761aa80a66729e4[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:13:55 2018 -0600
+
+    split
+
+[33mcommit 8eb35dd57b235596d79f4dab2a3575522ed0bbe9[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:12:59 2018 -0600
+
+    not getday
+
+[33mcommit bdf1b2340d9ae23164d25feb5c973a199114c262[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:12:15 2018 -0600
+
+    date
+
+[33mcommit dddf2ff49ec1264e833e9309d68357de5322e515[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:08:40 2018 -0600
+
+    title
+
+[33mcommit 9fa775eb78132ad472e9dc6889977645bbbef075[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:08:10 2018 -0600
+
+    length
+
+[33mcommit 712720b01af069898a3b32ca43846584518d28be[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:07:38 2018 -0600
+
+    see day
+
+[33mcommit 99def1e126002fa7154d75368fd792aa23417659[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:05:22 2018 -0600
+
+    see day
+
+[33mcommit a1dc74e63a361e12e129e6ae2531d825c423b0a9[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 21:03:59 2018 -0600
+
+    test update
+
+[33mcommit 7429dfb3c1ac3ca5447a6117eac3b5d5e92b3d33[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:31:54 2018 -0600
+
+    test
+
+[33mcommit 1e25551ce47560b3fb4968fe11614035416a0240[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:29:45 2018 -0600
+
+    test
+
+[33mcommit 66b96654ce56848dbcbba96e757eefeeeaa02d85[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:28:27 2018 -0600
+
+    test
+
+[33mcommit 190e32b881831a93f30321cb19d247e4027c4bcf[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:27:29 2018 -0600
+
+    test
+
+[33mcommit 49e429f5a3429618dac0a46a6a4e32c5c0cf2859[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:25:44 2018 -0600
+
+    test
+
+[33mcommit b1ebc35ef144362b7932cec08642775211d0dd5d[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:24:39 2018 -0600
+
+    test
+
+[33mcommit 586d40eb183751ad431ea31733db0b16cd307ade[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:23:39 2018 -0600
+
+    month as num
+
+[33mcommit 7b07fd6b63b125b015fd4b6b5c6cf3a5245349ba[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:18:47 2018 -0600
+
+    text sql response
+
+[33mcommit c98985a29ebae5f75f87f97b6f0fcf80340a04bd[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:11:26 2018 -0600
+
+    fixed indices
+
+[33mcommit a49a978a7b12a735e3723aec38171460df31bc9d[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:10:52 2018 -0600
+
+    test post
+
+[33mcommit 33ed78e88098981e13810e560ed9a50084243fec[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 20:05:43 2018 -0600
+
+    test post
+
+[33mcommit 4573c9b6bb46ca6a553bb5a732690801b2b5ec62[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 19:57:41 2018 -0600
+
+    json encode output
+
+[33mcommit 9049fe46ea1aa6c7b3dcffe4626fe0c1064f1718[m
+Author: Zach Faddis <zach.faddis@gmail.com>
+Date:   Sat Feb 24 19:41:11 2018 -0600
+
+    Communicate with google api for travel info
+
+[33mcommit 20308cb167b41c19dc87fc6b8df06f4a8e780c70[m
+Merge: 1a6a1a1 35958c0
+Author: Mostafa Dabas <m-dabas@users.noreply.github.com>
+Date:   Sat Feb 24 19:37:23 2018 -0600
+
+    Merge pull request #5 from oserna1/nishant-dev
+    
+     added close button on overlay and added other overlay elements
+
+[33mcommit 1a6a1a1f77a3a39b820210e698caf8b75e4d7a58[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 17:06:11 2018 -0600
+
+    title
+
+[33mcommit f121a59c6fda3061135c4c761a27f4f0b1e47897[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 17:05:25 2018 -0600
+
+    test event
+
+[33mcommit c8671daa3cbd66bf5caf07f14277f719bceb5a00[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:59:42 2018 -0600
+
+    after
+
+[33mcommit 59017df56f76feaf414eeef51247213d2e6951b6[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:56:44 2018 -0600
+
+    change day text
+
+[33mcommit b79581a3b6b20a01e091fb87883fe534953cc013[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:54:56 2018 -0600
+
+    change day
+
+[33mcommit 9bc0e83a92b906d1ecd002d1fbdb00fa84236d76[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:53:59 2018 -0600
+
+    .other-month
+
+[33mcommit 580b27c8e184b798d7b57c9efb3108bbd1a61416[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:53:26 2018 -0600
+
+    test grab day
+
+[33mcommit 86e61201212e188a34e22427975a3048144940c3[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:51:35 2018 -0600
+
+    test grab day
+
+[33mcommit 25d46ee124d0c3d3af5b3ecc544c1341dd8aaac1[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:16:24 2018 -0600
+
+    test output
+
+[33mcommit 1956ec3f3f7c178a7ac9d2d7cf43d3d12e40a981[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:15:28 2018 -0600
+
+    test
+
+[33mcommit 1c9fdca7a468a1ad82ea34fa405ae059aca73fbe[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:15:12 2018 -0600
+
+    test
+
+[33mcommit 664348b6d58e4e9bc3b2feebdc4587279afd6b13[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:08:48 2018 -0600
+
+    text
+
+[33mcommit 3d7b10c84d51553f41a1d5845bd2a3707f375248[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:08:27 2018 -0600
+
+    3rd child
+
+[33mcommit cc4de142a438a0d514b4fae6c6a266aff5f759a8[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:05:01 2018 -0600
+
+    test
+
+[33mcommit cbe697ffeefdbec727ffd5e3730f41f1b07a627b[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:03:40 2018 -0600
+
+    test
+
+[33mcommit 1aab3fd0a643ea80b3d3b1de3d872fda14a2c9ec[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 16:01:53 2018 -0600
+
+    test get month
+
+[33mcommit 52be299c2107ad7be548e5f01cc5dcedec9e2c86[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 15:11:06 2018 -0600
+
+    new branch
+
+[33mcommit 35958c08750760dbf901c6a7bd370d01fff986b6[m
+Author: nishantg95 <nishant.groveris@gmail.com>
+Date:   Sat Feb 24 14:51:59 2018 -0600
+
+     added close button on overlay and added other overlay elements
+
+[33mcommit 88e1629c70cf50f8948a123a012d21eebf940d21[m
+Merge: d82868e 04ee6ec
+Author: Mostafa Dabas <m-dabas@users.noreply.github.com>
+Date:   Sat Feb 24 14:42:12 2018 -0600
+
+    Merge pull request #3 from oserna1/nishant-dev
+    
+    Nishant dev
+
+[33mcommit d82868e37cec8fae41d66ec1e80e53e0eeacbb96[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 14:26:05 2018 -0600
+
+    missing apostrophe
+
+[33mcommit 7c61d932ef85f9728410fd1918d3b9a52b0a5a17[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 14:25:28 2018 -0600
+
+    like search
+
+[33mcommit 3679bc793d498a2af7e92d99456737a50bdf7a0b[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 14:23:20 2018 -0600
+
+    find in set
+
+[33mcommit a318f0bc23d07c7cc55f074b0fcc964146ce8515[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 14:00:19 2018 -0600
+
+    empty ul
+
+[33mcommit 0575f42814260acd2f88df2f2f98547d81141c5c[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:59:09 2018 -0600
+
+    test
+
+[33mcommit 1b09310bbd95d02ce96030e704590426444b540e[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:58:18 2018 -0600
+
+    test
+
+[33mcommit 9bf3f42be4d07b4fcf2d2c8af62c5f2c001fea2b[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:57:34 2018 -0600
+
+    prevent submit?
+
+[33mcommit 03110ebf6c9b1f09ed675226d88c742db5814839[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:55:21 2018 -0600
+
+    button
+
+[33mcommit 46443ba97871e76e08a7929d7992e3dadd02ffce[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:33:09 2018 -0600
+
+    test
+
+[33mcommit 884d707f7732dd972013f97af1c61282ad14cd2d[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:29:07 2018 -0600
+
+    test new ul
+
+[33mcommit 1e05206d13a76f158579d737c07a6e22139562d9[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:22:38 2018 -0600
+
+    test length
+
+[33mcommit f617a52e9a3b61f66fadbe1d1381f3425c47574f[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:19:03 2018 -0600
+
+    test
+
+[33mcommit e03944e7c4b886cf2ad2a9e5651a754a541af805[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:18:34 2018 -0600
+
+    test
+
+[33mcommit f11c930787a508ebc2f997ed806e3fe5cc54edeb[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:17:59 2018 -0600
+
+    test
+
+[33mcommit e75bd6a568db330152b86c832384a5636590f82b[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:17:16 2018 -0600
+
+    test
+
+[33mcommit 210179cc92dddb5d832ec2238b96571102c8caf5[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:16:45 2018 -0600
+
+    no json encode
+
+[33mcommit 0c8a3128d7b9bba6dde681ca6c5a02d29c8f4ff1[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:15:51 2018 -0600
+
+    no json encode
+
+[33mcommit f9bca8dba346777bcbb6bd64e69f55a29d5aa99c[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 13:14:24 2018 -0600
+
+    test append
+
+[33mcommit aa6eae045a06941e5e467be1e89174d4b2526c1c[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 12:58:49 2018 -0600
+
+    test
+
+[33mcommit 7ccf053ae2fa3a77c48a9ebd1d39abb7f1f9d985[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 12:41:07 2018 -0600
+
+    form data
+
+[33mcommit 04ee6ecd0ca48cb374a3a361da1d642b982c6a11[m
+Author: nishantg95 <nishant.groveris@gmail.com>
+Date:   Sat Feb 24 12:40:19 2018 -0600
+
+    fixed width of event/bus overlay in mobile view and added border radius to it
+
+[33mcommit 8aa045a56f2c9531df3ed7ebf24ea46c1de73feb[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 12:38:39 2018 -0600
+
+    hash ret
+
+[33mcommit 9e4db205a01c3c13553cca16d4c1657b2981a04c[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 12:37:17 2018 -0600
+
+    hash ret
+
+[33mcommit 22869deeee624a137c885b9fff6572ea8e7810f3[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 12:35:40 2018 -0600
+
+    json enc response
+
+[33mcommit 3a65a58671414e75612b7df7de13b2b84cee3c8d[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 12:33:36 2018 -0600
+
+    rm datatyoe
+
+[33mcommit c9e98be4eab81f98e7af537e6886564ed06201ea[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 12:31:47 2018 -0600
+
+    test ajax
+
+[33mcommit 82286c256bee29fe472d1721c2676d3636c00547[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 12:16:57 2018 -0600
+
+    onclick
+
+[33mcommit ab6649816f7f4542a78c320fbb2d24ea26e73711[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 11:26:14 2018 -0600
+
+    form submit
+
+[33mcommit 6cabf0c54b5589121582cf3ea401645ca2d04cc5[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 11:23:28 2018 -0600
+
+    alert data
+
+[33mcommit 9262a7d69127f9b6d57ea655eb2e054369172fcd[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 11:22:20 2018 -0600
+
+    added paren
+
+[33mcommit 538d678454115df2ae293b92f9cf0af049a4d9a0[m
+Merge: d3a553b a30ed22
+Author: nishantg95 <nishant.groveris@gmail.com>
+Date:   Sat Feb 24 11:16:18 2018 -0600
+
+    Merge pull request #2 from oserna1/oscar-branch
+    
+    Oscar branch- gimme the overlay
+
+[33mcommit a30ed22ba90b1b485332af834968042e4671061d[m
+Merge: 9a4c78b d3a553b
+Author: nishantg95 <nishant.groveris@gmail.com>
+Date:   Sat Feb 24 11:15:57 2018 -0600
+
+    Merge branch 'nishant-dev' into oscar-branch
+
+[33mcommit 5d2db2f2723956777ebe40c357b3452e797409d5[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 10:55:30 2018 -0600
+
+    hi
+
+[33mcommit 0cf7d3c0ef2f4e42fb3148f10e1cbee8861ff3e7[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 10:54:53 2018 -0600
+
+    test
+
+[33mcommit 10311ebe9e6dacd21a0d658e87970c656184f7de[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 10:49:36 2018 -0600
+
+    test
+
+[33mcommit bb1b48d9a67e2dfc1edc9b40b0a47e03345f818e[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 10:48:51 2018 -0600
+
+    hello post
+
+[33mcommit 89cbd02f077ec270e13602849e27ce2e57a70c7f[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 10:43:15 2018 -0600
+
+    hello world ajax
+
+[33mcommit 1436f4458ebbac86960012878be8937ce8042cbf[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 03:42:32 2018 -0600
+
+    latest google
+
+[33mcommit 045bbdd08642d8921a780a7b9d34145db32846af[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 03:39:59 2018 -0600
+
+    google jquery lib
+
+[33mcommit 3392aeb731f4ae76596c533ef1a45e2e2f09a7fb[m
+Author: m-dabas <dabas1994@gmail.com>
+Date:   Sat Feb 24 03:36:12 2018 -0600
+
+    .post
