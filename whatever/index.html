@@ -40,7 +40,7 @@
 
             request.done(function(response) {
                 var results = JSON.parse(response);
-                alert(results.length);
+                //alert(results.length);
 
                 //$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
 
@@ -49,12 +49,12 @@
                     var title = results[i]['ename'];
                     var start = results[i]['startTime'];
                     var day = results[i]['date'].split("-")[2];
-                    alert(day);
+                    //alert(day);
                     var newEvent = "<div class=\"event\">" +
                         "<div class=\"event-start\" id=\"divInline\">"+start+"</div>" +
                         "<div class=\"event-title\" id=\"divInline\">"+title+"</div></div>";
 
-                    $(".day:not('.other-month') .date:contains("+day+")").after("<div>hello</div>");
+                    $(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
                     //$('#event_results').append("<li>"+ename+": " +desc+"</li>");
                     //$('#event_results').append('<li>hello</li>');
                     //$("#content").append('<li>qwerty</li>');
