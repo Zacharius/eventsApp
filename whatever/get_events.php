@@ -4,9 +4,12 @@ include('../database.php');
 $conn = connect_db();
 
 $results = array();
-$items = $_POST['items'];
+$month = $_POST['month'];
+$year = $_POST['year'];
 
-echo json_encode($items);
+$ret = array($month, $year);
+
+echo json_encode($ret);
 /*
 // data validation
 if(empty($category)){
