@@ -110,6 +110,8 @@
           var results = JSON.parse(response);
           alert (response);
           $('#ov-ev-title h1').text(results['ename']);
+          $('#ov-ev-start h3').text(results['startTime'] + results['endTime']);
+          //$('#ov-ev-title h1').text(results['ename']);
       });
 
       request.fail(function(jqXHR, textStatus) {
