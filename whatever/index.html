@@ -58,7 +58,7 @@
                         "<div class=\"event-title\" id=\"divInline\">"+title+"</div></div>";
 
                     //$(".day:not('.other-month') .date:contains("+day+")").last().after(newEvent);
-					var newElement = newEvent.insertAfter($(".day:not('.other-month') .date:contains("+day+")").last());
+					var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains("+day+")").last());
 					/*newElement.on("click", function() {
                         $("#overlay").css("display","block");
                         $("#overlay1").css("display","block");
