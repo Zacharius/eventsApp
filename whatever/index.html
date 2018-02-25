@@ -52,7 +52,7 @@
                 for (var i = 0; i < results.length; i++) {
                     var title = results[i]['ename'];
                     var start = results[i]['startTime'];
-                    var day = parseInt(results[i]['date'].split("-")[2], 10);
+                    var day = results[i]['date'].split("-")[2];
                     //alert(day);
                     var newEvent = "<div class=\"event\">" +
                         "<div class=\"event-start\" id=\"divInline\">"+start+" </div>" +
@@ -255,7 +255,7 @@
 					<div class="date">8</div>
 				</li>
 				<li class="day">
-					<div class="date">9</div>
+					<div class="date">09</div>
 				</li>
 			</ul>
 
