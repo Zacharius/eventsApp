@@ -239,6 +239,7 @@ function fetchDate1(flag) {
 
     var lastDayindex= lastDay.getDate();
     //alert(lastDayindex);
+    $('#calendar').remove();
     populateCalendar(firstdayindex,lastDayindex);
 }
 
@@ -272,7 +273,7 @@ function fetchDate(){
 
 	var lastDayindex= lastDay.getDate();
 	//alert(lastDayindex);
-	$('#calendar').remove();
+
 	populateCalendar(firstdayindex,lastDayindex);
 
 }
