@@ -36,7 +36,6 @@
     var request = $.ajax({
       type: "POST",
       url: "./get_events.php",
-        async: false,
       data: {
         month: items[1],
         year: items[2]
@@ -106,7 +105,6 @@
       var request = $.ajax({
           type: "POST",
           url: "./get_event_by_id.php",
-          async: false,
           data: {id: eid}
       });
 
