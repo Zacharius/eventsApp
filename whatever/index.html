@@ -36,6 +36,7 @@
     var request = $.ajax({
       type: "POST",
       url: "./get_events.php",
+        async: false,
       data: {
         month: items[1],
         year: items[2]
@@ -105,6 +106,7 @@
       var request = $.ajax({
           type: "POST",
           url: "./get_event_by_id.php",
+          async: false,
           data: {id: eid}
       });
 
@@ -120,7 +122,7 @@
           $('#ov-ev-start-pos form input').val("8801 Cinnamon Creek dr, San Antonio, TX, 78240");
           $('#ov-ev-end-pos form input').val(results[0]['address']);
 
-          //$('#ov-ev-busfare').text(results[1]['fare']);
+          $('#ov-ev-busfare').text(results[1]['fare']);
 
       });
 
