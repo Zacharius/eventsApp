@@ -216,7 +216,14 @@ $("#x").click(function(){
 
 function fetchDate1(flag) {
     var months = ["January","February","March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
-    var curmon = $('.month ul li:nth-child(3)');
+    //var curmon = $('.month ul li:nth-child(3)');
+
+    var month = $('.month ul li:nth-child(3)').text();
+    var reg = /([a-zA-Z]+)(\d+)/;
+    var items = month.split(reg);
+
+    var curmon = items[1];
+
     var d = months.indexOf(curmon);
     if (flag == 0) {
         d--;
