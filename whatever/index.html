@@ -52,11 +52,13 @@
       for (var i = 0; i < results.length; i++) {
         var title = results[i]['ename'];
         var start = results[i]['startTime'];
+        var eid = results[i]['id'];
         var day = results[i]['date'].split("-")[2];
         //alert(day);
         var newEvent = "<div class=\"event\">" +
         "<div class=\"event-start\" id=\"divInline\">" + start + " </div>" +
-        "<div class=\"event-title\" id=\"divInline\">" + title + "</div></div>";
+        "<div class=\"event-title\" id=\"divInline\">" + title + "</div>" +
+        "<div class=\"event-id\" id=\"divInline\" style=\"display: none\">" + eid + "</div></div>";
 
         //$(".day:not('.other-month') .date:contains("+day+")").last().after(newEvent);
         var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
