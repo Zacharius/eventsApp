@@ -193,11 +193,15 @@ display: none;
     cursor: pointer;
 }
 #ovDate{
+
   text-align: left;
   margin-left: 10px;
   font-size: 25px;
   color: white;
   margin-top: 10px;
+
+}
+#ovTitle{
 
 }
 #x {
