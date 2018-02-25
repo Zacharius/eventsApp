@@ -310,7 +310,7 @@ display: none;
     left: 12.5%;
     right: 12.5%;
     bottom: 12.5%;
-    background-color: rgb(225, 230, 239,0.98);
+    background-color: rgba(225, 230, 239,0.98);
     border-radius: 5px;
     z-index: 2;
     cursor: pointer;
