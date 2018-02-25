@@ -417,6 +417,8 @@ function fetchDate(){
 
       request2.done(function(response) {
           var results = JSON.parse(response);
+          mylat = results['lat'];
+          mylong = results['long'];
           //alert(response);
           //alert(results['fare']);
           //$('#ov-ev-busfare').text(results['fare']);
@@ -489,10 +491,12 @@ function fetchDate(){
 </script>
 
 <script>
+	var mylat = 29.4241;
+	var mylong = -98.4936;
 function myMap() {
 var mapProp= {
-    center:new google.maps.LatLng(29.4241,-98.4936),
-    zoom:11,
+    center:new google.maps.LatLng(mylat,mylong),
+    zoom:11
 };
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
