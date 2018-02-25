@@ -11,6 +11,7 @@ if(empty($category)){
     die();
 }
 
+
 // fetch names of events with the specified category
 $sql = "SELECT * from Events WHERE ename LIKE '%$category%'";
 if($result = mysqli_query($conn, $sql)){

@@ -13,6 +13,7 @@
 
         request.done(function(response) {
             var results = JSON.parse(response);
+            alert(results[0]['ename']);
             //alert ( results.length);
             $('#event_results').empty();
             for (var i = 0; i < results.length; i++) {
