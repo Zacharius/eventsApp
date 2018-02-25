@@ -139,7 +139,7 @@
       request2.done(function(response) {
           var results = JSON.parse(response);
           alert(response);
-          $('#ov-ev-busfare').text(results['fare']);
+          $('#ov-ev-busfare').text(""+results['fare']);
       });
 
       request2.fail(function(jqXHR, textStatus) {
