@@ -95,9 +95,9 @@
 	<div id="content-wrapper">
 		<div class="month">
 			<ul>
-				<li class="prev">&#10094;</li>
-				<li class="next">&#10095;</li>
-				<li>August<br><span style="font-size:18px">2017</span></li>
+				<li class="prev" onclick="fetchDate1(0)">&#10094;</li>
+				<li class="next" onclick="fetchDate1(1)">&#10095;</li>
+				<li>February<br><span style="font-size:18px">2018</span></li>
 			</ul>
 		</div>
 
@@ -214,6 +214,34 @@ $("#x").click(function(){
 	}
 });
 
+function fetchDate1(flag) {
+    var months = ["January","February","March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
+    var curmon = $('.month ul li:nth-child(3)');
+    var d = months.indexOf(curmon);
+    if (flag == 0) {
+        d--;
+	} else {
+        d++;
+	}
+	var newmonth = months[d];
+    $('.month ul li:nth-child(3)').html(newmonth+"<br><span style=\"font-size:18px\">2018</span>");
+
+
+    /*Find the first day of the month, then find the day of the week for that*/
+    var first = new Date(2018, d, 1);
+    var firstdayindex = first.getDay();
+
+    var date = new Date();
+    var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+    // var firstday = findDay(first);
+    //alert(firstdayindex);
+
+    var lastDayindex= lastDay.getDate();
+    //alert(lastDayindex);
+    populateCalendar(firstdayindex,lastDayindex);
+}
+
 function fetchDate(){
 	var today = new Date();
 	var months = ["January","February","March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
@@ -244,6 +272,7 @@ function fetchDate(){
 
 	var lastDayindex= lastDay.getDate();
 	//alert(lastDayindex);
+	$('#calendar').remove();
 	populateCalendar(firstdayindex,lastDayindex);
 
 }
