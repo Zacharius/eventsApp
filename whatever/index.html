@@ -23,7 +23,7 @@
     var month = $('.month ul li:nth-child(3)').text();
     var reg = /([a-zA-Z]+)(\d+)/;
     var items = month.split(reg);
-    alert(items[1]+"   "+items[2]);
+    //alert(items[1]+"   "+items[2]);
 
     /*var temp = "<div class=\"event\">" +
     "<div class=\"event-title\">" +
@@ -64,7 +64,7 @@
         var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
         newElement.on("click", function() {
 
-          populateOverlay(eid);
+          populateOverlay(event);
 
           $("#overlay").css("display", "block");
           $("#overlay1").css("display", "block");
@@ -98,8 +98,8 @@
     });
   }
 
-  function populateOverlay(eid) {
-      //var eid = $(this).find("#event-id").text();
+  function populateOverlay(event) {
+      var eid = event.currentTarget.find(".event-id").text();
       var request = $.ajax({
           type: "POST",
           url: "./get_event_by_id.php",
