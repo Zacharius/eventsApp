@@ -22,18 +22,15 @@
             var month = $('.month ul li:nth-child(3)').text();
             var reg = /([a-zA-Z]+)(\d+)/;
             var items = month.split(reg);
-            alert(items[1]+"   "+items[2]);
+            //alert(items[1]+"   "+items[2]);
 
-			var day = 30;
 			/*var temp = "<div class=\"event\">" +
                 "<div class=\"event-title\">" +
                 "HTML 5 lecture with Brad Traversy from Eduonix" +
                 "</div><div class=\"event-time\">" +
                 "1:00pm to 3:00pm" +
                 "</div></div>";*/
-			//$(".day:not('.other-month') .date:contains("+day+")").after(temp);
-
-			//alert(fday);
+			//$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
 
             var request = $.ajax({
                 type: "POST",
@@ -44,14 +41,23 @@
             request.done(function(response) {
                 var results = JSON.parse(response);
                 alert(response);
-                /*$('#event_results').empty();
+
+                //$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
+
+                //$('#event_results').empty();
                 for (var i = 0; i < results.length; i++) {
-                    var ename = results[i]['ename'];
-                    var desc = results[i]['description'];
-                    $('#event_results').append("<li>"+ename+": " +desc+"</li>");
+                    var title = results[i]['ename'];
+                    var start = results[i]['startTime'];
+                    var day = results[i]['date'].getDate();
+                    var newEvent = "<div class=\"event\">" +
+                        "<div class=\"event-start\" id=\"divInline\">"+start+"</div>" +
+                        "<div class=\"event-title\" id=\"divInline\">"+title+"</div></div>";
+
+                    $(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
+                    //$('#event_results').append("<li>"+ename+": " +desc+"</li>");
                     //$('#event_results').append('<li>hello</li>');
                     //$("#content").append('<li>qwerty</li>');
-                }*/
+                }
             });
 
             request.fail(function(jqXHR, textStatus) {
