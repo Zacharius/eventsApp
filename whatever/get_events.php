@@ -4,8 +4,8 @@ include('../database.php');
 $conn = connect_db();
 
 $results = array();
-$month = date("n",strtotime($_POST['month']));
-$year = $_POST['year'];
+$month = "02";//date("n",strtotime($_POST['month']));
+$year = "2018";//$_POST['year'];
 
 
 // data validation
