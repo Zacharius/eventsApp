@@ -354,91 +354,89 @@
 	<div style="padding: 20px"></div>
 
 	<div class="container">
-		
-		<div class="row">
-			<div class="col-md-2 pink">
-				
-			</div>
-			<div class="col-md-7 col-sm-7 col-xs-12 pink">
-				<div id="ov-ev-title">
-					<h1>VIA Codeathon</h1>
-				</div>		
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-12 pink">
-				<div id="ov-ev-start">
-					<h3> start - end</h3>
+			<div class="row">
+				<div class="col-md-2 pink">
+					
+				</div>
+				<div class="col-md-7 col-sm-7 col-xs-12 pink">
+					<div id="ov-ev-title">
+						<h1>VIA Codeathon</h1>
+					</div>		
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 pink">
+					<div id="ov-ev-start">
+						<h3> start - end</h3>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-2 pink">
-				
-			</div>
-			<div class="col-md-10 pink">
-				<div id="ov-ev-tags">
-					<p>tags comedy kids free music plays theatre pubs beer</p>
+			<div class="row">
+				<div class="col-md-2 pink">
+					
+				</div>
+				<div class="col-md-10 pink">
+					<div id="ov-ev-tags">
+						<p>tags comedy kids free music plays theatre pubs beer</p>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-2 pink">
-				
-			</div>
-			<div class="col-md-10 pink">
-				<div id="ov-ev-desc">
-					<p>description of the event</p>
+			<div class="row">
+				<div class="col-md-2 pink">
+					
+				</div>
+				<div class="col-md-10 pink">
+					<div id="ov-ev-desc">
+						<p>description of the event</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="row" style="padding: 20px"></div>
+			
+			<div class="row" style="padding: 20px"></div>
 
-		<div class="row">
-			<div class="col-md-12 pink">
-				<h1 style="text-align: center;">Bus Info</h1>
+			<div class="row">
+				<div class="col-md-12 pink">
+					<h1 style="text-align: center;">Bus Info</h1>
+				</div>
 			</div>
-		</div>
 
-		<div class= "row">
-	    	<div class= "col-md-5">
-	      		<div class="row">
-		        	<div class="col-md-12 pink"> 
-		        		<div id="ov-ev-start-pos">
-		        			<form>
-		        				<input type="text" name="start-position" placeholder="starting">
-		        			</form>
-		        		</div>		
-		        	</div>
-	     		</div>
-	      		<div class="row">
-	        		<div class="col-md-12 pink">
-	        			<div id="ov-ev-end-pos">
-	        				<form>
-		        				<input type="text" name="end-position" placeholder="ending">
-		        			</form>
-	        			</div>
-	        		</div>
-	      		</div>
-	      		<div class="row">
-	        		<div class="col-md-12 pink"> 
-	        			<div id="ov-ev-busfare">
-	        				bus fare
-	        			</div>
-	        		</div>
-	      		</div>
-	    	</div>
+			<div class= "row">
+		    	<div class= "col-md-5">
+		      		<div class="row">
+			        	<div class="col-md-12 pink"> 
+			        		<div id="ov-ev-start-pos">
+			        			<form>
+			        				<input type="text" name="start-position" placeholder="starting">
+			        			</form>
+			        		</div>		
+			        	</div>
+		     		</div>
+		      		<div class="row">
+		        		<div class="col-md-12 pink">
+		        			<div id="ov-ev-end-pos">
+		        				<form>
+			        				<input type="text" name="end-position" placeholder="ending">
+			        			</form>
+		        			</div>
+		        		</div>
+		      		</div>
+		      		<div class="row">
+		        		<div class="col-md-12 pink"> 
+		        			<div id="ov-ev-busfare">
+		        				bus fare
+		        			</div>
+		        		</div>
+		      		</div>
+		    	</div>
 
-	    	<div class="col-md-1 pink">location</div>
+		    	<div class="col-md-1 pink">location</div>
 
-	    	<div class="col-md-6 pink">
-	    		itinerary
-	    		<div id="googleMap" style="width:100px;height:100px;"></div>
-	    	</div>
+		    	<div class="col-md-6 pink">
+		    		itinerary
+		    		<div id="googleMap" style="width:100%;height:150px;"></div>
+		    	</div>
 
-	  	</div>
-
+		  	</div>
 	</div>
 			
 	
@@ -492,7 +490,7 @@ var mapProp= {
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNRskTYG0q51UVMriEpYFZ1NubWEFblWI=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4qqOUsPIWK6xZsx3GPopJpt0fWMA4mfo&callback=myMap"></script>
 	<!-- <script>
 	$( ".event " ).click(function() {
 		alert($(this).children(".event-host").text());
