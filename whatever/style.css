@@ -303,7 +303,7 @@ display: none;
 /*this is for the overlay*/
 #overlay {
     position: fixed;
-    display: block;
+    display: none;
     width: 75%;
     height: 75%;
     top: 12.5%;
