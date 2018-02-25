@@ -186,14 +186,15 @@ display: none;
     left: 12.5%;
     right: 12.5%;
     bottom: 12.5%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(240,240,240,0.9);
     border-radius: 5px;
     z-index: 2;
     cursor: pointer;
 }
-#ovTitle{
-  text-align: center;
-  font-size: 30px;
+#ovDate{
+  text-align: left;
+  margin-left: 10px;
+  font-size: 25px;
   color: white;
   margin-top: 10px;
 
@@ -231,6 +232,11 @@ display: none;
     -ms-transform: translate(-50%,-50%);
 }
 
+.pink{
+  background: pink;
+  border: 1px solid black;
+}
+
 /* ============================
         Mobile Responsiveness
    ============================*/
@@ -251,6 +257,7 @@ display: none;
     float: none;
   }
   #overlay{
+    overflow-y: scroll;
     width: auto;
     height: 75%;
     top: 15%;
