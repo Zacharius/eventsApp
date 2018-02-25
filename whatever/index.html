@@ -20,7 +20,6 @@
   // });
 
   function populateInitial() {
-      alert("hello");
     var month = $('.month ul li:nth-child(3)').text();
     var reg = /([a-zA-Z]+)(\d+)/;
     var items = month.split(reg);
@@ -44,6 +43,7 @@
     });
 
     request.done(function(response) {
+        alert("hello");
       var results = JSON.parse(response);
       //alert(results.length);
 
