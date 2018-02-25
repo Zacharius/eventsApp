@@ -93,3 +93,4 @@ $ret['fare'] = "2";
 echo json_encode($ret);
 
 ?>
+
