@@ -38,7 +38,7 @@
             var request = $.ajax({
                 type: "POST",
                 url: "./get_events.php",
-				data: {month:items[0], year:items[1]}
+				data: {month:items[1], year:items[2]}
             });
 
             request.done(function(response) {
