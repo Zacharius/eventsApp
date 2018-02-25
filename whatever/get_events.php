@@ -16,7 +16,7 @@ if (empty($year)) { die("Year is blank."); }
 $sql = "SELECT * from Events WHERE YEAR(date) = $year AND MONTH(date) = $month";
 if($result = mysqli_query($conn, $sql)){
     while($row = mysqli_fetch_assoc($result)){
-        $results[] = $row;
+        array_push($results, $row);
     }
     echo(json_encode($results));
 } else {
