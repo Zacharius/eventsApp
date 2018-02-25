@@ -11,8 +11,8 @@
 $ret = array();
 
 $origin = '8801 Cinnamon Creek dr, San Antonio, TX, 78240';
-//$destination = '8233 Potranco Road';
-$destination = $_POST['dest'];
+$destination = '8233 Potranco Road';
+//$destination = $_POST['dest'];
 $apiKey='AIzaSyAHkOp4TdEBDVIV6H9192SghZ-h4idguAU';
 
 function urlBuilder($origin, $destination, $apiKey)
