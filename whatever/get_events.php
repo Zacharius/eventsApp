@@ -4,13 +4,10 @@ include('../database.php');
 $conn = connect_db();
 
 $results = array();
-$month = date("n",strtotime("August"));
-$year = "2017";
+$month = date("n",strtotime($_POST['month']));
+$year = $_POST['year'];
 
-echo $month . "<br>";
 
-$results[] = $month;
-echo json_encode($results);
 // data validation
 if (empty($month)) { die("Month is blank."); }
 if (empty($year)) { die("Year is blank."); }
