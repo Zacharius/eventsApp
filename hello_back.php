@@ -12,7 +12,7 @@ if(empty($category)){
 }
 
 // fetch names of events with the specified category
-$sql = "SELECT ename, description from Events WHERE ename LIKE '%$category%'";
+$sql = "SELECT * from Events WHERE ename LIKE '%$category%'";
 if($result = mysqli_query($conn, $sql)){
     while($row = mysqli_fetch_assoc($result)){
         $results[] = $row;
