@@ -64,7 +64,7 @@
         var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains(" + day + ")").last());
         newElement.on("click", function() {
 
-          populateOverlay(eid);
+          populateOverlay(this);
 
           $("#overlay").css("display", "block");
           $("#overlay1").css("display", "block");
@@ -98,7 +98,8 @@
     });
   }
 
-  function populateOverlay(eid) {
+  function populateOverlay(element) {
+      var eid = element.find('#event-id');
       var request = $.ajax({
           type: "POST",
           url: "./get_event_by_id.php",
