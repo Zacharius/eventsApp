@@ -111,7 +111,8 @@
           alert (response);
           $('#ov-ev-title h1').text(results['ename']);
           $('#ov-ev-start h3').text(results['startTime'] + " - " + results['endTime']);
-          //$('#ov-ev-title h1').text(results['ename']);
+          $('#ov-ev-tags p').text(results['tags']);
+          $('#ov-ev-desc p').text(results['description']);
       });
 
       request.fail(function(jqXHR, textStatus) {
