@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-
-<body>
-<h1>Hello World</h1>
-
 <?php
 
 $ret = array();
@@ -101,5 +93,3 @@ $ret['fare'] = "2";
 echo json_encode($ret);
 
 ?>
-</body>
-</html>

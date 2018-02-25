@@ -411,14 +411,14 @@ function fetchDate(){
       // map info stuff
       var request2 = $.ajax({
           type: "POST",
-          url: "./foo.php",
+          url: "../route.php",
           data: {dest: destin}
       });
 
       request2.done(function(response) {
           var results = JSON.parse(response);
           alert(response);
-          alert(results['hi']);
+          alert(results['fare']);
           //$('#ov-ev-busfare').text(results['fare']);
       });
 
