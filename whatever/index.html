@@ -99,7 +99,6 @@
   }
 
   function populateOverlay(event) {
-      var destin = '';
 
       // event details
       var eid = $(event.currentTarget).find(".event-id").text();
@@ -111,17 +110,18 @@
 
       request.done(function(response) {
           var results = JSON.parse(response);
-          //alert(response);
-          $('#ov-ev-title h1').text(results['ename']);
-          $('#ov-ev-start h3').text(results['startTime'] + " - " + results['endTime']);
-          $('#ov-ev-tags p').text(results['tags']);
-          $('#ov-ev-desc p').text(results['description']);
+          alert(response);
+          $('#ov-ev-title h1').text(results[0]['ename']);
+          $('#ov-ev-start h3').text(results[0]['startTime'] + " - " + results['endTime']);
+          $('#ov-ev-tags p').text(results[0]['tags']);
+          $('#ov-ev-desc p').text(results[0]['description']);
 
           // TODO get current location instead
           $('#ov-ev-start-pos form input').val("8801 Cinnamon Creek dr, San Antonio, TX, 78240");
-          $('#ov-ev-end-pos form input').val(results['address']);
+          $('#ov-ev-end-pos form input').val(results[0]['address']);
 
-          destin = results['address'];
+          $('#ov-ev-busfare').text(results[1]['fare']);
+
       });
 
       request.fail(function(jqXHR, textStatus) {
@@ -129,7 +129,7 @@
       });
 
 
-      // map info stuff
+      /*// map info stuff
       var request2 = $.ajax({
           type: "POST",
           url: "../route.php",
@@ -144,7 +144,7 @@
 
       request2.fail(function(jqXHR, textStatus) {
           alert( "Request failed: " + textStatus );
-      });
+      });*/
   }
 
   </script>
