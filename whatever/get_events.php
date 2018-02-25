@@ -7,6 +7,8 @@ $results = array();
 $month = date("n",strtotime($_POST['month']));
 $year = $_POST['year'];
 
+echo $month . "<br>";
+
 $results[] = $month;
 echo json_encode($results);
 // data validation
