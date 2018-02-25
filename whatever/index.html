@@ -51,7 +51,7 @@
                     var day = results[i]['date'].split("-")[2];
                     //alert(day);
                     var newEvent = "<div class=\"event\">" +
-                        "<div class=\"event-start\" id=\"divInline\">"+start+"</div>" +
+                        "<div class=\"event-start\" id=\"divInline\">"+start+" </div>" +
                         "<div class=\"event-title\" id=\"divInline\">"+title+"</div></div>";
 
                     $(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
