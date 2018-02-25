@@ -17,9 +17,9 @@ if($result = mysqli_query($conn, $sql)){
 }
 
 //$file = file_get_contents('../route.php');
-$file = include "../route.php";
+//$file = include "../route.php";
 /*$content = eval("?>$file");*/
 
 $ret[] = $row;
-$ret[] = $file;
+//$ret[] = $file;
 echo json_encode($ret);
