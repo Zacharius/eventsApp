@@ -19,4 +19,6 @@ if($result = mysqli_query($conn, $sql)){
         $results[] = $row;
     }
     echo(json_encode($results));
+} else {
+    die('failure');
 }
