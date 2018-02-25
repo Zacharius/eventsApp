@@ -340,19 +340,19 @@
   function populateCalendar(index, lastDay) {
     var rowrem = 7;
     var rowcnt = 1;
-    var foo = "<div id=\"calendar\">" +
-    "<ul class=\"weekdays\">" +
-    "<li>Sunday</li>" +
-    "<li>Monday</li>" +
-    "<li>Tuesday</li>" +
-    "<li>Wednesday</li>" +
-    "<li>Thursday</li>" +
-    "<li>Friday</li>" +
-    "<li>Saturday</li>" +
-    "</ul></div>";
+    var foo = "<table id=\"calendar\">" +
+    "<tr class=\"weekdays\">" +
+    "<th scope=\"col\">Sunday</th>" +
+    "<th scope=\"col\">Monday</th>" +
+    "<th scope=\"col\">Tuesday</th>" +
+    "<th scope=\"col\">Wednesday</th>" +
+    "<th scope=\"col\">Thursday</th>" +
+    "<th scope=\"col\">Friday</th>" +
+    "<th scope=\"col\">Saturday</th>" +
+    " </tr></table>";
 
     alert("break1");
-    var row1 = "<ul class=\"days\" id=\"row1\"></ul>";
+    var row1 = "<tr class=\"days\" id=\"row1\"></tr>";
     var row2 = "<ul class=\"days\" id=\"row2\">";
     var row3 = "<ul class=\"days\" id=\"row3\">";
     var row4 = "<ul class=\"days\" id=\"row4\">";
@@ -360,7 +360,7 @@
 
     var bar = "<li class=\"day\"><div class=\"date\">5</div></li>";
 
-    var otherday = "<li class=\"day other-month\"></li>";
+    var otherday = "<td class=\"day other-month\"></td>";
 
     $("#content-wrapper").append(foo);
 
@@ -377,9 +377,9 @@
       if (rowrem == 0) {
         rowrem = 7;
         rowcnt++;
-        $('#calendar').append("<ul class=\"days\" id=\"row" + rowcnt + "\"></ul>");
+        $('#calendar').append("<tr class=\"days\" id=\"row" + rowcnt + "\"></tr>");
       }
-      $('#row' + rowcnt).append("<li class=\"day\"><div class=\"date\">" + i + "</div></li>");
+      $('#row' + rowcnt).append("<td class=\"day\"><div class=\"date\">" + i + "</div></td>");
       rowrem--;
     }
 
