@@ -14,9 +14,10 @@
 	<script
 	src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
+	crossorigin="anonymous">
+	</script>
 </head>
-<body>
+<body onload="fetchDate()">
 
 	<!-- Image and text -->
 	<nav class="navbar navbar-light" style="background-color: rgb(39, 72, 124)">
@@ -347,56 +348,93 @@
 	</div>
 	<!-- /. wrap -->
 
-<!-- overlay stuff -->
-<div id="overlay" >
-	<button type="button" name="ovClose" id="x">X</button>
-<div id="ovDate">Feb 24</div>
+	<!-- overlay stuff -->
+	<div id="overlay" >
+		<button type="button" name="ovClose" id="x">X</button>
+		<div id="ovDate">Feb 24</div>
 
-</div>
+	</div>
 
-<div id="overlay1" >
-</div>
+	<div id="overlay1" >
+	</div>
 
 
 
-<!-- javascript stuff -->
-<script>
+	<!-- javascript stuff -->
+	<script>
 
-$( ".event " ).click(function() {
-  	// alert($(this).children(".event-desc").text());
-	$("#overlay").css("display","block");
-	$("#overlay1").css("display","block");
-	$("body").css("overflow-y", "hidden");
-	$("body").css("overflow-x", "hidden");
+	$( ".event " ).click(function() {
+		// alert($(this).children(".event-desc").text());
+		$("#overlay").css("display","block");
+		$("#overlay1").css("display","block");
+		$("body").css("overflow-y", "hidden");
+		$("body").css("overflow-x", "hidden");
 
-});
+	});
 
-$("#overlay1").click(function(){
-	if($("#overlay").css("display") == "block")
-	{
-		$("#overlay").css("display","none");
-		$("#overlay1").css("display","none");
-		$("body").css("overflow-y", "scroll");
+	$("#overlay1").click(function(){
+		if($("#overlay").css("display") == "block")
+		{
+			$("#overlay").css("display","none");
+			$("#overlay1").css("display","none");
+			$("body").css("overflow-y", "scroll");
+		}
+	});
+
+	$("#x").click(function(){
+		if($("#overlay").css("display") == "block")
+		{
+			$("#overlay").css("display","none");
+			$("#overlay1").css("display","none");
+			$("body").css("overflow-y", "scroll");
+		}
+	});
+
+	function fetchDate(){
+		var today = new Date();
+		var months = ["January","February","March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
+		var dd = today.getDate();
+		var mm = today.getMonth(); //January is 0!
+		var currentMonth= months[mm];
+
+		var yyyy = today.getFullYear();
+		// if(dd<10){
+		// 	dd='0'+dd;
+		// }
+		// if(mm<10){
+		// 	mm='0'+mm;
+		// }
+		// var today = dd+'/'+mm+'/'+yyyy;
+		/*Populate month on the header bar*/
+		$('.month ul li:nth-child(3)').html(currentMonth+"<br><span style=\"font-size:18px\">"+yyyy+"</span>");
+
+		/*Find the first day of the month, then find the day of the week for that*/
+		var first = new Date(yyyy, mm, 1);
+		var firstday= findDay(first);
+		// alert(firstday);
+
 	}
-});
+	function findDay(d){
+		// alert(d);
+		var weekday = new Array(7);
+		weekday[0] = "Sunday";
+		weekday[1] = "Monday";
+		weekday[2] = "Tuesday";
+		weekday[3] = "Wednesday";
+		weekday[4] = "Thursday";
+		weekday[5] = "Friday";
+		weekday[6] = "Saturday";
+		var n = weekday[d.getDay()];
+		alert(n);
 
-$("#x").click(function(){
-	if($("#overlay").css("display") == "block")
-	{
-		$("#overlay").css("display","none");
-		$("#overlay1").css("display","none");
-		$("body").css("overflow-y", "scroll");
 	}
-});
 
-
-
-</script>
+	</script>
 	<!-- <script>
 	$( ".event " ).click(function() {
-		alert($(this).children(".event-host").text());
-	});
-	</script> -->
+	alert($(this).children(".event-host").text());
+});
+</script> -->
 
 </body>
 </html>

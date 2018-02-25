@@ -191,11 +191,14 @@ display: none;
     z-index: 2;
     cursor: pointer;
 }
-#ovTitle{
+#ovDate{
   text-align: center;
   font-size: 30px;
   color: white;
   margin-top: 10px;
+
+}
+#ovTitle{
 
 }
 #x {
