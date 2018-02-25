@@ -15,10 +15,91 @@
 	src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+			populateInitial();
+        });
+
+        function populateInitial() {
+            var month = $('.month ul li:nth-child(3)').text();
+            var reg = /([a-zA-Z]+)(\d+)/;
+            var items = month.split(reg);
+            //alert(items[1]+"   "+items[2]);
+
+            /*var temp = "<div class=\"event\">" +
+                "<div class=\"event-title\">" +
+                "HTML 5 lecture with Brad Traversy from Eduonix" +
+                "</div><div class=\"event-time\">" +
+                "1:00pm to 3:00pm" +
+                "</div></div>";*/
+            //$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
+
+            var request = $.ajax({
+                type: "POST",
+                url: "./get_events.php",
+                data: {month:items[1], year:items[2]}
+            });
+
+            request.done(function(response) {
+                var results = JSON.parse(response);
+                //alert(results.length);
+
+                //$(".day:not('.other-month') .date:contains("+day+")").after(newEvent);
+
+                //$('#event_results').empty();
+                for (var i = 0; i < results.length; i++) {
+                    var title = results[i]['ename'];
+                    var start = results[i]['startTime'];
+                    var day = results[i]['date'].split("-")[2];
+                    //alert(day);
+                    var newEvent = "<div class=\"event\">" +
+                        "<div class=\"event-start\" id=\"divInline\">"+start+" </div>" +
+                        "<div class=\"event-title\" id=\"divInline\">"+title+"</div></div>";
+
+                    //$(".day:not('.other-month') .date:contains("+day+")").last().after(newEvent);
+					var newElement = $(newEvent).insertAfter($(".day:not('.other-month') .date:contains("+day+")").last());
+					newElement.on("click", function() {
+                        $("#overlay").css("display","block");
+                        $("#overlay1").css("display","block");
+                        $("body").css("overflow-y", "hidden");
+                        $("body").css("overflow-x", "hidden");
+
+                        $("#overlay1").click(function(){
+                            if($("#overlay").css("display") == "block")
+                            {
+                                $("#overlay").css("display","none");
+                                $("#overlay1").css("display","none");
+                                $("body").css("overflow-y", "scroll");
+                            }
+                        });
+
+                        $("#x").click(function(){
+                            if($("#overlay").css("display") == "block")
+                            {
+                                $("#overlay").css("display","none");
+                                $("#overlay1").css("display","none");
+                                $("body").css("overflow-y", "scroll");
+                            }
+                        });
+					});
+                    //$('#event_results').append("<li>"+ename+": " +desc+"</li>");
+                    //$('#event_results').append('<li>hello</li>');
+                    //$("#content").append('<li>qwerty</li>');
+                }
+            });
+
+            request.fail(function(jqXHR, textStatus) {
+                alert( "Request failed: " + textStatus );
+            });
+		}
+
+    </script>
 </head>
 <body>
 
-	<!-- Image and text -->
+	<!-- Image and text  -->
 	<nav class="navbar navbar-light" style="background-color: rgb(39, 72, 124)">
 		<a class="navbar-brand" href="#">
 			<img src="Main-Logo.png" width="50" height="35" class="d-inline-block align-top" alt="">
@@ -129,10 +210,10 @@
 				<!-- Days in current month -->
 
 				<li class="day">
-					<div class="date">1</div>
+					<div class="date">01</div>
 				</li>
 				<li class="day">
-					<div class="date">2</div>
+					<div class="date">02</div>
 					<div class="event">
 						<div class="event-desc">
 							Career development @ Community College room #402
@@ -148,19 +229,19 @@
 
 			<ul class="days">
 				<li class="day">
-					<div class="date">3</div>
+					<div class="date">03</div>
 				</li>
 				<li class="day">
-					<div class="date">4</div>
+					<div class="date">04</div>
 				</li>
 				<li class="day">
-					<div class="date">5</div>
+					<div class="date">05</div>
 				</li>
 				<li class="day">
-					<div class="date">6</div>
+					<div class="date">06</div>
 				</li>
 				<li class="day">
-					<div class="date">7</div>
+					<div class="date">07</div>
 					<div class="event">
 						<div class="event-desc">
 							Group Project meetup
@@ -171,10 +252,10 @@
 					</div>
 				</li>
 				<li class="day">
-					<div class="date">8</div>
+					<div class="date">08</div>
 				</li>
 				<li class="day">
-					<div class="date">9</div>
+					<div class="date">09</div>
 				</li>
 			</ul>
 
@@ -322,23 +403,23 @@
 					<div class="date">31</div>
 				</li>
 				<li class="day other-month">
-					<div class="date">1</div>
+					<div class="date">01</div>
 					<!-- Next Month -->
 				</li>
 				<li class="day other-month">
-					<div class="date">2</div>
+					<div class="date">02</div>
 				</li>
 				<li class="day other-month">
-					<div class="date">3</div>
+					<div class="date">03</div>
 				</li>
 				<li class="day other-month">
-					<div class="date">4</div>
+					<div class="date">04</div>
 				</li>
 				<li class="day other-month">
-					<div class="date">5</div>
+					<div class="date">05</div>
 				</li>
 				<li class="day other-month">
-					<div class="date">6</div>
+					<div class="date">06</div>
 				</li>
 			</ul>
 
