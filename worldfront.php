@@ -3,10 +3,12 @@ These are all the categories currently in the database:
 include('database.php');
 $conn = connect_db();
 
-$sql = "SELECT * from Events WHERE YEAR(date) = 2018 AND MONTH(date) = 02";
+$year = "2018";
+$sql = "SELECT * from Events WHERE YEAR(date) = $year";
 $result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
 
-echo json_encode($result);
+echo json_encode($row);
 /*echo "<ul id='current_cats'>";
 while($row = mysqli_fetch_assoc($result)) {
     echo "<li>{$row['tags']}</li>";
