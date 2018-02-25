@@ -186,7 +186,7 @@ display: none;
     left: 12.5%;
     right: 12.5%;
     bottom: 12.5%;
-    background-color: rgba(240,240,240,0.9);
+    background-color: rgba(119,119,119,0.9);
     border-radius: 5px;
     z-index: 2;
     cursor: pointer;
@@ -236,6 +236,7 @@ display: none;
   background: pink;
   border: 1px solid black;
 }
+
 
 /* ============================
         Mobile Responsiveness
