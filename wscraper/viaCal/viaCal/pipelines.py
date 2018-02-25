@@ -31,25 +31,32 @@ class ViacalPipeline(object):
             database='viaSocial',
             user=os.environ['RDS_USERNAME'],
             password=os.environ['RDS_PASSWORD'])
+            
+            preDate = item['date'][0]
+            preDate = preDate.strip('\n')
+            dateR = preDate + ", 2018"
+            dateI = datetime.strptime(dateR, '%b, %d, %Y')
+            print(item['date'][0] = dateI.strftime('%Y-%m-%d'))
 
 
-            cursor = conn.cursor()
-            insertEvent = ("INSERT INTO Events (date, ename, hname, description, address, cost, " 
-                            "startTime) "
-                            "VALUES (%s, %s, %s, %s, %s, %s, %s)" )
 
-            data = ((item['date'][0].encode('utf-8')), 
-                    (item['title'][0].encode('utf-8')),
-                    (item['venue'][0].encode('utf-8')),
-                    (item['des'][0].encode('utf-8')),
-                    (item['address'][0].encode('utf-8')), 
-                    (item['cost'][0].encode('utf-8')),
-                    (item['time'][0].encode('utf-8')))
+            #cursor = conn.cursor()
+            #insertEvent = ("INSERT IGNORE INTO Events (date, ename, hname, description, address, cost, " 
+            #                "startTime) "
+            #                "VALUES (%s, %s, %s, %s, %s, %s, %s)" )
 
-            cursor.execute(insertEvent, data)
-            conn.commit()
-            cursor.close()
-            conn.close()
+           # data = ((item['date'][0].encode('utf-8')), 
+           #         (item['title'][0].encode('utf-8')),
+           #         (item['venue'][0].encode('utf-8')),
+           #         (item['des'][0].encode('utf-8')),
+           #         (item['address'][0].encode('utf-8')), 
+           #         (item['cost'][0].encode('utf-8')),
+           #         (item['time'][0].encode('utf-8')))
+
+           # cursor.execute(insertEvent, data)
+           # conn.commit()
+           # cursor.close()
+           # conn.close()
 
         except mysql.connector.Error as  e:
             print "MYSQL Error %s", e
