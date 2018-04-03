@@ -1,10 +1,10 @@
 <H1> Event List Page </H1>
-<ul>
+<ol>
 {% if event_list %}
 
     {% for event in event_list %}
 	<li>
-	    <ol>
+	    <ul>
 		<li>
 		    <a href="{{event.get_absolute_url}}">
 			title : {{ event.title }}
@@ -12,8 +12,8 @@
 		</li>
 		<li>{{ event.venue }}</li>
 		
-	    </ol>
+	    </ul>
 	</li>
     {% endfor %}
 {% endif %}
-</ul>
+</ol>

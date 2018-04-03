@@ -3,3 +3,6 @@
 <h4>{{ event.venue }}</h4>
 
 <p>{{ event.desc }}</p>
+
+{% load static %}
+<img src="{% static event.imgLoc %}" alt="default image"> 

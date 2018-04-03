@@ -7,10 +7,12 @@ from django.urls import reverse
 class Event(models.Model):
 
     #Fields
-    title = models.CharField(max_length=50, primary_key=True)
+    title = models.CharField(max_length=100, primary_key=True)
     desc = models.TextField()
-    venue = models.CharField(max_length=50)
+    price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    venue = models.CharField(max_length=100)
     startDate = models.DateTimeField()
+    imgLoc = models.CharField(max_length=100, default='default.jpg')
 
     class Meta:
         ordering = [ 'startDate' ]
