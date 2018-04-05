@@ -1,19 +1,151 @@
-<H1> Event List Page </H1>
-<ol>
-{% if event_list %}
+<!DOCTYPE html>
 
-    {% for event in event_list %}
-	<li>
-	    <ul>
-		<li>
-		    <a href="{{event.get_absolute_url}}">
-			title : {{ event.title }}
-		    </a>
-		</li>
-		<li>{{ event.venue }}</li>
-		
-	    </ul>
-	</li>
-    {% endfor %}
-{% endif %}
-</ol>
+<head>
+  <meta charset="utf-8">
+  <title>Events List</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    function ellipsizeTextBox(myClass) {
+      var el = document.getElementsByClassName(myClass);
+      var i = el.length;
+      while (i--) {
+        var wordArray = el[i].innerHTML.split(' ');
+        while (el[i].scrollHeight > el[i].offsetHeight) {
+          wordArray.pop();
+          el[i].innerHTML = wordArray.join(' ') + '...';
+        }
+      }
+    }
+
+    function checkWidth() {
+      var width = $(window).width();
+
+      if (width >= '768') {
+        $('#filter-form').addClass('show');
+        $('#collapse-form-btn').hide();
+      } else {
+        $('#filter-form').removeClass('show');
+        $('#collapse-form-btn').show();
+      }
+    }
+
+    // Execute on load
+    checkWidth();
+    //ellipsizeTextBox('block-with-text');
+    // Bind event listener
+    $(window).resize(function() {
+      checkWidth();
+      //ellipsizeTextBox('block-with-text');
+    });
+  });
+  </script>
+
+  <style>
+  .col-md-6 {
+    margin-bottom: 30px;
+  }
+
+  #block-with-text {
+    height: 6em;
+  }
+
+  a {
+     text-decoration: none ;
+     color: black;
+  }
+
+  a:hover {
+    color: black;
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  .card-body {
+    transition: background-color 0.5s ease;
+  }
+
+  .card-body:hover {
+    background-color: #f7f8f9;
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="https://cdn3.volusion.com/drk7m.puwj5/v/vspfiles/photos/636_Brown_Women-2.jpg" style="width:70px; padding: 2px; border: 1px solid silver; border-radius: 10%"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="#">Events</a>
+        <a class="nav-item nav-link" href="#">Placeholder-for-Zach</a>
+        <a class="nav-item nav-link disabled" href="#">Disabled</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row" style="padding: 15px; width: 100%; margin-left: 0px;">
+    <div class="col-md-3" style="background-color: lightgray; padding: 10px; margin-bottom: 10px;">
+      <form id="filter-form" class="collapse">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Example select</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Example multiple select</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+      </form>
+      <center><button id="collapse-form-btn" class="btn btn-info" data-toggle="collapse" data-target="#filter-form">Show Filters</button></center>
+    </div>
+
+    <div class="col-md-9">
+      <div class="row">
+        {% if event_list %}
+            {% for event in event_list %}
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <a href="{{event.get_absolute_url}}">
+                <div class="card">
+                  {% load static %}
+                  <img class="card-img-top" src="{% static event.imgLoc %}" alt="default image" style="height: 200px; object-fit: cover;">
+                  <div class="card-body" style="height: 100px;">
+                    <h5 class="card-title text-truncate">{{ event.title }}</h5>
+                    <p class="card-text text-truncate">{{ event.venue }}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</body>
+
