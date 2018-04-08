@@ -13,6 +13,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=100)
     startDate = models.DateTimeField()
     imgLoc = models.CharField(max_length=100, default='default.jpg')
+    category = models.CharField(max_length=100, default='default')
 
     class Meta:
         ordering = [ 'startDate' ]

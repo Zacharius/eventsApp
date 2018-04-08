@@ -21,3 +21,9 @@ class searchView(generic.ListView):
         return Event.objects.filter(Q(title__icontains=searchParam) |
                                     Q(desc__icontains=searchParam))
 
+class categoryView(generic.ListView):
+	#template_name1 = 'cal/event_list.html'
+
+    def get_queryset(self):
+    	searchParam = self.kwargs['category']
+    	return Event.objects.filter(category__icontains=searchParam)
