@@ -5,7 +5,7 @@ from django.db.models import Q
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html', {'events' : Event.objects.all } )
+    return render(request, 'home.html', {'event_list' : Event.objects.all } )
 
 class EventListView(generic.ListView):
    model = Event 
