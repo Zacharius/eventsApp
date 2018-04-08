@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('events/' ,views.EventListView.as_view(), name='event-list'),
     path('search/<search>' ,views.searchView.as_view(), name='event-list'),
-    path('events/<str:pk>', views.EventDetailView.as_view(), name='event-detail'),
+    path('events/<str:pk>' ,views.EventDetailView.as_view(), name='event-detail'),
+    path('category/<category>' ,views.categoryView.as_view(), name='event-list'),
 ]
 
