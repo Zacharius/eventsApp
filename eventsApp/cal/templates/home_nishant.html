@@ -90,21 +90,44 @@
 
     <!--Top nav bar-->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #edeef3 !important;">
-      <a class="navbar-brand" href="#"><img src="https://cdn3.volusion.com/drk7m.puwj5/v/vspfiles/photos/636_Brown_Women-2.jpg" style="width:70px; padding: 2px; border: 1px solid silver; border-radius: 10%"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="/">Home</a>
-          <a class="nav-item nav-link" href="/events">Events</a>
-        </div>
-      </div>
-    </nav>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Chanclas</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item center active">
+          <a class="nav-link" href="#">Events-View <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Calendar-view</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Map-View</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <button type="button" class="btn btn-primary">Login</button>
+    </div>
+  </nav>
   </head>
 
   <body>
+  <!-- Jumbotron-->
+  <div class="jumbotron">
+    <h1 class="display-3">Events, the way you want to see them</h1>
+    <p class="lead">We get it, there's a bunch of event websites out there. Why use our site?</p>
+    <hr class="my-2">
+    <p>Well, because we know everything that is happeinng in the town! Events that your mom does't know about, your friends would never go to....you get the idea.</p>
+    <!--<p class="lead">
+      <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
+    </p> -->
+  </div>
 
 
   <!-- Carousel for promoted events-->
@@ -115,18 +138,20 @@
         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        {% if event_list %}
-          {% for event in event_list %}
-          <div class="carousel-item active">
-            {% load static %}
-            <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="default image" src="{% static event.imgLoc %}" data-holder-rendered="true">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>{{ event.title }}</h3>
-              <p>{{ event.venue }}</p>
-            </div>
+        <div class="carousel-item active">
+          <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [900x300]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22900%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1627948487c%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A45pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1627948487c%22%3E%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22308.296875%22%20y%3D%22170.1%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </div>
-          {% endfor %}
-        {% endif %}
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [900x300]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22900%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1627948487d%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A45pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1627948487d%22%3E%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22264.953125%22%20y%3D%22170.1%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -137,18 +162,6 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </div>
-
-  <!-- Jumbotron-->
-  <div class="jumbotron" style="background-color: #e6e6e6;">
-    <h1 class="display-3">Events, the way you want to see them</h1>
-    <br/>
-    <p class="lead">We get it, there's a bunch of event websites out there. Why use our site?</p>
-    <hr class="my-2">
-    <p>Well, because we know everything that is happeinng in the town! Events that your mom does't know about, your friends would never go to....you get the idea.</p>
-    <!--<p class="lead">
-      <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
-    </p> -->
   </div>
 
   <!-- Extra space for scrolling-->
@@ -171,7 +184,7 @@
 
   			</div>
 
-  			<div class="footer-left" style="text-align: center;">
+  			<div class="footer-left">
   <!--
   				<p class="footer-links">
   					<a href="#">Home</a>
