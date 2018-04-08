@@ -84,7 +84,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="#">Home</a>
+          <a class="nav-item nav-link" href="/">Home</a>
           <a class="nav-item nav-link active" href="/events">Events</a>
         </div>
       </div>
@@ -124,7 +124,7 @@
               {% for event in event_list %}
               <div class="col-lg-4 col-md-6 col-sm-6">
                 <a href="{{event.get_absolute_url}}">
-                  <div class="card">
+                  <div class="card event-card">
                     {% load static %}
                     <img class="card-img-top" src="{% static event.imgLoc %}" alt="default image" style="height: 200px; object-fit: cover;">
                     <div class="card-body" style="height: 100px;">

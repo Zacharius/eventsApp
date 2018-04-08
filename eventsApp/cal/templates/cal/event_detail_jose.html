@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
     </style>
   </head>
 
-  <body style="height: 100%;">
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #edeef3 !important;">
       <a class="navbar-brand" href="#"><img src="https://cdn3.volusion.com/drk7m.puwj5/v/vspfiles/photos/636_Brown_Women-2.jpg" style="width:70px; padding: 2px; border: 1px solid silver; border-radius: 10%"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,48 +41,7 @@
         </div>
       </div>
     </nav>
-    <br/>
 
-
-    <!-- event detail section -->
-    <div class="row" style="width: 100%; margin-left: 0px;">
-      <!-- left spacing -->
-      <div class="col-md-2"></div>
-      <!-- event detail -->
-      <div class="col-md-8">
-        <!-- image, title, and description -->
-        <div style="padding-left: 10px; padding-right: 10px;">
-          <div style="text-align: center;">
-            {% load static %}
-            <img class="img-fluid" src="{% static event.imgLoc %}" alt="default image" style="max-height: 400px;">
-          </div>
-          <br/>
-          <h3>{{ event.title }}</h3>
-          <br/>
-          <p>{{ event.desc }}</p>
-        </div>
-        <br/><hr/>
-        <!-- start date, venue, and price -->
-        <div class="row" style="text-align: center;">
-          <div class="col-md-4">
-            <h4>Date and Time</h4>
-            <p>{{ event.startDate }}</p>
-          </div>
-          <div class="col-md-4">
-            <h4>Location</h4>
-            <p>{{ event.venue }}</p>
-          </div>
-          <div class="col-md-4">
-            <h4>Cost</h4>
-            <p>{{ event.price }}</p>
-          </div>
-        </div>
-      </div>
-      <!-- right spacing -->
-      <div class="col-md-2"></div>
-    </div>
-
-<!--
     <div class="row" style="padding: 15px; margin-left: 0px;">
       <div class="col-md-12">
         <div class="col-md-12">
@@ -129,7 +88,5 @@
       </div>
 
     </div>
-  -->
-
   </body>
 </html>
