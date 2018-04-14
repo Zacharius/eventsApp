@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html style="height: 100%;">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Events List</title>
 
@@ -30,6 +31,19 @@
         checkWidth();
       });
     });
+
+    function submitNavForm()
+    {
+      var searchQuery = document.getElementById("navSearchBar").value;
+
+      if (searchQuery) {
+        document.getElementById("nav-form").action = "/search/" + searchQuery;
+        document.getElementById("nav-form").submit();
+      } else {
+        document.getElementById("nav-form").action = "/events/";
+        document.getElementById("nav-form").submit();
+      }
+    }
 
     function submitForm()
     {
@@ -109,6 +123,10 @@
           <a class="nav-item nav-link" href="/">Home</a>
           <a class="nav-item nav-link active" href="/events">Events</a>
         </div>
+        <form class="form-inline my-2 my-lg-0 ml-auto" id="nav-form" onsubmit="submitNavForm()">
+          <input class="form-control mr-sm-2" type="search" id="navSearchBar" placeholder="Search events" aria-label="Search events">
+          <button class="btn btn-outline-success my-2 my-sm-0" onclick="submitNavForm()">Search</button>
+        </form>
       </div>
     </nav>
 
@@ -117,9 +135,9 @@
         <form id="filter-form" class="collapse" action="#" onsubmit="submitForm()">
           <div class="form-group">
             <label for="searchBar">Search</label>
-            <input type="text" class="form-control" id="searchBar" placeholder="Enter a query">
+            <input type="text" name="query" class="form-control" id="searchBar" placeholder="Enter a query">
           </div>
-          <br/>
+          <hr/>
           <div class="form-group">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="form-category" id="cat1" value="Fiesta">
@@ -134,8 +152,15 @@
               <label class="form-check-label" for="cat3">NSFW</label>
             </div>
           </div>
+          <hr/>
+          <div class="form-group">
+            <label for="form-date">Date</label>
+            <input type="date" name="date" class="form-control" id="form-date">
+          </div>
           <br/>
-          <button class="btn" onclick="submitForm()">Submit</button>
+          <p class="text-center">
+            <button class="btn btn-outline-success center" onclick="submitForm()">Submit</button>
+          </p>
         </form>
         <center><button id="collapse-form-btn" class="btn btn-info" data-toggle="collapse" data-target="#filter-form">Show Filters</button></center>
       </div>

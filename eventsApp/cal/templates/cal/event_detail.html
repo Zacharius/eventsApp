@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html style="height: 100%;">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -14,6 +15,19 @@
           $('#filter-form').removeClass('show');
         }
       });
+
+      function submitNavForm()
+      {
+        var searchQuery = document.getElementById("navSearchBar").value;
+
+        if (searchQuery) {
+          document.getElementById("nav-form").action = "/search/" + searchQuery;
+          document.getElementById("nav-form").submit();
+        } else {
+          document.getElementById("nav-form").action = "/events/";
+          document.getElementById("nav-form").submit();
+        }
+      }
     </script>
 
     <style>
@@ -39,6 +53,10 @@
           <a class="nav-item nav-link" href="/">Home</a>
           <a class="nav-item nav-link" href="/events">Events</a>
         </div>
+        <form class="form-inline my-2 my-lg-0 ml-auto" id="nav-form" onsubmit="submitNavForm()">
+          <input class="form-control mr-sm-2" type="search" id="navSearchBar" placeholder="Search events" aria-label="Search events">
+          <button class="btn btn-outline-success my-2 my-sm-0" onclick="submitNavForm()">Search</button>
+        </form>
       </div>
     </nav>
     <br/>
@@ -74,7 +92,7 @@
           </div>
           <div class="col-md-4">
             <h4>Cost</h4>
-            <p>{{ event.price }}</p>
+            <p>${{ event.price }}</p>
           </div>
         </div>
       </div>

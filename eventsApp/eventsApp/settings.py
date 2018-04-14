@@ -25,7 +25,7 @@ SECRET_KEY = '1c1uy9=xg8*r3@l58zy5wjhxkmj_&td973=xg751c_#_bc3euv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['eventnear.us']
+ALLOWED_HOSTS = ['localhost', '192.168.1.31']
 
 
 # Application definition
