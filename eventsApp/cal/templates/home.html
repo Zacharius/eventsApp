@@ -1,182 +1,51 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <!--Import Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-    <style>
-      .footer-distributed{
-        background-color: #292c2f;
-        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-        box-sizing: border-box;
-        width: 100%;
-        text-align: left;
-        font: normal 16px sans-serif;
-
-        padding: 45px 50px;
-        margin-top: 80px;
-      }
-
-      .footer-distributed .footer-left p{
-        color:  #8f9296;
-        font-size: 14px;
-        margin: 0;
-      }
-
-      /* Footer links */
-
-      .footer-distributed p.footer-links{
-        font-size:18px;
-        font-weight: bold;
-        color:  #ffffff;
-        margin: 0 0 10px;
-        padding: 0;
-      }
-
-      .footer-distributed p.footer-links a{
-        display:inline-block;
-        line-height: 1.8;
-        text-decoration: none;
-        color:  inherit;
-      }
-
-      .footer-distributed .footer-right{
-        float: right;
-        margin-top: 6px;
-        max-width: 180px;
-      }
-
-      .footer-distributed .footer-right a{
-        display: inline-block;
-        width: 35px;
-        height: 35px;
-        background-color:  #33383b;
-        border-radius: 2px;
-
-        font-size: 20px;
-        color: #ffffff;
-        text-align: center;
-        line-height: 35px;
-
-        margin-left: 3px;
-      }
-
-      /* If you don't want the footer to be responsive, remove these media queries */
-
-      @media (max-width: 600px) {
-
-        .footer-distributed .footer-left,
-        .footer-distributed .footer-right{
-          text-align: center;
-        }
-
-        .footer-distributed .footer-right{
-          float: none;
-          margin: 0 auto 20px;
-        }
-
-        .footer-distributed .footer-left p.footer-links{
-          line-height: 1.8;
-        }
-      }
-
-      @media (min-width: 768px) {
-        .carousel-item {
-          height: 500px;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .carousel-item {
-          height: 300px;
-        }
-      }
-    </style>
-
-    <script>
-    $(document).ready(function() {
-      $(".carousel-item").first().addClass("active");
-    });
-
-    function submitNavForm()
-    {
-      var searchQuery = document.getElementById("navSearchBar").value;
-
-      if (searchQuery) {
-        document.getElementById("nav-form").action = "/search/" + searchQuery;
-        document.getElementById("nav-form").submit();
-      } else {
-        document.getElementById("nav-form").action = "/events/";
-        document.getElementById("nav-form").submit();
-      }
-    }
-    </script>
-
-    <!--Top nav bar-->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #edeef3 !important;">
-      <a class="navbar-brand" href="#"><img src="https://cdn3.volusion.com/drk7m.puwj5/v/vspfiles/photos/636_Brown_Women-2.jpg" style="width:70px; padding: 2px; border: 1px solid silver; border-radius: 10%"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav mr-auto">
-          <a class="nav-item nav-link active" href="/">Home</a>
-          <a class="nav-item nav-link" href="/events">Events</a>
-        </div>
-        <form class="form-inline my-2 my-lg-0 ml-auto" id="nav-form" onsubmit="submitNavForm()">
-          <input class="form-control mr-sm-2" type="search" id="navSearchBar" placeholder="Search events" aria-label="Search events">
-          <button class="btn btn-outline-success my-2 my-sm-0" onclick="submitNavForm()">Search</button>
-        </form>
-      </div>
-    </nav>
-  </head>
-
-  <body>
+{% extends "base_generic.html" %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
 
 
+
+  {% block content %}
+  <script>
+  $(document).ready(function() {
+    console.log( "ready!" );
+    $(".carousel-item").first().addClass("active");
+  });
+  </script>
   <!-- Carousel for promoted events-->
-  <div class="bd-example">
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        {% if event_list %}
-          {% for event in event_list|slice:":3" %}
-          <div class="carousel-item">
-            <a href="/events/{{ event.title }}">
-              {% load static %}
-              <img class="d-block w-100 carousel-image" alt="default image" src="{% static event.imgLoc %}" data-holder-rendered="true" style="object-fit: cover; height: 100%;">
-              <div class="carousel-caption d-none d-md-block">
-                <h3>{{ event.title }}</h3>
-                <p>{{ event.venue }}</p>
-              </div>
-            </a>
-          </div>
-          {% endfor %}
-        {% endif %}
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+<div class="bd-example">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      {% if event_list %}
+        {% for event in event_list|slice:":3" %}
+        <div class="carousel-item">
+          <a href="/events/{{ event.title }}">
+            {% load static %}
+            <img class="d-block w-100 carousel-image" alt="default image" src="{% static event.imgLoc %}" data-holder-rendered="true" style="object-fit: cover; height: 100%;">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>{{ event.title }}</h3>
+              <p>{{ event.venue }}</p>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      {% endif %}
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+</div>
 
   <!-- Jumbotron-->
   <div class="jumbotron" style="background-color: #e6e6e6;">
@@ -196,39 +65,4 @@
   <br>
   <br>
   <br><br>
-
-
-  <!--Footer-->
-  		<footer class="footer-distributed">
-        <!--
-  			<div class="footer-right">
-
-  				<a href="#"><i class="fa fa-facebook"></i></a>
-  				<a href="#"><i class="fa fa-twitter"></i></a>
-  				<a href="#"><i class="fa fa-linkedin"></i></a>
-  				<a href="#"><i class="fa fa-github"></i></a>
-
-  			</div>
-
-  			<div class="footer-left">
-  				<p class="footer-links">
-  					<a href="#">Home</a>
-  					·
-  					<a href="#">Blog</a>
-  					·
-  					<a href="#">Pricing</a>
-  					·
-  					<a href="#">About</a>
-  					·
-  					<a href="#">Faq</a>
-  					·
-  					<a href="#">Contact</a>
-  				</p>
-
-  				<p align="center" style="text-align: center;">Company Name &copy; 2018</p>
-  			</div>
-        -->
-
-  		</footer>
-  </body>
-</html>
+  {% endblock %}

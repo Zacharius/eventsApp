@@ -12,4 +12,3 @@ urlpatterns = [
     path('events/<str:pk>' ,views.EventDetailView.as_view(), name='event-detail'),
     path('category/<category>' ,views.categoryView.as_view(), name='event-list'),
 ]
-
