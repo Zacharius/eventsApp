@@ -2,5 +2,4 @@ node_modules
 settings.py
 *.pyc
 dbsqlite3
-__pycache__
-*.pyc
+__pycache__/
