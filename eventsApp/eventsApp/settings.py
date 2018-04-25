@@ -25,7 +25,7 @@ SECRET_KEY = '1c1uy9=xg8*r3@l58zy5wjhxkmj_&td973=xg751c_#_bc3euv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.1.31']
+ALLOWED_HOSTS = ['localhost', '192.168.0.22','127.0.0.1']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'eventsApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,3 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+#Redirect to home URL after login (default redirects to /accounts/profile)
+LOGIN_REDIRECT_URL = '/'
