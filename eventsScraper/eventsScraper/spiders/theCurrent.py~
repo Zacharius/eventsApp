@@ -1,0 +1,27 @@
+import scrapy
+
+class theCurrentEventsSpider(scrapy.Spider):
+    name= "theCurrent"
+
+    start_urls =
+    ["https://www.sacurrent.com/sanantonio/king-william-fair-and-parade/Event?oid=8974833"]
+
+    def parse(self, response):
+
+        yield {
+            'title' : 
+            response.css('h1.listingTitle::text')[1].extract().strip(),
+            'dateText' :
+            response.css('span.eventWhen::text').extract_first().strip(),
+            'priceText' :
+            response.css(span.eventPrice('span.eventWhen::text').extract_first().strip(),
+            'desc' :
+            response.css('div.descr_txt::text').extract_first().strip()
+        }
+
+
+
+            
+                         
+            
+                         
