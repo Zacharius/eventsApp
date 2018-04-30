@@ -1,125 +1,128 @@
-    {% extends "base_generic.html" %}
-    {% block title %}
-    <title>Event List</title>
-    {% endblock %}
+{% extends "base_generic.html" %}
+{% block title %}
+<title>Event List</title>
+{% endblock %}
 
 
 
-    {% block content %}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style_list.css' %}">
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style_list.css' %}">
 
 
-    <script type="text/javascript">
-    var prevwidth = $(window).width();
-    $(document).ready(function() {
-      function checkWidth() {
-        var width = $(window).width();
+<script type="text/javascript">
+  var prevwidth = $(window).width();
+  $(document).ready(function() {
+    $("#nav-events").addClass("active");
+    $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
 
-        if (width >= '768') {
-          $('#filter-form').addClass('show');
-          $('#collapse-form-btn').hide();
-        } else {
-          if (prevwidth >= '768') {
-            $('#filter-form').removeClass('show');
-            $('#collapse-form-btn').show();
-          }
-        }
-        prevwidth = width;
-      }
+    function checkWidth() {
+      var width = $(window).width();
 
-      // Execute on load
-      checkWidth();
-      // Bind event listener
-      $(window).resize(function() {
-        checkWidth();
-      });
-    });
-
-    function submitForm()
-    {
-      var searchQuery = document.getElementById("searchBar").value;
-
-      var catRadio;
-      // get list of radio buttons with specified name
-      var radios = document.getElementById("filter-form").elements["form-category"];
-
-      // loop through list of radio buttons
-      var len=radios.length;
-      for (var i=0; i<len; i++) {
-          if ( radios[i].checked ) { // radio checked?
-              catRadio = radios[i].value; // if so, hold its value in val
-              break; // and break out of for loop
-          }
-      }
-
-      if (searchQuery) {
-        document.getElementById("filter-form").action = "/search/" + searchQuery;
-        document.getElementById("filter-form").submit();
-      } else if (catRadio) {
-        document.getElementById("filter-form").action = "/category/" + catRadio;
-        document.getElementById("filter-form").submit();
+      if (width >= '768') {
+        $('#filter-form').addClass('show');
+        $('#collapse-form-btn').hide();
       } else {
-        document.getElementById("filter-form").action = "/events/";
-        document.getElementById("filter-form").submit();
+        if (prevwidth >= '768') {
+          $('#filter-form').removeClass('show');
+          $('#collapse-form-btn').show();
+        }
       }
+      prevwidth = width;
     }
-    </script>
 
-    <div class="row" style="padding: 15px; width: 100%; margin: 0px;">
-      <div class="col-md-3" id="formCol">
-        <form id="filter-form" class="collapse" action="#" onsubmit="submitForm()">
-          <div class="form-group">
-            <label for="searchBar">Search</label>
-            <input type="text" name="query" class="form-control" id="searchBar" placeholder="Enter a query">
-          </div>
-          <hr/>
-          <div class="form-group">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="form-category" id="cat1" value="Fiesta">
-              <label class="form-check-label" for="cat1">Fiesta</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="form-category" id="cat2" value="Music">
-              <label class="form-check-label" for="cat2">Music</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="form-category" id="cat3" value="NSFW">
-              <label class="form-check-label" for="cat3">NSFW</label>
-            </div>
-          </div>
-          <hr/>
-          <div class="form-group">
-            <label for="form-date">Date</label>
-            <input type="date" name="date" class="form-control" id="form-date">
-          </div>
-          <br/>
-          <p class="text-center">
-            <button class="btn btn-outline-success center" onclick="submitForm()">Submit</button>
-          </p>
-        </form>
-        <center><button id="collapse-form-btn" class="btn btn-info" data-toggle="collapse" data-target="#filter-form">Show Filters</button></center>
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(function() {
+      checkWidth();
+    });
+  });
+
+  function submitForm()
+  {
+    var searchQuery = document.getElementById("searchBar").value;
+
+    var catRadio;
+    // get list of radio buttons with specified name
+    var radios = document.getElementById("filter-form").elements["form-category"];
+
+    // loop through list of radio buttons
+    var len=radios.length;
+    for (var i=0; i<len; i++) {
+        if ( radios[i].checked ) { // radio checked?
+            catRadio = radios[i].value; // if so, hold its value in val
+            break; // and break out of for loop
+        }
+    }
+
+    if (searchQuery) {
+      document.getElementById("filter-form").action = "/search/" + searchQuery;
+      document.getElementById("filter-form").submit();
+    } else if (catRadio) {
+      document.getElementById("filter-form").action = "/category/" + catRadio;
+      document.getElementById("filter-form").submit();
+    } else {
+      document.getElementById("filter-form").action = "/events/";
+      document.getElementById("filter-form").submit();
+    }
+  }
+</script>
+
+<div class="row" style="padding: 15px; width: 100%; margin: 0px;">
+  <div class="col-md-3" id="formCol">
+    <form id="filter-form" class="collapse" action="/events" type="GET">
+      <div class="form-group">
+        <label for="searchBar">Search</label>
+        <input type="text" name="search" class="form-control" id="searchBar" placeholder="Enter a query">
       </div>
-
-      <div class="col-md-9">
-        <div class="row">
-          {% if event_list %}
-            {% for event in event_list %}
-            <div class="col-lg-4 col-md-6 col-sm-6">
-              <a href="{{event.get_absolute_url}}">
-                <div class="card event-card">
-                  {% load static %}
-                  <img class="card-img-top" src="{% static event.imgLoc %}" alt="default image" style="height: 200px; object-fit: cover;">
-                  <div class="card-body" style="height: 100px;">
-                    <h5 class="card-title text-truncate">{{ event.title }}</h5>
-                    <p class="card-text text-truncate">{{ event.venue }}</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            {% endfor %}
-          {% endif %}
+      <hr/>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="category" id="cat1" value="Fiesta">
+          <label class="form-check-label" for="cat1">Fiesta</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="category" id="cat2" value="Music">
+          <label class="form-check-label" for="cat2">Music</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="category" id="cat3" value="NSFW">
+          <label class="form-check-label" for="cat3">NSFW</label>
         </div>
       </div>
+      <hr/>
+      <div class="form-group">
+        <label for="datepicker">Date</label>
+        <input type="text" name="date" class="form-control" id="datepicker" pattern="^\d{4}-\d{2}-\d{2}$" placeholder="yyyy-mm-dd">
+      </div>
+      <br/>
+      <p class="text-center">
+        <button class="btn btn-outline-success center">Submit</button>
+      </p>
+    </form>
+    <center><button id="collapse-form-btn" class="btn btn-info" data-toggle="collapse" data-target="#filter-form">Show Filters</button></center>
+  </div>
+
+  <div class="col-md-9">
+    <div class="row">
+      {% if event_list %}
+        {% for event in event_list %}
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <a href="{{event.get_absolute_url}}">
+            <div class="card event-card">
+              {% load static %}
+              <img class="card-img-top" src="{% static event.imgLoc %}" alt="default image" style="height: 200px; object-fit: cover;">
+              <div class="card-body" style="height: 100px;">
+                <h5 class="card-title text-truncate">{{ event.title }}</h5>
+                <p class="card-text text-truncate">{{ event.venue }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      {% endif %}
     </div>
-    {% endblock %}
+  </div>
+</div>
+{% endblock %}
