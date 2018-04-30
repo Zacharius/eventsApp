@@ -1,5 +1,11 @@
-
+{% extends "base_generic.html" %}
 {% block content %}
+
+<script>
+  $(document).ready(function() {
+    $("#nav-login").addClass("active");
+  });
+</script>
 
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
@@ -33,6 +39,6 @@
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<!--<p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
 
-{% endblock content %}
+{% endblock %}
