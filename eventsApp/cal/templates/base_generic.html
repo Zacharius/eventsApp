@@ -56,12 +56,12 @@
             <a class="nav-item nav-link" id="nav-login" href="{% url 'login'%}?next={{request.path}}">Login</a>
             {% endif %}
           </div>
-          <form class="form-inline my-2 my-lg-0 ml-auto" id="nav-form" onsubmit="submitNavForm()">
+          <form class="form-inline my-2 my-lg-0 ml-auto" id="nav-form" action="/events" type="GET">
             {% if user.is_authenticated %}
             <li class="nav-item nav-link" style="color: rgba(0,0,0,.5)">{{ user.get_username }}</li>
             {% endif %}
-            <input class="form-control mr-sm-2" type="search" id="navSearchBar" placeholder="Search events" aria-label="Search events">
-            <button class="btn btn-outline-success my-2 my-sm-0" onclick="submitNavForm()">Search</button>
+            <input class="form-control mr-sm-2" type="text" name="search" id="navSearchBar" placeholder="Search events" aria-label="Search events">
+            <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
           </form>
         </div>
       </nav>
