@@ -9,14 +9,11 @@ class theCurrentEventsSpider(scrapy.Spider):
 
     def parse(self, response):
 
-        print('hello world!!!!!!')
         eventPages = response.css('div.listing > h3 > a::attr(href)').extract()
 
         for eventPage in eventPages :
-            print(eventPage)
             yield scrapy.Request(eventPage, callback=self.parseEvent)
-                                 
-        
+                                     
 
     def parseEvent(self, response):
 
@@ -25,12 +22,18 @@ class theCurrentEventsSpider(scrapy.Spider):
                  response.css('h1.listingTitle::text')[1].extract().strip(),
             'dateText' :
                  response.css('span.eventWhen::text').extract_first().strip(),
+            'date' :
+                 response.css('span.eventWhen::text').re(r'\w+ \d+')[0],
             'priceText' :
                  response.css('span.eventPrice::text').extract_first().strip(),
+            'price' :
+                 response.css('span.eventPrice::text').re(r'\d+')[0],
             'desc' :
                  response.css('div.descr_txt::text').extract_first().strip(),
             'sourceLink' :
                  response.css('span.eventUrl a::attr(href)').extract_first()        
+            'imgLoc' :
+                 respones.css('link["rel=image_src"]::atr(href)').extract_first()
         }
 
 
