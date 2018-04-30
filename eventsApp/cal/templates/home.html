@@ -4,15 +4,16 @@
 {% endblock %}
 
 
-
-  {% block content %}
-  <script>
+{% block content %}
+<script>
   $(document).ready(function() {
     console.log( "ready!" );
+    $("#nav-home").addClass("active");
     $(".carousel-item").first().addClass("active");
   });
-  </script>
-  <!-- Carousel for promoted events-->
+</script>
+
+<!-- Carousel for promoted events-->
 <div class="bd-example">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -47,22 +48,22 @@
   </div>
 </div>
 
-  <!-- Jumbotron-->
-  <div class="jumbotron" style="background-color: #e6e6e6;">
-    <h1 class="display-3">Events, the way you want to see them</h1>
-    <br/>
-    <p class="lead">We get it, there's a bunch of event websites out there. Why use our site?</p>
-    <hr class="my-2">
-    <p>Well, because we know everything that is happeinng in the town! Events that your mom does't know about, your friends would never go to....you get the idea.</p>
-    <!--<p class="lead">
-      <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
-    </p> -->
-  </div>
+<!-- Jumbotron-->
+<div class="jumbotron" style="background-color: #e6e6e6;">
+  <h1 class="display-3">Events, the way you want to see them</h1>
+  <br/>
+  <p class="lead">We get it, there's a bunch of event websites out there. Why use our site?</p>
+  <hr class="my-2">
+  <p>Well, because we know everything that is happeinng in the town! Events that your mom does't know about, your friends would never go to....you get the idea.</p>
+  <!--<p class="lead">
+    <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
+  </p> -->
+</div>
 
-  <!-- Extra space for scrolling-->
-  <br>
-  <br>
-  <br>
-  <br>
-  <br><br>
-  {% endblock %}
+<!-- Extra space for scrolling-->
+<br>
+<br>
+<br>
+<br>
+<br><br>
+{% endblock %}
