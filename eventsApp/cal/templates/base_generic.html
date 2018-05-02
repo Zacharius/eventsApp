@@ -47,6 +47,7 @@
             <a class="nav-item nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
             {% else %}
             <a class="nav-item nav-link" id="nav-login" href="{% url 'login'%}?next={{request.path}}">Login</a>
+            <a class="nav-item nav-link" id="nav-register" href="{% url 'register'%}?next={{request.path}}">Register</a>
             {% endif %}
           </div>
           <form class="form-inline my-2 my-lg-0 ml-auto" id="nav-form" onsubmit="submitNavForm()">
