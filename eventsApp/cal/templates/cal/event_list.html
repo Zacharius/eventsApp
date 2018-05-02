@@ -14,6 +14,7 @@
   var prevwidth = $(window).width();
   $(document).ready(function() {
     $("#nav-events").addClass("active");
+    $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
 
     function checkWidth() {
       var width = $(window).width();
@@ -92,12 +93,12 @@
       </div>
       <hr/>
       <div class="form-group">
-        <label for="form-date">Date</label>
-        <input type="date" name="date" class="form-control" id="form-date" pattern="^\d{2}/\d{2}/\d{4}$" placeholder="mm/dd/yyyy">
+        <label for="datepicker">Date</label>
+        <input type="text" name="date" class="form-control" id="datepicker" pattern="^\d{4}-\d{2}-\d{2}$" placeholder="yyyy-mm-dd">
       </div>
       <br/>
       <p class="text-center">
-        <button class="btn btn-outline-success center" onclick="submitForm()">Submit</button>
+        <button class="btn btn-outline-success center">Submit</button>
       </p>
     </form>
     <center><button id="collapse-form-btn" class="btn btn-info" data-toggle="collapse" data-target="#filter-form">Show Filters</button></center>
