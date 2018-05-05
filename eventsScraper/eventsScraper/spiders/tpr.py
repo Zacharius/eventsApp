@@ -50,9 +50,9 @@ class QuotesSpider(scrapy.Spider):
                'address' : addr,
                 'price' : cost,
                 'priceText' : cost,
-                #'time' : time,
-                'category' : cats,
-                #'dow' : dow
+                'time' : time,
+                'cats' : cats,
+                'dow' : dow
 
                }
 
