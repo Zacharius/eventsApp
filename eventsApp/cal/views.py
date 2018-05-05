@@ -1,11 +1,27 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
+from django.contrib import messages
 from .models import Event
 from django.db.models import Q
 
 # Create your views here.
+def register(request):
+    if request.method == 'POST':
+        f = CustomUserCreationForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.success(request, 'Account created successfully')
+            return redirect('login')
+
+    else:
+        f = CustomUserCreationForm(request.POST)
+
+    return render(request, "registration/register.html", {'form': f})
+
 def home(request):
     return render(request, 'home.html', {'event_list' : Event.objects.all()[:3] } )
 

@@ -1,6 +1,6 @@
 # Ignore binary files
 *.pyc
-dbsqlite3
+db.sqlite3
 __pycache__/
 
 #Config file unique to environment
