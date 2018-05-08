@@ -28,7 +28,7 @@ def home(request):
 def user_login(request):
     context = {}
     if request.method == "POST":
-        pass
+        return redirect('home')
     else:
         return render(request, "registration/login.html", context)
 
