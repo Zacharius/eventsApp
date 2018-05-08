@@ -7,6 +7,7 @@ class theCurrentEventsSpider(scrapy.Spider):
         "https://www.sacurrent.com/sanantonio/EventSearch"
     ]
 
+    #root parsing method, begins parsing at start_urls
     def parse(self, response):
 
         eventPages = response.css('div.listing > h3 > a::attr(href)').extract()
@@ -14,16 +15,24 @@ class theCurrentEventsSpider(scrapy.Spider):
         for eventPage in eventPages :
             yield scrapy.Request(eventPage, callback=self.parseEvent)
                                      
-
+    
     def parseEvent(self, response):
 
-        title = response.css('h1.listingTitle::text')[1].extract().strip()
+        titleList = response.css('h1.listingTitle::text')
+
+        title = titleList[len(titleList)-1].extract().strip()
 
         dateText = response.css('span.eventWhen::text').extract_first().strip()
 
         date = response.css('span.eventWhen::text').re(r'\w+ \d+')[0]
 
-        priceText = response.css('span.eventPrice::text').extract_first().strip()
+        priceHTML =   response.css('span.eventPrice::text')
+
+        if priceHTML:
+            priceText = priceHTML.extract_first().strip()
+        else:
+            priceText = 'Free'
+        
 
         if priceText == 'Free':
             price = 0
@@ -34,8 +43,17 @@ class theCurrentEventsSpider(scrapy.Spider):
 
         sourceLink = response.css('span.eventUrl a::attr(href)').extract_first()
 
-        imgLoc = response.css('link["rel=image_src"]::atr(href)').extract_first()
+        imgLoc = \
+        response.css('link[rel="image_src"]::attr(href)').extract_first()
+
+        categoryHTML = response.css('p.tags a::text')
+
+        if categoryHTML:
+            category = categoryHTML.extract_first()
+        else:
+            category = 'none'
         
+        venue = response.css('li.locationItem h4 a::text').extract_first()
 
         yield {
             'title' : title,
@@ -46,6 +64,9 @@ class theCurrentEventsSpider(scrapy.Spider):
             'desc' : desc,
             'sourceLink' : sourceLink,
             'imgLoc' : imgLoc,
+            'sourceLink' : sourceLink,
+            'category' : category,
+            'venue' : venue
         }
 
 
