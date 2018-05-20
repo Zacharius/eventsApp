@@ -116,8 +116,7 @@
         <div class="col-lg-4 col-md-6 col-sm-6">
           <a href="{{event.get_absolute_url}}">
             <div class="card event-card">
-              {% load static %}
-              <img class="card-img-top" src="{% static event.imgLoc %}" alt="default image" style="height: 200px; object-fit: cover;">
+              <img class="card-img-top" src="{{ event.imgLoc }}" alt="default image" style="height: 200px; object-fit: cover;">
               <div class="card-body" style="height: 100px;">
                 <h5 class="card-title text-truncate">{{ event.title }}</h5>
                 <p class="card-text text-truncate">{{ event.venue }}</p>

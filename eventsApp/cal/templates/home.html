@@ -26,8 +26,7 @@
         {% for event in event_list|slice:":3" %}
         <div class="carousel-item">
           <a href="/events/{{ event.title }}">
-            {% load static %}
-            <img class="d-block w-100 carousel-image" alt="default image" src="{% static event.imgLoc %}" data-holder-rendered="true" style="object-fit: cover; height: 100%;">
+            <img class="d-block w-100 carousel-image" alt="default image" src="{{ event.imgLoc }}" data-holder-rendered="true" style="object-fit: cover; height: 100%;">
             <div class="carousel-caption d-none d-md-block">
               <h3>{{ event.title }}</h3>
               <p>{{ event.venue }}</p>

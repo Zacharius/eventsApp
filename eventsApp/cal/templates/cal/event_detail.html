@@ -50,8 +50,7 @@
         <!-- image, title, and description -->
         <div style="padding-left: 10px; padding-right: 10px;">
           <div style="text-align: center;">
-            {% load static %}
-            <img class="img-fluid" src="{% static event.imgLoc %}" alt="default image" style="max-height: 400px;">
+            <img class="img-fluid" src="{{ event.imgLoc }}" alt="default image" style="max-height: 400px;">
           </div>
           <br/>
           <h3>{{ event.title }}</h3>
@@ -63,7 +62,7 @@
         <div class="row" style="text-align: center;">
           <div class="col-md-4">
             <h4>Date and Time</h4>
-            <p>{{ event.date }}</p>
+            <p>{{ event.dateText }}</p>
           </div>
           <div class="col-md-4">
             <h4>Location</h4>
@@ -71,7 +70,7 @@
           </div>
           <div class="col-md-4">
             <h4>Cost</h4>
-            <p>${{ event.price }}</p>
+            <p>{{ event.priceText }}</p>
           </div>
         </div>
       </div>
