@@ -11,12 +11,34 @@ class theCurrentEventsSpider(scrapy.Spider):
     #root parsing method, begins parsing at start_urls
     def parse(self, response):
 
-        eventPages = response.css('div.listing > h3 > a::attr(href)').extract()
+        #grab and parse all listings on first page
+        #eventPages = response.css('div.listing > h3 > a::attr(href)').extract()
 
-        for eventPage in eventPages :
-            yield scrapy.Request(eventPage, callback=self.parseEvent)
+        
+        #for eventPage in eventPages :
+        #    yield scrapy.Request(eventPage, callback=self.parseEvent)
                                      
     
+        #find out how many pages of events there are
+        numPages = response.css('div.pagination a::attr(title)').re(r'\d+$')[0]
+
+
+        #go through every page and parse the events contained within
+        for page in range(1, int(numPages)+1):
+            eventPage = response.urljoin('?page='+str(page))
+            yield scrapy.Request(eventPage, callback=self.parseEventPage)
+            
+            
+    def parseEventPage(self, response):
+        
+         #grab and parse all events on the page
+        eventPages = response.css('div.listing > h3 > a::attr(href)').extract()
+
+        
+        for eventPage in eventPages :
+            yield scrapy.Request(eventPage, callback=self.parseEvent)   
+
+
     def parseEvent(self, response):
 
         titleList = response.css('h1.listingTitle::text')
