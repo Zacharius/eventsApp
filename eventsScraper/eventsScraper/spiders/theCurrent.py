@@ -55,19 +55,20 @@ class theCurrentEventsSpider(scrapy.Spider):
         
         venue = response.css('li.locationItem h4 a::text').extract_first()
 
-        yield {
-            'title' : title,
-            'dateText' : dateText,
-            'date' : date,
-            'priceText' : priceText,
-            'price' : price,
-            'desc' : desc,
-            'sourceLink' : sourceLink,
-            'imgLoc' : imgLoc,
-            'sourceLink' : sourceLink,
-            'category' : category,
-            'venue' : venue
-        }
+        if title:
+            yield {
+                'title' : title,
+                'dateText' : dateText,
+                'date' : date,
+                'priceText' : priceText,
+                'price' : price,
+                'desc' : desc,
+                'sourceLink' : sourceLink,
+                'imgLoc' : imgLoc,
+                'sourceLink' : sourceLink,
+                'category' : category,
+                'venue' : venue
+            }
 
 
 
