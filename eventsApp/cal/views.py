@@ -38,6 +38,7 @@ def success(request):
 def user_logout(request):
     pass
 
+from datetime import datetime
 def events(request):
 
     event_list = Event.objects.all()
@@ -50,6 +51,14 @@ def events(request):
     if request.GET.__contains__('category'):
         catParam = request.GET.__getitem__('category');
         event_list = event_list.filter(category__icontains=catParam)
+
+    if request.GET.__contains__('venue'):
+        venueParam = request.GET.__getitem__('venue');
+        event_list = event_list.filter(venue__icontains=venueParam)
+
+    if request.GET.__contains__('date'):
+        dateParam = request.GET.__getitem__('date');
+        event_list = event_list.filter(date__date=dateParam)
 
     return render(request, 'cal/event_list.html', {'event_list' : event_list} )
 
