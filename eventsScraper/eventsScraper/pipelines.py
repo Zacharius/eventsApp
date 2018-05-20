@@ -30,7 +30,7 @@ class EventsscraperPipeline(object):
                     (item['price']),
                     (item['priceText']),
                     (item['venue']),
-                    (item['date']),
+                    (constructDateTime(item['date'])),
                     (item['dateText']),
                     (item['imgLoc']),
                     (item['category']),
@@ -50,3 +50,34 @@ class EventsscraperPipeline(object):
 
     def spider_close(self, spider):
         conn.close()
+
+def constructDateTime(dateText):
+
+    #if dateText is empty, return nothing
+    if not dateText:
+        return
+
+    #associative array mapping month names to their corresponding number
+    monthStringToNum = {
+        "January" : '01',
+        "February" : '02',
+        "March" : '03',
+        "April" : '04',
+        "May" : '05',
+        "June" : '06',
+        "July" : '07',
+        "August" : '08',
+        "September" : '09',
+        "October" : '10',
+        "November" : '11',
+        "December" : '12' }
+
+
+    month = monthStringToNum[dateText.split(" ")[0]]
+    day = dateText.split(" ")[1]
+
+    if not len(day)==2:
+        day = "0"+day
+
+    return "2018-"+month+"-"+day+" 00:00:00"
+

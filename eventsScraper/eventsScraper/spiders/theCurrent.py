@@ -7,6 +7,7 @@ class theCurrentEventsSpider(scrapy.Spider):
         "https://www.sacurrent.com/sanantonio/EventSearch"
     ]
 
+
     #root parsing method, begins parsing at start_urls
     def parse(self, response):
 
@@ -70,7 +71,11 @@ class theCurrentEventsSpider(scrapy.Spider):
                 'venue' : venue
             }
 
+    
 
+    
+            
+        
 
             
                          
