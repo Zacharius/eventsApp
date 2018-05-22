@@ -3,12 +3,36 @@ from django.contrib.auth.models import User
 from django import forms
 from django.core.exceptions import ValidationError
 
-
 class CustomUserCreationForm(forms.Form):
-    username = forms.CharField(label='Enter Username', min_length=4, max_length=150)
-    email = forms.EmailField(label='Enter email')
-    password1 = forms.CharField(label='Enter password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)
+    username = forms.CharField(min_length=4, max_length=150, widget=forms.TextInput(
+        attrs ={
+                'style': 'border-color: blue;',
+                'placeholder': 'username'
+            }
+    ))
+    email = forms.EmailField( widget=forms.TextInput(
+        attrs = {
+            'class':'form-control',
+            'style': 'border-color: blue;',
+            'placeholder': 'valid email'
+
+        }
+    ))
+    password1 = forms.CharField(widget=forms.PasswordInput(
+        attrs = {
+            'class':'form-control',
+            'style': 'border-color: blue;',
+            'placeholder': 'password'
+        }
+    ))
+    password2 = forms.CharField(widget=forms.PasswordInput(
+        attrs = {
+            'class':'form-control',
+            'style': 'border-color: blue;',
+            'placeholder': 'Confirm password'
+
+        }
+    ))
 
     def clean_username(self):
         username = self.cleaned_data['username'].lower()
