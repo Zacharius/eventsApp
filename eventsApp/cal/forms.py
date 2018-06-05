@@ -4,7 +4,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 
 class CustomUserCreationForm(forms.Form):
-    username = forms.CharField(min_length=4, max_length=150, widget=forms.TextInput(
+    username = forms.CharField(min_length=4, max_length=150,required=False, widget=forms.TextInput(
         attrs ={
                 'style': 'border-color: blue;',
                 'placeholder': 'username'
