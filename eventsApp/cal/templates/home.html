@@ -25,7 +25,7 @@
       {% if event_list %}
         {% for event in event_list|slice:":3" %}
         <div class="carousel-item">
-          <a href="/events/{{ event.title }}">
+          <a href="/events/{{ event.slug }}">
             <img class="d-block w-100 carousel-image" alt="default image" src="{{ event.imgLoc }}" data-holder-rendered="true" style="object-fit: cover; height: 100%;">
             <div class="carousel-caption d-none d-md-block">
               <h3>{{ event.title }}</h3>

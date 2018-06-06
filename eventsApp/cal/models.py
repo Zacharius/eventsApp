@@ -7,7 +7,7 @@ from django.urls import reverse
 class Event(models.Model):
 
     #Fields
-    title = models.CharField(max_length=100, primary_key=True)
+    title = models.CharField(max_length=150)
     desc = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     priceText = models.CharField(max_length=100)
@@ -17,13 +17,13 @@ class Event(models.Model):
     imgLoc = models.CharField(max_length=100, default='default.jpg')
     category = models.CharField(max_length=100, default='default')
     sourceLink = models.CharField(max_length=250, default="eventnear.us")
+    slug = models.SlugField(max_length=100, default="default slug", primary_key=True)
 
     class Meta:
         ordering = [ 'date' ]
 
     def get_absolute_url(self):
-        return reverse('event-detail', args=[self.title])
+        return reverse('event-detail', args=[self.slug])
 
     def __str_(self):
         return self.title 
-    
