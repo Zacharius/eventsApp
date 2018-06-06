@@ -10,7 +10,7 @@ class CustomUserCreationForm(forms.Form):
                 'placeholder': 'username'
             }
     ))
-    email = forms.EmailField( widget=forms.TextInput(
+    email = forms.EmailField(required=False, widget=forms.TextInput(
         attrs = {
             'class':'form-control',
             'style': 'border-color: blue;',
@@ -18,14 +18,14 @@ class CustomUserCreationForm(forms.Form):
 
         }
     ))
-    password1 = forms.CharField(widget=forms.PasswordInput(
+    password1 = forms.CharField(min_length=6, max_length=20,required=False, widget=forms.PasswordInput(
         attrs = {
             'class':'form-control',
             'style': 'border-color: blue;',
             'placeholder': 'password'
         }
     ))
-    password2 = forms.CharField(widget=forms.PasswordInput(
+    password2 = forms.CharField(min_length=6, max_length=20,required=False, widget=forms.PasswordInput(
         attrs = {
             'class':'form-control',
             'style': 'border-color: blue;',
