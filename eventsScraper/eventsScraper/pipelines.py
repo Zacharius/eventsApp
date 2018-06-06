@@ -23,8 +23,9 @@ class EventsscraperPipeline(object):
             cursor = self.conn.cursor()
             # Create insert query and pass the data from item array parameter
             insertEvent = ("INSERT INTO cal_event (title, desc, price, priceText,"
-                           "venue, date, dateText, imgLoc, category, sourceLink)"
-                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+                           "venue, date, dateText, imgLoc, category, sourceLink,"
+                            "slug)"
+                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
             data = ((item['title']),
                     (item['desc']),
                     (item['price']),
@@ -34,7 +35,9 @@ class EventsscraperPipeline(object):
                     (item['dateText']),
                     (item['imgLoc']),
                     (item['category']),
-                    (item['sourceLink']))
+                    (item['sourceLink']),
+                    (reduceToSlug(item['title'])))
+            
 
             #Execute insert query and close cursor and connection
             cursor.execute(insertEvent, data)
@@ -51,7 +54,27 @@ class EventsscraperPipeline(object):
     def spider_close(self, spider):
         conn.close()
 
+#remove all non-alphanumerics from title, replace spaces with underscore, makes
+#lower case
+
+def reduceToSlug(title):
+
+    title = title.lower()
+    
+    slug = ""
+
+    for char in title:
+        if char.isspace():
+            slug += "_"
+
+        if char.isalnum():
+            slug += char
+
+    return slug
+
+
 def constructDateTime(dateText):
+
 
     #if dateText is empty, return nothing
     if not dateText:
@@ -60,17 +83,28 @@ def constructDateTime(dateText):
     #associative array mapping month names to their corresponding number
     monthStringToNum = {
         "January" : '01',
+        "Jan." : '01',
         "February" : '02',
+        "Feb." : '02',
         "March" : '03',
+        "Mar." : '03',
         "April" : '04',
-        "May" : '05',
+        "Apr." : '04',
+        "May." : '05',
         "June" : '06',
+        "Jun." : '06',
         "July" : '07',
+        "Jul." : '07',
         "August" : '08',
+        "Aug." : '08',
         "September" : '09',
+        "Sept." : '09',
         "October" : '10',
+        "Oct." : '10',
         "November" : '11',
-        "December" : '12' }
+        "Nov." : '11',
+        "December" : '12' ,
+        "Dec." : '12' }
 
 
     month = monthStringToNum[dateText.split(" ")[0]]

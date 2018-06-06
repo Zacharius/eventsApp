@@ -47,7 +47,7 @@ class theCurrentEventsSpider(scrapy.Spider):
 
         dateText = response.css('span.eventWhen::text').extract_first().strip()
 
-        date = response.css('span.eventWhen::text').re(r'\w+ \d+')[0]
+        date = response.css('span.eventWhen::text').re(r'\w+\.* \d+')[0]
 
         priceHTML =   response.css('span.eventPrice::text')
 
