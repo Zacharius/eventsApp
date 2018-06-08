@@ -80,31 +80,33 @@ def constructDateTime(dateText):
     if not dateText:
         return
 
+    dateText = dateText.lower()
+    
     #associative array mapping month names to their corresponding number
     monthStringToNum = {
-        "January" : '01',
-        "Jan." : '01',
-        "February" : '02',
-        "Feb." : '02',
-        "March" : '03',
-        "Mar." : '03',
-        "April" : '04',
-        "Apr." : '04',
-        "May." : '05',
-        "June" : '06',
-        "Jun." : '06',
-        "July" : '07',
-        "Jul." : '07',
-        "August" : '08',
-        "Aug." : '08',
-        "September" : '09',
-        "Sept." : '09',
-        "October" : '10',
-        "Oct." : '10',
-        "November" : '11',
-        "Nov." : '11',
-        "December" : '12' ,
-        "Dec." : '12' }
+        "january" : '01',
+        "jan." : '01',
+        "february" : '02',
+        "feb." : '02',
+        "march" : '03',
+        "mar." : '03',
+        "april" : '04',
+        "apr." : '04',
+        "may." : '05',
+        "june" : '06',
+        "jun." : '06',
+        "july" : '07',
+        "jul." : '07',
+        "august" : '08',
+        "aug." : '08',
+        "september" : '09',
+        "sept." : '09',
+        "october" : '10',
+        "oct." : '10',
+        "november" : '11',
+        "nov." : '11',
+        "december" : '12' ,
+        "dec." : '12' }
 
 
     month = monthStringToNum[dateText.split(" ")[0]]

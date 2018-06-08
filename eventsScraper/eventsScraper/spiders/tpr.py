@@ -5,12 +5,9 @@ from scrapy import Request
 class QuotesSpider(scrapy.Spider):
     name = "tpr"
 
-    def start_requests(self):
-        urls = [
-            'http://tpr.org/community-calendar',
+    start_urls = [
+            'http://tpr.org/community-calendar'
         ]
-        for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
        for event in response.css('li.event-stub'):
@@ -26,35 +23,41 @@ class QuotesSpider(scrapy.Spider):
        yield scrapy.Request(absolute_next_url, callback = self.parse)
 
     def parse_page(self, response):
-        date = response.meta.get('date')
-        title = response.meta.get('title')
-        venue = response.meta.get('venue')
-        des = response.css('div.content div.row.collapse.description p::text').extract_first()
-        address = response.css('ul.event-venue li::text').extract_first()
-        addr = address[0];
-        cost = response.css('li.icon.price::text').extract_first()
-        if cost is 'Free':
-            cost = 0
-        time = response.css('li.icon.time::text').extract()
-        cats = response.css('li.categories a::text').extract()
-        dow = response.css('div.dayofweek::text').extract()
+        dateText = response.css("li.date-summary::text").extract_first().strip()
+        date = response.css("li.date-summary::text").re(r"\w+\.* \d+")[0]
+        title = response.css("h1.title::text").extract_first()
+        address = "\n".join(response.css("ul.event-venue li::text").extract())
+        desc = response.css('div.content div.row.collapse.description p::text').extract_first()
+        venue = response.css('li.icon.venue::text').extract_first()
+        priceText = response.css('li.icon.price::text').extract_first()
+        if not priceText or priceText == 'Free':
+            price = 0
+        else:
+            price = response.css('li.icon.price::text').re(r'\d+')[0]
+        category = response.css('li.categories a::text').extract_first()
+        if not category:
+            category = ""
+        imgLoc = response.css('div.event-image img::attr(src)').extract_first()
+        if not imgLoc:
+            imgLoc = ""
+        sourceLink = response.url
         
 
 
-        yield {
-               'date': date,
-               'dateText' : date,
-               'title': title,
-               'venue': venue,
-               'des': des,
-               'address' : addr,
-                'price' : cost,
-                'priceText' : cost,
-                'time' : time,
-                'cats' : cats,
-                'dow' : dow
 
-               }
+        yield {
+                'title' : title,
+                'dateText' : dateText,
+                'date' : date,
+                'priceText' : priceText,
+                'price' : price,
+                'desc' : desc,
+                'sourceLink' : sourceLink,
+                'imgLoc' : imgLoc,
+                'sourceLink' : sourceLink,
+                'category' : category,
+                'venue' : venue
+            }
 
 
 
