@@ -58,7 +58,10 @@ def events(request):
 
     if request.GET.__contains__('date'):
         dateParam = request.GET.__getitem__('date');
-        event_list = event_list.filter(date__date=dateParam)
+        try:
+            event_list = event_list.filter(date__date=dateParam)
+        except:
+            pass
 
     return render(request, 'cal/event_list.html', {'event_list' : event_list} )
 
