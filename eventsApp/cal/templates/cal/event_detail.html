@@ -1,0 +1,80 @@
+{% extends "base_generic.html" %}
+{% block title %}
+<title>Event Detail</title>
+{% endblock %}
+
+
+
+  {% block content %}
+    <script>
+      $(document).ready(function() {
+        var width = $(window).width();
+
+        if (width < '768') {
+          $('#filter-form').removeClass('show');
+        }
+      });
+
+      function submitNavForm()
+      {
+        var searchQuery = document.getElementById("navSearchBar").value;
+
+        if (searchQuery) {
+          document.getElementById("nav-form").action = "/search/" + searchQuery;
+          document.getElementById("nav-form").submit();
+        } else {
+          document.getElementById("nav-form").action = "/events/";
+          document.getElementById("nav-form").submit();
+        }
+      }
+    </script>
+
+    <style>
+      .col-md-4 {
+        margin-bottom: 30px;
+      }
+
+      .event-link {
+        margin-bottom: 40px;
+        margin-left: 20px;
+      }
+    </style>
+
+
+    <!-- event detail section -->
+    <div class="row" style="width: 100%; margin: 0px; margin-top: 10px;">
+      <!-- left spacing -->
+      <div class="col-md-2"></div>
+      <!-- event detail -->
+      <div class="col-md-8">
+        <!-- image, title, and description -->
+        <div style="padding-left: 10px; padding-right: 10px;">
+          <div style="text-align: center;">
+            <img class="img-fluid" src="{{ event.imgLoc }}" alt="default image" style="max-height: 400px;">
+          </div>
+          <br/>
+          <h3>{{ event.title }}</h3>
+          <br/>
+          <p>{{ event.desc }}</p>
+        </div>
+        <br/><hr/>
+        <!-- start date, venue, and price -->
+        <div class="row" style="text-align: center;">
+          <div class="col-md-4">
+            <h4>Date and Time</h4>
+            <p>{{ event.dateText }}</p>
+          </div>
+          <div class="col-md-4">
+            <h4>Location</h4>
+            <p>{{ event.venue }}</p>
+          </div>
+          <div class="col-md-4">
+            <h4>Cost</h4>
+            <p>{{ event.priceText }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- right spacing -->
+      <div class="col-md-2"></div>
+    </div>
+{% endblock %}

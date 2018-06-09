@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+      $(document).ready(function() {
+        var width = $(window).width();
+
+        if (width < '768') {
+          $('#filter-form').removeClass('show');
+        }
+      });
+    </script>
+
+    <style>
+      .col-md-4 {
+        margin-bottom: 30px;
+      }
+
+      .event-link {
+        margin-bottom: 40px;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #edeef3 !important;">
+      <a class="navbar-brand" href="#"><img src="https://cdn3.volusion.com/drk7m.puwj5/v/vspfiles/photos/636_Brown_Women-2.jpg" style="width:70px; padding: 2px; border: 1px solid silver; border-radius: 10%"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/events">Events</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row" style="padding: 15px; margin-left: 0px;">
+      <div class="col-md-12">
+        <div class="col-md-12">
+          <div style="text-align: center;">
+            {% load static %}
+            <img class="img-fluid" src="{% static event.imgLoc %}" alt="default image" style="max-height: 400px;">
+          </div>
+          <br/>
+          <div class="row">
+            <h3 class="title">{{ event.title }}</h3>
+          </div>
+          <div class="row">
+            <p class="card-description">{{ event.desc }}</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-4">
+              <h4 class="date-time-section"> Date and Time </h4>
+              <div class="col-md-12">
+                <div class="row">
+                  <p class="DateTime">{{ event.startDate }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h4 class="Venue"> Location or Venue</h4>
+              <div class="col-md-12">
+                <div class="row">
+                  <p class="venue">{{ event.venue }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h4 class="Cost-Section"> Cost </h4>
+              <div class="col-md-12">
+                <div class="row">
+                  <p class="Cost">{{ event.price }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

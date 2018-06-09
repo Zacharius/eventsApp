@@ -1,0 +1,48 @@
+To Do:
+1) Two data sources - automatic. Scraper pick up new events and push to the database. 
+2) http does not redirect to https
+3) better documentation, readme page on github
+4) Start running tests
+5) Basic monitoring, usage statistics; no cookie trackers
+
+(farther down the road)
+
+6) Feature: allow users subscribe to venue artists - event feeds can be accessed on our site or can get an rss feed.
+7) API for adding events. 
+
+8) problem with mobile features. 
+
+9) need to set up multiple filters
+10) allow filters and search
+11) http get parameters fix
+
+priority
+search
+https
+flaw with design - page needs a search bar
+login section
+unified design (done)
+scraper 
+
+front
+calendar view (oscar, nishant) 
+search bar - mostafa
+login (one for users and creaters/venues)- bk
+form filter modification - multiple categories and start and end date - mostafa and jose
+(next cycle) map-view
+(next cycle) extending http
+mobile not working - mostafa and jose
+
+back
+scraper - zach and jose and bk
+analytics - zach is going to track everyone
+http not working - jose
+get params - zach (before sunday)
+
+credential to server - zach
+
+by the end of two sundays from now - 
+finish from two mondays from now
+alpha .2 release 22
+
+
