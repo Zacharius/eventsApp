@@ -6,28 +6,33 @@ from django.core.exceptions import ValidationError
 class CustomUserCreationForm(forms.Form):
     username = forms.CharField(min_length=4, max_length=150,required=False, widget=forms.TextInput(
         attrs ={
+                'class':'form-control',
+                'required': 'True',
                 'style': 'border-color: blue;',
-                'placeholder': 'username'
+                'placeholder': 'username     required'
             }
     ))
     email = forms.EmailField(required=False, widget=forms.TextInput(
         attrs = {
             'class':'form-control',
+            'required': 'True',
             'style': 'border-color: blue;',
-            'placeholder': 'valid email'
+            'placeholder': 'valid email     required'
 
         }
     ))
     password1 = forms.CharField(min_length=6, max_length=20,required=False, widget=forms.PasswordInput(
         attrs = {
             'class':'form-control',
+            'required': 'True',
             'style': 'border-color: blue;',
-            'placeholder': 'password'
+            'placeholder': 'password     required'
         }
     ))
     password2 = forms.CharField(min_length=6, max_length=20,required=False, widget=forms.PasswordInput(
         attrs = {
             'class':'form-control',
+            'required': 'True',
             'style': 'border-color: blue;',
             'placeholder': 'Confirm password'
 
