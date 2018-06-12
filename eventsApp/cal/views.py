@@ -39,6 +39,7 @@ def user_logout(request):
     pass
 
 from datetime import datetime
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def events(request):
 
     event_list = Event.objects.all()
@@ -58,12 +59,41 @@ def events(request):
 
     if request.GET.__contains__('date'):
         dateParam = request.GET.__getitem__('date');
-        event_list = event_list.filter(date__date=dateParam)
+        try:
+            event_list = event_list.filter(date__date=dateParam)
+        except:
+            pass
 
     return render(request, 'cal/event_list.html', {'event_list' : event_list} )
 
 class EventListView(generic.ListView):
-   model = Event
+    model = Event
+    paginate_by = 9
+
+    def get_queryset(self):
+        event_list = Event.objects.all()
+
+        if self.request.GET.get('search', ''):
+            searchParam = self.request.GET.get('search', '')
+            event_list = event_list.filter(Q(title__icontains=searchParam) |
+                                              Q(desc__icontains=searchParam))
+
+        if self.request.GET.get('category', ''):
+            catParam = self.request.GET.get('category', '')
+            event_list = event_list.filter(category__icontains=catParam)
+
+        if self.request.GET.get('venue', ''):
+            venueParam = self.request.GET.get('venue', '')
+            event_list = event_list.filter(venue__icontains=venueParam)
+
+        if self.request.GET.get('date', ''):
+            dateParam = self.request.GET.get('date', '')
+            try:
+                event_list = event_list.filter(date__date=dateParam)
+            except:
+                pass
+
+        return event_list
 
 class EventDetailView(generic.DetailView):
     model = Event
