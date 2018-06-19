@@ -62,8 +62,13 @@ class theCurrentEventsSpider(scrapy.Spider):
         else:
             price = response.css('span.eventPrice::text').re(r'\d+')[0]
 
-        desc = response.css('div.descr_txt::text').extract_first().strip()
-
+        descriptions = response.css('div.descr_txt *::text').extract()
+        # peice together all parts of description, sometimes description has
+        # embedded tags
+        desc = ""
+        for i in descriptions:
+          desc += i.strip()+ " "
+          
         sourceLink = response.css('span.eventUrl a::attr(href)').extract_first()
 
         imgLoc = \
