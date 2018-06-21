@@ -7,6 +7,14 @@
   font: normal 16px sans-serif;
 
   padding: 45px 50px;
+<<<<<<< HEAD
+=======
+}
+
+#main-footer {
+  position: fixed;
+  bottom: 0px;
+>>>>>>> bk_bak
 }
 
 .footer-distributed .footer-left p{

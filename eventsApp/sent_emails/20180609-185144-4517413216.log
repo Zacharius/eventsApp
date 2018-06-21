@@ -1,0 +1,12 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: b2khat@gmail.com
+Date: Sat, 09 Jun 2018 18:51:44 -0000
+Message-ID: <152857030461.2165.12866437037476720874@damus-MacBook-Air.local>
+
+Someone asked for password reset for email b2khat@gmail.com. Follow the link below:
+http://127.0.0.1:8000/accounts/reset/Mw/4ww-d6e09741d265f4c5a02d/
+-------------------------------------------------------------------------------

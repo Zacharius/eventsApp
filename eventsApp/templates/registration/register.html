@@ -13,7 +13,7 @@
   });
 </script>
 
-     <div class="login">
+     <div class="container">
 
          {% if messages %}
             <ul>
@@ -23,15 +23,15 @@
             </ul>
         {% endif %}
 
-        <h1>Create account - The Great Django Blog</h1>
+        <h1>Registration for Event Near Us</h1>
 
          <form method="post" >
              {% csrf_token %}
-             <table>
+             <table style="width: 50%">
                 {{ form.as_table }}
                  <tr>
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Register" /></td>
+                    <td> <br> </td>
+                    <td> <br><input type="submit" name="submit" value="Register" /></td>
                 </tr>
              </table>
          </form>
